@@ -1,0 +1,119 @@
+.achievements {
+  padding: 2em;
+  margin: 0 auto;
+  text-align: center;
+  /* box-shadow: var(--shadow); */
+  transition: transform 0.2s linear;
+}
+
+.achievements:hover {
+  transform: translateY(-7px);
+}
+
+.achievements__description {
+  margin-top: 1em;
+}
+
+.achievements__stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1.2em 0;
+}
+
+.achievements__stack-item {
+  margin: 0.5em;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--clr-fg-alt);
+}
+
+.achievements .link--icon {
+  margin-left: 0.5em;
+}
+
+/*--------------------------------------------------------------
+# 
+--------------------------------------------------------------*/
+.faq .faq-list {
+  padding: 0 100px;
+}
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+.faq .faq-list li + li {
+  margin-top: 15px;
+}
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+}
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #11664a;
+}
+.faq .faq-list .icon-show, .faq .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+.icon-show {
+  display: none;
+}
+a.collapsed {
+  color: #279e80;
+  transition: 0.3s;
+}
+a.collapsed:hover {
+  color: #279e80;
+}
+a.collapsed .icon-show {
+  display: inline-block;
+}
+a.collapsed .icon-close {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
+
+.achNames {
+  text-align: left;
+  font-weight: 600;
+  min-height: 100%;
+}
+
+.achCard {
+  text-align: left;
+  height: 80;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+.textVerticalAlign {
+  vertical-align: middle;
+  text-align: left;
+}
