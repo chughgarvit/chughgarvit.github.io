@@ -7,10 +7,10 @@ import { Col, Container, Row } from 'react-bootstrap';
 const AchievementsContainer = ({ publication }) => (
 
   <Container key={uniqid()} data-aos="fade-up" data-aos-delay="100" className="achCard">
-    <Row style={{ height: 30 }} className="textVerticalAlign">
+    <Row className="textVerticalAlign">
       <Col xs={1}>
 
-        <Icon icon="bx:award" color="#79774C" width="20px" height="20px" />
+        <Icon icon="bx:award" color="#79774C"/>
       </Col>
       <Col xs={11} className="achNames">
         {publication.name}

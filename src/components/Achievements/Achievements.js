@@ -18,13 +18,13 @@ const Achievements = () => (
           2022
         </li>
       </ul>
-      <Container style={{ height: achievements2022.length * 50 }}>
+      <Container >
         {achievements2022.map((publication) => (
           <div>
             <Row>
               <AchievementsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>
@@ -35,13 +35,13 @@ const Achievements = () => (
           2021
         </li>
       </ul>
-      <Container style={{ height: achievements2021.length * 50 }}>
+      <Container >
         {achievements2021.map((publication) => (
           <div>
             <Row>
               <AchievementsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>
@@ -52,13 +52,13 @@ const Achievements = () => (
           2020
         </li>
       </ul>
-      <Container style={{ height: achievements2020.length * 50 }}>
+      <Container >
         {achievements2020.map((publication) => (
           <div>
             <Row>
               <AchievementsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>
@@ -70,13 +70,13 @@ const Achievements = () => (
           2019
         </li>
       </ul>
-      <Container style={{ height: achievements2019.length * 50 }}>
+      <Container >
         {achievements2019.map((publication) => (
           <div>
             <Row>
               <AchievementsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>
@@ -88,13 +88,13 @@ const Achievements = () => (
           1998
         </li>
       </ul>
-      <Container style={{ height: achievements2018.length * 50 }}>
+      <Container >
         {achievements2018.map((publication) => (
           <div>
             <Row>
               <AchievementsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>

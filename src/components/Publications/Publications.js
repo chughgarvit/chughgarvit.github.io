@@ -18,13 +18,13 @@ const Publications = () => (
           Journals
         </li>
       </ul>
-      <Container style={{ height: journals.length * 90 }}>
+      <Container >
         {journals.map((publication) => (
           <div>
-            <Row>
-              <PublicationsContainer key={uniqid()} publication={publication} />
+            <Row >
+              <PublicationsContainer key={uniqid()} publication={publication} style={{paddingBottom: 20}}/>
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>
@@ -35,13 +35,13 @@ const Publications = () => (
           Conferences
         </li>
       </ul>
-      <Container style={{ height: conferences.length * 90 }}>
+      <Container >
         {conferences.map((publication) => (
           <div>
             <Row>
               <PublicationsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>
@@ -52,13 +52,13 @@ const Publications = () => (
           Book Chapters
         </li>
       </ul>
-      <Container style={{ height: bookChapters.length * 90 }}>
+      <Container >
         {bookChapters.map((publication) => (
           <div>
             <Row>
               <PublicationsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>
@@ -69,13 +69,13 @@ const Publications = () => (
           Books
         </li>
       </ul>
-      <Container style={{ height: books.length * 90 }}>
+      <Container >
         {books.map((publication) => (
           <div>
             <Row>
               <PublicationsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>
@@ -86,13 +86,13 @@ const Publications = () => (
           Patents
         </li>
       </ul>
-      <Container style={{ height: patents.length * 90 }}>
+      <Container >
         {patents.map((publication) => (
           <div>
             <Row>
               <PublicationsContainer key={uniqid()} publication={publication} />
             </Row>
-            <Row style={{ height: 20 }} />
+            {/* <Row style={{ height: 20 }} /> */}
           </div>
         ))}
       </Container>

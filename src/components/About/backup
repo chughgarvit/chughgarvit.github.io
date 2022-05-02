@@ -15,9 +15,9 @@ const About = () => {
   const { name, role, description, resume, social } = about
 
   return (
-    <Container >
+    <Container>
       <Row>
-        <Col className='about' lg={{ span: 8, order: 1 }} md={{ span: 8, order: 1 }} xs={{ span: 12, order: 1 }} sm={{ span: 12, order: 1 }}>
+        <Col className='about' xs={8}>
           {name && (
             <div style={{ fontSize: "60px" }}>
               Hi, I am <span className='about__name'>{name}.</span>
@@ -82,11 +82,12 @@ const About = () => {
             )}
           </div>
         </Col>
-        <Col lg={{ span: 4, order: 2 }} md={{ span: 4, order: 2 }} xs={{ span: 12, order: 2 }} sm={{ span: 12, order: 2 }}>
+        <Col>
 
           <Row style={{ height: "10%" }} />
           <Row>
-            <img src={myImage} alt="Logo" className="myImage center" />
+            <img src={myImage} alt="Logo" className="myImage" />
+
           </Row>
 
         </Col>

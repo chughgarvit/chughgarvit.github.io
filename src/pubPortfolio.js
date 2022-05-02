@@ -4,11 +4,6 @@ const journals = [
         link: "https://doi.org/10.1002/ett.4076",
         name: "An improved ensemble based intrusion detection technique using XGBoost.",
         year: 2021
-    },
-    {
-        authors: "",
-        link: "",
-        name: ""
     }
 ]
 
@@ -18,11 +13,6 @@ const conferences = [
         link: "https://doi.org/10.1002/ett.4076",
         name: "An improved ensemble based intrusion detection technique using XGBoost.",
         year: 2021
-    },
-    {
-        authors: "",
-        link: "",
-        name: ""
     }
 ]
 
@@ -32,11 +22,6 @@ const bookChapters = [
         link: "https://doi.org/10.1002/ett.4076",
         name: "An improved ensemble based intrusion detection technique using XGBoost.",
         year: 2021
-    },
-    {
-        authors: "",
-        link: "",
-        name: ""
     }
 ]
 
@@ -46,11 +31,6 @@ const books = [
         link: "https://doi.org/10.1002/ett.4076",
         name: "An improved ensemble based intrusion detection technique using XGBoost.",
         year: 2021
-    },
-    {
-        authors: "",
-        link: "",
-        name: ""
     }
 ]
 
@@ -60,11 +40,6 @@ const patents = [
         link: "https://doi.org/10.1002/ett.4076",
         name: "An improved ensemble based intrusion detection technique using XGBoost.",
         year: 2021
-    },
-    {
-        authors: "",
-        link: "",
-        name: ""
     }
 ]
 
@@ -74,11 +49,6 @@ const achievements = [
         link: "https://doi.org/10.1002/ett.4076",
         name: "An improved ensemble based intrusion detection technique using XGBoost.",
         year: 2021
-    },
-    {
-        authors: "",
-        link: "",
-        name: ""
     }
 ]
 

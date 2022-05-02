@@ -12,15 +12,15 @@ import { Col, Container, Row } from 'react-bootstrap';
 const PublicationsContainer = ({ publication }) => (
 
   <Container key={uniqid()} data-aos="fade-up" data-aos-delay="100" className="pubCard">
-    <Row style={{ height: 50 }} className="textVerticalAlign">
+    <Row className="textVerticalAlign">
       <Col xs={1}>
 
-        <Icon icon="bx:award" color="#79774C" width="20px" height="20px" />
+        <Icon icon="bx:award" color="#79774C" />
       </Col>
       <Col xs={9} className="pubNames">
         {publication.name}
       </Col>
-      <Col xs={2}>
+      <Col xs={2} style={{textAlign: "right"}}>
         {publication.link && (
           <a
             href={publication.link}
@@ -32,13 +32,13 @@ const PublicationsContainer = ({ publication }) => (
         )}
       </Col>
     </Row>
-    <Row className="authNames textVerticalAlign" style={{ height: 20 }}>
+    <Row className="authNames textVerticalAlign" >
       <Col xs={1} />
       <Col>
         {publication.authors}
       </Col>
     </Row>
-    <Row style={{ height: 10 }} />
+    {/* <Row style={{ height: 10 }} /> */}
   </Container>
 )
 
