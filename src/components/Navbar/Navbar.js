@@ -5,7 +5,7 @@ import { useState } from 'react'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 // import { ThemeContext } from '../../contexts/theme'
-import { publications, projects, skills, contact } from '../../portfolio'
+import { projects, skills, contact } from '../../portfolio'
 // import { projects, skills, contact } from '../../portfolio'
 import './Navbar.css'
 
@@ -32,17 +32,15 @@ const Navbar = () => {
           </a>
         </li>
 
-        {publications.length ? (
-          <li className='nav__list-item'>
-            <a
-              href='#publications'
-              onClick={toggleNavList}
-              className='link link--nav'
-            >
-              Publications
-            </a>
-          </li>
-        ) : null}
+        <li className='nav__list-item'>
+          <a
+            href='#publications'
+            onClick={toggleNavList}
+            className='link link--nav'
+          >
+            Publications
+          </a>
+        </li>
 
         <li className='nav__list-item'>
           <a

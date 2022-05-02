@@ -7,113 +7,48 @@ const header = {
 const about = {
   // all the properties are optional - can be left empty or deleted
   name: 'Garvit Chugh',
-  role: 'PhD Scholar',
-  description:
-    'Avid researcher in wireless computing, mobile software design, and operating systems. I work with sensors and IoT devices and make statistical analysis to find data-driven solutions and perform data visualization. Currently a Ph.D. scholar at IIT Jodhpur under the supervision of Dr. Suchetana Chakraborty.',
+  role: 'PhD Scholar, Entrepreneur, Author',
+  description: 'Result oriented, top performer, and self-starter professional with expertise in technologies such as mobile and wireless computing, IoT, Telecom Networks, software design, and operating systems. I work with sensors and IoT devices and make statistical analysis to find data-driven solutions and perform data visualization. Currently a Ph.D. scholar at IIT Jodhpur under the supervision of Dr. Suchetana Chakraborty, and Dr. Sandip Chakraborty, IIT Kharagpur',
   resume: 'https://drive.google.com/file/d/1MNL9R2CeONe07Y89kYmnT9gFgBcxQeT5/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/garvitchugh98/',
-    github: 'https://github.com',
+    github: 'https://github.com/chughgarvit',
     googlescholar: 'https://scholar.google.com/citations?user=15XfuxMAAAAJ&hl=en',
-    dblp: 'https://github.com',
+    dblp: 'https://dblp.org/pid/302/5075',
   },
 }
-
-const pubs = [
-  {
-    authors: "Name 1, Name 2",
-    link: "https://github.com",
-    name: "Federated machine learning with data mining in health care",
-    year: 2022
-  },
-  {
-    authors: "Name 1, Name 2",
-    link: "https://github.com",
-    name: "CICRM: Clustering Inspired Correlation-based Ranking Method for a Cognitive Activities' dataset"
-  },
-  {
-    authors: "Name 1, Name 2",
-    link: "https://github.com",
-    name: "Federated machine learning with data mining in health care",
-    year: 2022
-  },
-  {
-    authors: "Name 1, Name 2",
-    link: "https://github.com",
-    name: "CICRM: Clustering Inspired Correlation-based Ranking Method for a Cognitive Activities' dataset"
-  }
-]
-
-const publications = [
-  // projects can be added an removed
-  // if there are no projects, Projects section won't show up
-  {
-    name: 'Paper 1',
-    description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
-  },
-  {
-    name: 'Paper 2',
-    description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
-  },
-  {
-    name: 'Project 3',
-    description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
-  },
-  {
-    name: 'Project 3',
-    description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
-  },
-]
-
 
 const projects = [
   // projects can be added an removed
   // if there are no projects, Projects section won't show up
   {
-    name: 'Paper 1',
+    name: 'Quantifying attention using eSense (earable) devices ',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
+      'Using earable technology to detect the synchronized silent nodding of the listeners in an online meeting as the speaker speaks. And use it to quantify attention.',
+    stack: ['Python3', 'scikit-learn', 'earables', 'HMM'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
   {
-    name: 'Project 2',
+    name: 'Ensemble based Intrusion detection system',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
+      'a technique is proposed that combines XGBoost with ensemble-based IDS to achieve a real time intrusion detection system',
+    stack: ['Python3', 'Deep Learning'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
   {
-    name: 'Project 3',
+    name: 'Talk More',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
+      'Android-based application for real-time messaging, like WhatsApp',
+    stack: ['Java', 'Android', 'Firebase', 'SQLite'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
   {
-    name: 'Project 3',
-    description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
+    name: 'Legal Helper',
+    description: 'Using image processing and classification to determine the meaning of a legal document like rental agreement, and presenting the meaning in a layman context.',
+    stack: ['Java', 'Android', 'Firebase', 'SQLite', 'Computer Vision', 'Image Processing'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
@@ -122,18 +57,17 @@ const projects = [
 const skills = [
   // skills can be added or removed
   // if there are no skills, Skills section won't show up
-  'HTML',
+  'C', 'C++', 'Java', 'Python', 'NodeJS', 'MySQL', 'Firebase',
+  'Latex', 'Android Studio', 'NetBeans', 'Network Simulator (Version 3)',
+
   'CSS',
   'JavaScript',
   'TypeScript',
   'React',
   'Redux',
-  'SASS',
   'Material UI',
   'Git',
-  'CI/CD',
-  'Jest',
-  'Enzyme',
+  'Leadership', 'Problem Solving', 'Team Player', 'Communication Skills', 'HTML',
 ]
 
 const contact = {
@@ -144,12 +78,12 @@ const contact = {
 const education = [
   {
     id: 1,
-    title: "Frontend Developer",
-    location: "Dragontail, Ascana",
+    title: "Doctor of Philosophy, Ph.D., (Mobile and Pervasive Computing)",
+    location: "Indian Institute of Technology, Jodhpur, India",
     description:
-      "Converting data to a graphical interface, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that data.",
+      "I work with sensors and IoT devices and make statistical analysis to find data-driven solutions and perform data visualization. Currently a Ph.D. scholar at IIT Jodhpur under the supervision of Dr. Suchetana Chakraborty, and Dr. Sandip Chakraborty, IIT Kharagpur",
     buttonText: "View Frontend Projects",
-    date: "August 2016 - present",
+    date: "January 2022 - present",
     icon: "work"
   },
   {
@@ -203,4 +137,4 @@ const education = [
   }
 ]
 
-export { header, about, publications, pubs, projects, skills, contact, education }
+export { header, about, projects, skills, contact, education }
