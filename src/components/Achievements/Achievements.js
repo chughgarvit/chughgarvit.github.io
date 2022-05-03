@@ -1,7 +1,7 @@
 import { Container, Row } from 'react-bootstrap'
 import uniqid from 'uniqid'
 import React from 'react'
-import { achievements2022, achievements2021, achievements2020, achievements2019, achievements2018 } from '../../pubPortfolio'
+import { achievements } from '../../pubPortfolio'
 import AchievementsContainer from '../AchievementsContainer/AchievementsContainer'
 import './Achievements.css'
 
@@ -12,93 +12,24 @@ const Achievements = () => (
 
     <div className='achievements__grid'>
 
-      {/* Year 2022 */}
-      <ul className='listItem'>
-        <li>
-          2022
-        </li>
-      </ul>
-      <Container >
-        {achievements2022.map((publication) => (
-          <div>
-            <Row>
-              <AchievementsContainer key={uniqid()} publication={publication} />
-            </Row>
-            {/* <Row style={{ height: 20 }} /> */}
-          </div>
-        ))}
-      </Container>
-
-      {/* Year 2021 */}
-      <ul className='listItem'>
-        <li>
-          2021
-        </li>
-      </ul>
-      <Container >
-        {achievements2021.map((publication) => (
-          <div>
-            <Row>
-              <AchievementsContainer key={uniqid()} publication={publication} />
-            </Row>
-            {/* <Row style={{ height: 20 }} /> */}
-          </div>
-        ))}
-      </Container>
-
-      {/* Year 2020 */}
-      <ul className='listItem'>
-        <li>
-          2020
-        </li>
-      </ul>
-      <Container >
-        {achievements2020.map((publication) => (
-          <div>
-            <Row>
-              <AchievementsContainer key={uniqid()} publication={publication} />
-            </Row>
-            {/* <Row style={{ height: 20 }} /> */}
-          </div>
-        ))}
-      </Container>
-
-
-      {/* Year 2019 */}
-      <ul className='listItem'>
-        <li>
-          2019
-        </li>
-      </ul>
-      <Container >
-        {achievements2019.map((publication) => (
-          <div>
-            <Row>
-              <AchievementsContainer key={uniqid()} publication={publication} />
-            </Row>
-            {/* <Row style={{ height: 20 }} /> */}
-          </div>
-        ))}
-      </Container>
-
-
-      {/* Year 2018 */}
-      <ul className='listItem'>
-        <li>
-          1998
-        </li>
-      </ul>
-      <Container >
-        {achievements2018.map((publication) => (
-          <div>
-            <Row>
-              <AchievementsContainer key={uniqid()} publication={publication} />
-            </Row>
-            {/* <Row style={{ height: 20 }} /> */}
-          </div>
-        ))}
-      </Container>
-
+      {achievements.map((achievement) => (
+        <div>
+          <ul className='listItem'>
+            <li>
+              {achievement.year}
+            </li>
+          </ul>
+          <Container >
+            {achievement.data.map((publication) => (
+              <div>
+                <Row>
+                  <AchievementsContainer key={uniqid()} publication={publication} />
+                </Row>
+              </div>
+            ))}
+          </Container>
+        </div>
+      ))}
     </div >
   </section >
 )

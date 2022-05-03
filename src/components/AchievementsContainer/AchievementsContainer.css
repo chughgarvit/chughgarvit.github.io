@@ -117,3 +117,8 @@ a.collapsed .icon-close {
   vertical-align: middle;
   text-align: left;
 }
+
+.listStyle {
+  list-style-type: circle;
+  font-weight: 400;
+}

@@ -7,7 +7,7 @@ const header = {
 const about = {
   // all the properties are optional - can be left empty or deleted
   name: 'Garvit Chugh',
-  role: 'PhD Scholar, Entrepreneur, Author',
+  role: 'PhD Scholar, Author, Entrepreneur',
   description: 'Result oriented, top performer, and self-starter professional with expertise in technologies such as mobile and wireless computing, IoT, Telecom Networks, software design, and operating systems. I work with sensors and IoT devices and make statistical analysis to find data-driven solutions and perform data visualization. Currently a Ph.D. scholar at IIT Jodhpur under the supervision of Dr. Suchetana Chakraborty, and Dr. Sandip Chakraborty, IIT Kharagpur',
   resume: 'https://drive.google.com/file/d/1MNL9R2CeONe07Y89kYmnT9gFgBcxQeT5/view?usp=sharing',
   social: {
