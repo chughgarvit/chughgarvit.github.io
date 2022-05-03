@@ -44,7 +44,7 @@ const Navbar = () => {
 
         <li className='nav__list-item'>
           <a
-            href='#education'
+            href='#timeline'
             onClick={toggleNavList}
             className='link link--nav'
           >
