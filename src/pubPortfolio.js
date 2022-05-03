@@ -63,28 +63,46 @@ const patents = [
     }
 ]
 
-
-// • 
-// • GATE Scholar (GATE Fellowship), Ministry of Human Resource and Development (MHRD), India.
-// • Received Outstanding Student Award in B. Tech. (Final year) from my college for excellent academic and cultural contributions.
-// • Academic Excellence in B. Tech., Guru Gobind Indraprastha University, Delhi.
-//     ◦ 2nd Year - 93%, 3rd Year - 92%, 4th Year - 95%, Consistently secured top rank.
-// • Ranked among the top 2% in the Graduate Aptitude Test in Engineering (GATE) 2020.
-// • Ranked among the top 6% in the Common Aptitude Test (CAT) 2019.
-// • MAIT Hacks - 1st Position, Maharaja Agrasen Institute of Technology (Hackathon), Delhi.
-// • HackBVP - 4th Position, Bharatiya Vidyapeeth Institute of Technology (Hackathon), Delhi.
-//     ◦ Lead Developer
-//     ◦ Received judges' appreciation for the most unique idea
-// • Academic Excellence in Senior Secondary School, St. Xavier's Sr. Sec. School.
-
-
-
 const achievements = [
+    {
+        year: 2022,
+        data: [
+            {
+                head: "Comprehensive Exams of Ph.D. Cleared. ",
+                tail: ["Data-Intensive Computing","Sensors and IoT","Computer Systems"]
+            },
+            {
+                head: "Part of Management in four start-ups ",
+                tail: ["UniStreet, 2021 - Present ","GaliFoo, 2020 - Present","TestOnClick, 2020 - Present ","Bhagat Ram Software Solutions 2020 - 2022"]
+            },
+            {
+                head: "Marketing Member of  EDMVANS (YouTube channel with 1.93 Lakh subscribers) for Electronic dance music.",
+                tail: []
+            }
+        ]
+    },
     {
         year: 2021,
         data: [
             {
+                head: "Reviewer Certificate (2021), for serving as a reviewer for Transactions on Emerging Telecommunications Technologies. ",
+                tail: []
+            }
+        ]
+    },
+    {
+        year: 2020,
+        data: [
+            {
                 head: "GATE Scholar (GATE Fellowship), Ministry of Human Resource and Development (MHRD), India.",
+                tail: []
+            },
+            {
+                head: "Ranked among the top 2% in the Graduate Aptitude Test in Engineering (GATE) 2020.",
+                tail: []
+            },
+            {
+                head: "Class Representative (M. Tech. Batch of 2022)",
                 tail: []
             },
             {
@@ -93,16 +111,27 @@ const achievements = [
             },
             {
                 head: "Academic Excellence in B. Tech., Guru Gobind Indraprastha University, Delhi.",
-                tail: ["2nd Year - 93%, 3rd Year - 92%, 4th Year - 95%, Consistently secured top rank."]
+                tail: ["2nd Year - 93%", "3rd Year - 92%", "4th Year - 95%", "Consistently secured top rank."]
             },
             {
-                head: "Ranked among the top 2% in the Graduate Aptitude Test in Engineering (GATE) 2020.",
-                tail: []
-            },
+                head: "Active Member in sports activities conducted during B. Tech. at University level, (2016-2020)",
+                tail: ["Football", "Basketball", "Tug of war"]
+            }
+            
+        ]
+    },
+    {
+        year: 2019,
+        data: [            
             {
                 head: "Ranked among the top 6% in the Common Aptitude Test (CAT) 2019.",
                 tail: []
-            },
+            }
+        ]
+    },
+    {
+        year: 2017,
+        data: [
             {
                 head: "MAIT Hacks - 1st Position, Maharaja Agrasen Institute of Technology (Hackathon), Delhi.",
                 tail: []
@@ -110,9 +139,22 @@ const achievements = [
             {
                 head: "HackBVP - 4th Position, Bharatiya Vidyapeeth Institute of Technology (Hackathon), Delhi.",
                 tail: ["Lead Developer", "Received judges' appreciation for the most unique idea"]
-            },
+            }
+        ]
+    },
+    {
+        year: 2016,
+        data: [            
             {
                 head: "Academic Excellence in Senior Secondary School, St. Xavier's Sr. Sec. School.",
+                tail: []
+            },
+            {
+                head: "Interschool Personality Contest, St. Xaviers Sr. Sec. School, 2016",
+                tail: ["2nd Runner Up"]
+            }, 
+            {
+                head: "Prefect in Senior Secondary School, St. Xavier's Sr. Sec. School.",
                 tail: []
             }
         ]

@@ -57,17 +57,9 @@ const projects = [
 const skills = [
   // skills can be added or removed
   // if there are no skills, Skills section won't show up
-  'C', 'C++', 'Java', 'Python', 'NodeJS', 'MySQL', 'Firebase',
-  'Latex', 'Android Studio', 'NetBeans', 'Network Simulator (Version 3)',
-
-  'CSS',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Redux',
-  'Material UI',
-  'Git',
-  'Leadership', 'Problem Solving', 'Team Player', 'Communication Skills', 'HTML',
+  'C', 'C++', 'Java', 'Python', 'NodeJS', 'MySQL', 'Firebase','HTML','CSS','JavaScript',  'React',  'Material UI',  'Git',
+  'Latex', 'Android Studio', 'NetBeans', 'Network Simulator (Version 3)',  
+  'Leadership', 'Problem Solving', 'Team Player', 'Communication Skills'
 ]
 
 const contact = {
@@ -81,58 +73,58 @@ const education = [
     title: "Doctor of Philosophy, Ph.D., (Mobile and Pervasive Computing)",
     location: "Indian Institute of Technology, Jodhpur, India",
     description:
-      "I work with sensors and IoT devices and make statistical analysis to find data-driven solutions and perform data visualization. Currently a Ph.D. scholar at IIT Jodhpur under the supervision of Dr. Suchetana Chakraborty, and Dr. Sandip Chakraborty, IIT Kharagpur",
+      "Under the supervision of Dr. Suchetana Chakraborty, IIT Jodhpur, and Dr. Sandip Chakraborty, IIT Kharagpur.",
     buttonText: "View Frontend Projects",
     date: "January 2022 - present",
-    icon: "work"
+    icon: "school"
   },
   {
     id: 2,
-    title: "Backend Developer",
-    location: "Skystead, Craonia",
+    title: "Master of Technology, M.Tech, (CSE)",
+    location: "Indian Institute of Technology, Jodhpur, India",
     description:
-      "Working hand-in-hand with front-end developers by providing the outward facing web application elements server-side logic. Creating the logic to make the web app function properly, and accomplishing this through the use of server-side scripting languages.",
-    buttonText: "View Backend Projects",
-    date: "June 2013 - August 2016",
-    icon: "work"
+      "Under the supervision of Dr. Suchetana Chakraborty, IIT Jodhpur, and Dr. Sandip Chakraborty, IIT Kharagpur.",
+    buttonText: "View Frontend Projects",
+    date: "September 2020 - January 2022",
+    icon: "school"
   },
   {
     id: 3,
-    title: "Quality Assurance Engineer",
-    location: "South Warren, Geshington",
+    title: "Web Developer, Futural Solutions",
+    location: "Delhi, India",
     description:
-      "Assessing the quality of specifications and technical design documents in order to ensure timely, relevant and meaningful feedback.",
+      "TestOnClick: A web-based solutions for taking online examinations. Later joined the start-up.",
     buttonText: "Company Website",
-    date: "September 2011 - June 2013",
+    date: "January 2020 - June 2020",
     icon: "work"
   },
   {
     id: 4,
-    title: "Oak Ridge College",
-    location: "South Warren, Geshington",
+    title: "Field Researcher, Futural Solutions",
+    location: "Delhi, India",
     description:
-      "Online Course in Magical Beasts and Wonders of the World - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
+      "GaliFoo: Find the exact location of street food vendors around you. Later joined the start-up, Collected data of the vendors throughout Delhi, and managed a team of 4",
     buttonText: "Course Certificate",
-    date: "September 2011",
-    icon: "school"
+    date: "August 2019 - January 2020",
+    icon: "work"
   },
   {
     id: 5,
-    title: "Hawking College",
-    location: "Skystead, Craonia",
+    title: "Internships",
+    location: "Delhi, India",
     description:
-      "College - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
+      "Android Developer (Internship), Airports Authority of India, AAI. Android Developer (Internship), Center for Railway Information Systems (CRIS)",
     buttonText: "College Projects",
-    date: "2007 - 2011",
-    icon: "school"
+    date: "June 2019 - August 2019",
+    icon: "work"
   },
   {
     id: 6,
-    title: "Marble Hills Grammar School",
-    location: "Dragontail, Ascana",
+    title: "Bachelor of Technology, B.Tech, (CSE)",
+    location: "Delhi-NCR, India",
     description:
-      "Highschool - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-    date: "2003 - 2007",
+      "Under the supervision of Dr. Bhoopesh Singh Bhati, NSUT, and Dr. Nitesh Singh Bhati, GGSIPU.",
+    date: "2016 - 2020",
     icon: "school"
   }
 ]

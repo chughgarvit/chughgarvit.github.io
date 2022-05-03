@@ -55,11 +55,11 @@ const Navbar = () => {
         {projects.length ? (
           <li className='nav__list-item'>
             <a
-              href='#projects'
+              href='#achievements'
               onClick={toggleNavList}
               className='link link--nav'
             >
-              Projects
+              Achievements
             </a>
           </li>
         ) : null}
