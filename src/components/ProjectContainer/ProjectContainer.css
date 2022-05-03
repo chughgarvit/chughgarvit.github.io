@@ -4,6 +4,15 @@
   text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.2s linear;
+  position: relative;
+  width: auto;
+}
+
+.childProject {
+  position: absolute;
+  left: 1%;
+  bottom: 1%;
+  width: 100%;
 }
 
 .project:hover {

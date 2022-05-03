@@ -27,7 +27,6 @@ const projects = [
       'Using earable technology to detect the synchronized silent nodding of the listeners in an online meeting as the speaker speaks. And use it to quantify attention.',
     stack: ['Python3', 'scikit-learn', 'earables', 'HMM'],
     sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
   },
   {
     name: 'Ensemble based Intrusion detection system',
@@ -35,7 +34,6 @@ const projects = [
       'a technique is proposed that combines XGBoost with ensemble-based IDS to achieve a real time intrusion detection system',
     stack: ['Python3', 'Deep Learning'],
     sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
   },
   {
     name: 'Talk More',
@@ -43,22 +41,20 @@ const projects = [
       'Android-based application for real-time messaging, like WhatsApp',
     stack: ['Java', 'Android', 'Firebase', 'SQLite'],
     sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
   },
   {
     name: 'Legal Helper',
     description: 'Using image processing and classification to determine the meaning of a legal document like rental agreement, and presenting the meaning in a layman context.',
     stack: ['Java', 'Android', 'Firebase', 'SQLite', 'Computer Vision', 'Image Processing'],
     sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
   },
 ]
 
 const skills = [
   // skills can be added or removed
   // if there are no skills, Skills section won't show up
-  'C', 'C++', 'Java', 'Python', 'NodeJS', 'MySQL', 'Firebase','HTML','CSS','JavaScript',  'React',  'Material UI',  'Git',
-  'Latex', 'Android Studio', 'NetBeans', 'Network Simulator (Version 3)',  
+  'C', 'C++', 'Java', 'Python', 'NodeJS', 'MySQL', 'Firebase', 'HTML', 'CSS', 'JavaScript', 'React', 'Material UI', 'Git',
+  'Latex', 'Android Studio', 'NetBeans', 'Network Simulator (Version 3)',
   'Leadership', 'Problem Solving', 'Team Player', 'Communication Skills'
 ]
 
