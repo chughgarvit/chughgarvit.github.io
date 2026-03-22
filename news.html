@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Garvit Chugh - Latest News and Updates" />
+  <title>News - Garvit Chugh</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { padding:0; margin:0; border:0; outline:0; background-color:inherit; color:inherit; font-family:inherit; font-size:inherit; box-shadow:none; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    a { text-decoration:none; }
+
+    .app {
+      --clr-bg: #fcfcfc;
+      --clr-bg-alt: #fff;
+      --clr-fg: #555;
+      --clr-fg-alt: #444;
+      --clr-primary: #79774c;
+      --shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5;
+      color: var(--clr-fg);
+      background-color: var(--clr-bg);
+      min-height: 100vh;
+    }
+
+    h1, h2 { line-height:1.2; color:var(--clr-fg-alt); }
+    h1 { font-size:2.5rem; }
+
+    .header { height:8em; max-width:1100px; width:95%; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .nav__list { margin-right:1.5em; display:flex; list-style:none; }
+    .nav__list-item { margin-left:1.5em; }
+    .nav__hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+    .nav__logo { font-weight:700; font-size:1.5rem; color:var(--clr-primary); text-decoration:none; }
+    nav { margin-left:auto; }
+    .link--nav { color:var(--clr-fg); text-transform:lowercase; font-weight:500; text-decoration:none; position:relative; padding-bottom:.2em; }
+    .link--nav::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--clr-primary); transition:width .2s ease; }
+    .link--nav:hover::after { width:100%; }
+    .link--nav:hover { color:var(--clr-primary); }
+    .link--nav.active { color:var(--clr-primary); font-weight:700; }
+    .center { display:flex; align-items:center; }
+    @media(max-width:600px){
+      .header { height:6em; width:88%; }
+      .nav__list { display:none; flex-direction:column; justify-content:center; align-items:center; position:fixed; inset:0; width:100%; height:100%; background-color:var(--clr-bg); z-index:2; }
+      .nav__list.active { display:flex; }
+      .nav__list-item { margin:.5em 0; font-size:1.2rem; }
+      .nav__hamburger { display:flex; z-index:3; margin-left:.8em; }
+      main { width:88%; }
+    }
+    main { max-width:1100px; width:95%; margin:0 auto; padding:2em 0 4em; }
+
+    .page-title { margin-bottom:.3em; text-transform:uppercase; }
+    .page-subtitle { color:var(--clr-fg); font-size:.95rem; margin-bottom:2em; }
+
+    .news-list { list-style:none; margin:0; padding:0; display:grid; gap:10px; position:relative; padding-left:28px; }
+    .news-list::before { content:''; position:absolute; left:17px; top:8px; bottom:8px; width:2px; background:var(--clr-primary); opacity:.3; border-radius:999px; }
+    .news-item { display:grid; grid-template-columns:36px 1fr; align-items:start; gap:12px; margin-left:-28px; }
+    .news-badge { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:.75rem; color:var(--clr-bg); background:var(--clr-primary); flex-shrink:0; }
+    .news-card { background:var(--clr-bg-alt); border:1px solid rgba(0,0,0,.06); border-radius:8px; padding:10px 14px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+    .news-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--clr-primary); }
+    .news-text { margin:0; color:var(--clr-fg-alt); font-size:.92rem; line-height:1.5; font-weight:500; }
+    .news-text strong { color:var(--clr-primary); font-weight:700; }
+
+    .footer { padding:3em 0; text-align:center; font-size:.9rem; font-weight:600; color:var(--clr-fg); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="header center">
+    <a href="index.html" class="nav__logo">GC.</a>
+    <nav>
+      <ul class="nav__list" id="navList">
+        <li class="nav__list-item"><a href="index.html" class="link--nav">home</a></li>
+        <li class="nav__list-item"><a href="news.html" class="link--nav active">news</a></li>
+        <li class="nav__list-item"><a href="index.html#research" class="link--nav">research</a></li>
+        <li class="nav__list-item"><a href="education.html" class="link--nav">education</a></li>
+        <li class="nav__list-item"><a href="publications.html" class="link--nav">publications</a></li>
+        <li class="nav__list-item"><a href="awards.html" class="link--nav">awards</a></li>
+        <li class="nav__list-item"><a href="index.html#contact" class="link--nav">contact</a></li>
+      </ul>
+    </nav>
+    <div class="center">
+      <button class="btn btn--icon nav__hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Latest News</h1>
+    <p class="page-subtitle">All updates, newest first.</p>
+
+    <ol class="news-list">
+      <li class="news-item"><div class="news-badge">37</div><div class="news-card"><p class="news-text">Recipient of <strong>CHI 2026 Honourable Mention Award</strong> for <strong>MorsEar</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">36</div><div class="news-card"><p class="news-text"><strong>Gary Marsden Travel Award</strong> for <strong>CHI 2026</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">35</div><div class="news-card"><p class="news-text"><strong>IEEE CS TCCC</strong> and <strong>TCPP STG</strong> Travel Grant Awardee for <strong>PerCom 2026</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">34</div><div class="news-card"><p class="news-text">Invited TPC Member of <strong>HeadSys 2026</strong>, co-located with <strong>MobiSys 2026</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">33</div><div class="news-card"><p class="news-text"><strong>ACM IARCS</strong> Grant Recipient for <strong>PerCom 2026</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">32</div><div class="news-card"><p class="news-text"><strong>LRNF International Student Travel Grant</strong> Recipient for <strong>SenSys 2026</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">31</div><div class="news-card"><p class="news-text">Full paper accepted at <strong>CHI 2026 Main Track</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">30</div><div class="news-card"><p class="news-text">2 papers accepted at <strong>PerCom 2026 WiP Track</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">29</div><div class="news-card"><p class="news-text">Full paper accepted at <strong>PerCom 2026 Main Track</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">28</div><div class="news-card"><p class="news-text"><strong>COMSNETS 2026</strong> Travel Grant Awardee!</p></div></li>
+      <li class="news-item"><div class="news-badge">27</div><div class="news-card"><p class="news-text">Invited to present a poster on <strong>BiteSense</strong> at <strong>ARCS 2026</strong>, 11th Feb 2026, <strong>IIT Hyderabad</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">26</div><div class="news-card"><p class="news-text">Full paper accepted at <strong>COMSNETS 2026 Main Track</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">25</div><div class="news-card"><p class="news-text">Full paper accepted at <strong>SenSys 2026</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">24</div><div class="news-card"><p class="news-text">Full paper accepted at <strong>EICS 2026</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">23</div><div class="news-card"><p class="news-text">Selected to receive <strong>OmniBuds</strong>, a cutting-edge earable platform with integrated biosensors and on-device ML (June 2025).</p></div></li>
+      <li class="news-item"><div class="news-badge">22</div><div class="news-card"><p class="news-text"><strong>ACM/IARCS</strong> Travel Grant Awardee for <strong>PerCom 2025</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">21</div><div class="news-card"><p class="news-text"><strong>IEEE CS TCCC</strong> and <strong>TCPP STG</strong> Travel Grant Awardee for <strong>PerCom 2025</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">20</div><div class="news-card"><p class="news-text"><strong>LRN Foundation</strong> Travel Grant Awardee for <strong>PerCom 2025</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">19</div><div class="news-card"><p class="news-text">Full paper at <strong>PerCom 2025</strong> along with 1 WiP and 1 Artefact!</p></div></li>
+      <li class="news-item"><div class="news-badge">18</div><div class="news-card"><p class="news-text">TPC Member of <strong>COMSNETS Poster Session</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">17</div><div class="news-card"><p class="news-text">3 papers accepted at <strong>IEEE ICDM</strong>, <strong>ACM CODS-COMAD (IKDD)</strong>, and <strong>COMSNETS 2024</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">16</div><div class="news-card"><p class="news-text">Rank 4, <strong>Green Fintech Hackathon</strong>, IITJ with the <strong>Reserve Bank Innovation Hub (RBIH)</strong> (2024).</p></div></li>
+      <li class="news-item"><div class="news-badge">15</div><div class="news-card"><p class="news-text">Selected as Social Media Chair for <strong>COMSNETS 2025</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">14</div><div class="news-card"><p class="news-text">Received the <strong>Prime Minister Research Fellowship</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">13</div><div class="news-card"><p class="news-text">Finalist in the <strong>Stanford EPIC Data Challenge</strong>, USA, Top 5 out of 61, 2023.</p></div></li>
+      <li class="news-item"><div class="news-badge">12</div><div class="news-card"><p class="news-text">Finalist | <strong>IEEE Smart Mobility Challenge</strong>, Saudi Arabia, Top 5 out of 175, Sole Rep. of India.</p></div></li>
+      <li class="news-item"><div class="news-badge">11</div><div class="news-card"><p class="news-text">Research Internship at <strong>MPSC Lab, UMBC</strong>, USA (Sep 2023 &ndash; Feb 2024).</p></div></li>
+      <li class="news-item"><div class="news-badge">10</div><div class="news-card"><p class="news-text">Served as Web Chair at <strong>COMSNETS 2024</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">9</div><div class="news-card"><p class="news-text">Received the <strong>TCS Research Scholar Fellowship</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">8</div><div class="news-card"><p class="news-text">Full paper accepted at <strong>IEEE/ACM CHASE 2023</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">7</div><div class="news-card"><p class="news-text"><strong>Best Poster Award</strong> &ndash; Industry Day Poster Session, <strong>IIT Jodhpur</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">6</div><div class="news-card"><p class="news-text">Travel Grant from <strong>COMSNETS</strong> to attend the 15th International Conference (Jan 2023).</p></div></li>
+      <li class="news-item"><div class="news-badge">5</div><div class="news-card"><p class="news-text">Presented one Poster and one Demo at <strong>COMSNETS 2023</strong>!</p></div></li>
+      <li class="news-item"><div class="news-badge">4</div><div class="news-card"><p class="news-text">Received <strong>Outstanding TA Award</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">3</div><div class="news-card"><p class="news-text">Registration Grant to attend <strong>EarComp 2022</strong> by <strong>Nokia Bell Labs</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">2</div><div class="news-card"><p class="news-text">Paper accepted at <strong>EarComp 2022</strong>, <strong>Ubicomp/ISWC</strong>.</p></div></li>
+      <li class="news-item"><div class="news-badge">1</div><div class="news-card"><p class="news-text"><strong>GATE'20</strong>, <strong>CAT'19</strong> Qualified (Top 2 percentile in National Engineering and Aptitude Exams).</p></div></li>
+    </ol>
+  </main>
+  <footer class="footer">
+    <p>Garvit Chugh &copy; 2026</p>
+  </footer>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navList = document.getElementById('navList');
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    hamburger.textContent = navList.classList.contains('active') ? '\u00D7' : '\u2630';
+  });
+</script>
+</body>
+</html>

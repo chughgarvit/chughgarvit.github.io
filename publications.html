@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Garvit Chugh - Research Publications" />
+  <title>Publications - Garvit Chugh</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { padding:0; margin:0; border:0; outline:0; background-color:inherit; color:inherit; font-family:inherit; font-size:inherit; box-shadow:none; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    a { text-decoration:none; }
+    ul { list-style:none; }
+
+    .app {
+      --clr-bg: #fcfcfc;
+      --clr-bg-alt: #fff;
+      --clr-fg: #555;
+      --clr-fg-alt: #444;
+      --clr-primary: #79774c;
+      --shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5;
+      color: var(--clr-fg);
+      background-color: var(--clr-bg);
+      min-height: 100vh;
+    }
+
+    h1, h2 { line-height:1.2; color:var(--clr-fg-alt); }
+    h1 { font-size:2.5rem; }
+
+    .header { height:8em; max-width:1100px; width:95%; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .nav__list { margin-right:1.5em; display:flex; list-style:none; }
+    .nav__list-item { margin-left:1.5em; }
+    .nav__hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+    .nav__logo { font-weight:700; font-size:1.5rem; color:var(--clr-primary); text-decoration:none; }
+    nav { margin-left:auto; }
+    .link--nav { color:var(--clr-fg); text-transform:lowercase; font-weight:500; text-decoration:none; position:relative; padding-bottom:.2em; }
+    .link--nav::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--clr-primary); transition:width .2s ease; }
+    .link--nav:hover::after { width:100%; }
+    .link--nav:hover { color:var(--clr-primary); }
+    .link--nav.active { color:var(--clr-primary); font-weight:700; }
+    .center { display:flex; align-items:center; }
+    @media(max-width:600px){
+      .header { height:6em; width:88%; }
+      .nav__list { display:none; flex-direction:column; justify-content:center; align-items:center; position:fixed; inset:0; width:100%; height:100%; background-color:var(--clr-bg); z-index:2; }
+      .nav__list.active { display:flex; }
+      .nav__list-item { margin:.5em 0; font-size:1.2rem; }
+      .nav__hamburger { display:flex; z-index:3; margin-left:.8em; }
+      main { width:88%; }
+    }
+    main { max-width:1100px; width:95%; margin:0 auto; padding:2em 0 4em; }
+
+    .page-title { margin-bottom:.3em; text-transform:uppercase; }
+    .page-subtitle { color:var(--clr-fg); font-size:.95rem; margin-bottom:1.5em; }
+
+    /* ── Filters ── */
+    .filters { margin-bottom:2em; }
+    .filter-group { margin-bottom:.8em; }
+    .filter-label { font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:var(--clr-fg); margin-bottom:.4em; display:block; }
+    .filter-btns { display:flex; flex-wrap:wrap; gap:.4em; }
+    .filter-btn { padding:.35em .8em; font-size:.8rem; font-weight:600; border:1.5px solid rgba(0,0,0,.12); border-radius:20px; cursor:pointer; transition:all .15s; background:var(--clr-bg-alt); color:var(--clr-fg-alt); }
+    .filter-btn:hover { border-color:var(--clr-primary); color:var(--clr-primary); }
+    .filter-btn.active { background:var(--clr-primary); color:#fff; border-color:var(--clr-primary); }
+    .filter-count { font-size:.75rem; margin-left:1em; color:var(--clr-fg); font-weight:500; }
+
+    /* ── Publications ── */
+    .pub-year { font-size:1.8rem; font-weight:700; color:var(--clr-primary); margin-top:2em; margin-bottom:1em; padding-bottom:.3em; border-bottom:2px solid var(--clr-primary); }
+    .pub-year:first-of-type { margin-top:0; }
+    .pub-item { padding:1.2em 1.5em; margin-bottom:1em; background:var(--clr-bg-alt); border-radius:4px; box-shadow:var(--shadow); transition:all .2s; text-align:left; }
+    .pub-item:hover { transform:translateY(-3px); }
+    .pub-item.hidden { display:none; }
+    .pub-title { font-weight:600; color:var(--clr-fg-alt); font-size:1rem; }
+    .pub-authors { font-size:.9rem; margin-top:.3em; }
+    .pub-authors strong { color:var(--clr-primary); font-weight:600; }
+    .pub-venue { font-size:.85rem; margin-top:.3em; font-style:italic; color:var(--clr-fg-alt); }
+    .pub-badge { display:inline-block; font-size:.7rem; font-weight:600; padding:.15em .5em; border-radius:3px; margin-left:.3em; vertical-align:middle; }
+    .pub-badge--main { background:#06d6a0; color:#fff; }
+    .pub-badge--wip { background:#f9c74f; color:#333; }
+    .pub-badge--award { background:#e63946; color:#fff; }
+    .pub-badge--core { background:var(--clr-primary); color:var(--clr-bg); }
+    .pub-badge--journal { background:#457b9d; color:#fff; }
+    .pub-badge--patent { background:#6c757d; color:#fff; }
+    .pub-tags { margin-top:.4em; display:flex; flex-wrap:wrap; gap:.3em; }
+    .pub-tag { font-size:.65rem; padding:.15em .5em; border-radius:3px; background:rgba(121,119,76,.1); color:var(--clr-primary); font-weight:600; }
+    .pub-note { font-size:.85rem; color:var(--clr-fg); margin-top:1em; text-align:center; }
+    .link { color:var(--clr-primary); }
+    .no-results { text-align:center; padding:3em; color:var(--clr-fg); font-size:1rem; display:none; }
+
+    .footer { padding:3em 0; text-align:center; font-size:.9rem; font-weight:600; color:var(--clr-fg); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="header center">
+    <a href="index.html" class="nav__logo">GC.</a>
+    <nav>
+      <ul class="nav__list" id="navList">
+        <li class="nav__list-item"><a href="index.html" class="link--nav">home</a></li>
+        <li class="nav__list-item"><a href="news.html" class="link--nav">news</a></li>
+        <li class="nav__list-item"><a href="index.html#research" class="link--nav">research</a></li>
+        <li class="nav__list-item"><a href="education.html" class="link--nav">education</a></li>
+        <li class="nav__list-item"><a href="publications.html" class="link--nav active">publications</a></li>
+        <li class="nav__list-item"><a href="awards.html" class="link--nav">awards</a></li>
+        <li class="nav__list-item"><a href="index.html#contact" class="link--nav">contact</a></li>
+      </ul>
+    </nav>
+    <div class="center">
+      <button class="btn btn--icon nav__hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Publications</h1>
+    <p class="page-subtitle">22 peer-reviewed publications, 1 patent. <span class="filter-count" id="filterCount"></span></p>
+
+    <!-- ── Filters ── -->
+    <div class="filters">
+      <div class="filter-group">
+        <span class="filter-label">Year</span>
+        <div class="filter-btns" id="yearFilter">
+          <button class="filter-btn active" data-value="all">All</button>
+          <button class="filter-btn" data-value="2026">2026</button>
+          <button class="filter-btn" data-value="2025">2025</button>
+          <button class="filter-btn" data-value="2024">2024</button>
+          <button class="filter-btn" data-value="2023">2023</button>
+          <button class="filter-btn" data-value="2022">2022</button>
+          <button class="filter-btn" data-value="2021">2021</button>
+          <button class="filter-btn" data-value="patent">Patent</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Track</span>
+        <div class="filter-btns" id="trackFilter">
+          <button class="filter-btn active" data-value="all">All</button>
+          <button class="filter-btn" data-value="main">Main Track</button>
+          <button class="filter-btn" data-value="workshop">Workshop / WiP</button>
+          <button class="filter-btn" data-value="journal">Journal</button>
+          <button class="filter-btn" data-value="patent">Patent</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Topic</span>
+        <div class="filter-btns" id="topicFilter">
+          <button class="filter-btn active" data-value="all">All</button>
+          <button class="filter-btn" data-value="sensing">Sensing</button>
+          <button class="filter-btn" data-value="healthcare">Healthcare</button>
+          <button class="filter-btn" data-value="hci">HCI</button>
+          <button class="filter-btn" data-value="mlai">ML / AI</button>
+          <button class="filter-btn" data-value="security">Security</button>
+          <button class="filter-btn" data-value="systems">Systems</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-results" id="noResults">No publications match the selected filters.</div>
+
+    <!-- ── Publications ── -->
+    <div id="pubContainer">
+
+    <h2 class="pub-year" data-year-heading="2026">2026</h2>
+    <li class="pub-item" data-year="2026" data-track="main" data-topic="sensing hci security">
+      <div class="pub-title">MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable-Based Inertial Sensing <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span> <span class="pub-badge pub-badge--award">Honourable Mention Award</span></div>
+      <div class="pub-authors"><strong>Chugh, G.</strong>, Ghosh, I., Roy, N., Chakraborty, S., &amp; Chakraborty, S.</div>
+      <div class="pub-venue">CHI 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span><span class="pub-tag">Security</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2026" data-track="workshop" data-topic="healthcare sensing">
+      <div class="pub-title">VectionSense: Multimodal Inertial-Physiological Cybersickness Detection in Consumer VR <span class="pub-badge pub-badge--wip">Workshop</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors">Layal, K., Kumar, A., <strong>Chugh, G.</strong> &amp; Chakraborty, S.</div>
+      <div class="pub-venue">SAXR 2026 Workshop co-located with CHI 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2026" data-track="main" data-topic="healthcare sensing">
+      <div class="pub-title">HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors"><strong>Chugh, G.</strong> &amp; Chakraborty, S.</div>
+      <div class="pub-venue">PerCom 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2026" data-track="main" data-topic="mlai systems">
+      <div class="pub-title">Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors">Dey, E., Ravi, A., Shinde, G., <strong>Chugh, G.</strong>, Ghosh, I., Misra, A., &amp; Roy, N.</div>
+      <div class="pub-venue">PerCom 2026</div>
+      <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Systems</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2026" data-track="workshop" data-topic="sensing security">
+      <div class="pub-title">EarFence: Lightweight Ultrasonic Defense for Smart Earbuds Against Hidden Commands <span class="pub-badge pub-badge--wip">WiP Track</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors">Vadthya, S., <strong>Chugh, G.</strong> &amp; Chakraborty, S.</div>
+      <div class="pub-venue">PerCom 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">Security</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2026" data-track="workshop" data-topic="healthcare sensing hci">
+      <div class="pub-title">CompulsEar: Body-focused Repetitive Behaviors Detection using Earable-Based Inertial Sensing <span class="pub-badge pub-badge--wip">WiP Track</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors">Kumar, A.*, Sharma, S.*, <strong>Chugh, G.</strong>* &amp; Chakraborty, S. (*Equal Contribution)</div>
+      <div class="pub-venue">PerCom 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2026" data-track="journal" data-topic="healthcare sensing">
+      <div class="pub-title">SpineSense: Earable-Based Inertial Sensing for Spine Movement Monitoring to Combat Neck Pain <span class="pub-badge pub-badge--journal">Q1 Journal</span></div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong>, Suchetana Chakraborty and Sandip Chakraborty</div>
+      <div class="pub-venue">PACMHCI (EICS) 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2026" data-track="main" data-topic="healthcare sensing mlai hci">
+      <div class="pub-title">WristSense: Sensing Hidden Wrist Strain in Routine Activities via Inertial Tokenization and LLM-Based Feedback <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong>, Ananya Mondal, Sandip Chakraborty and Suchetana Chakraborty</div>
+      <div class="pub-venue">SenSys 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">ML / AI</span><span class="pub-tag">HCI</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2026" data-track="main" data-topic="systems sensing">
+      <div class="pub-title">Experience: From Sensors to Service: Advancing Ambient Living with an AIoT Community Testbed <span class="pub-badge pub-badge--main">Main Track</span></div>
+      <div class="pub-authors"><strong>Chugh, G.</strong>, Mondal, A., Osho, &amp; Chakraborty, S.</div>
+      <div class="pub-venue">COMSNETS 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Systems</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <h2 class="pub-year" data-year-heading="2025">2025</h2>
+    <li class="pub-item" data-year="2025" data-track="main" data-topic="mlai sensing">
+      <div class="pub-title">High-Order Moments Conditional Domain Adaptation Networks for Wearable Human Activity Recognition <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A</span></div>
+      <div class="pub-authors">Indrajeet Ghosh, <strong>Garvit Chugh</strong>, Abu Zaher Md Faridee, Nirmalya Roy</div>
+      <div class="pub-venue">CIKM 2025, Seoul, South Korea</div>
+      <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2025" data-track="main" data-topic="healthcare sensing">
+      <div class="pub-title">BiteSense: Earable-Based Inertial Sensing for Eating Behaviour Assessment <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong>, Indrajeet Ghosh, Suchetana Chakraborty and Sandip Chakraborty</div>
+      <div class="pub-venue">PerCom 2025</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2025" data-track="workshop" data-topic="systems sensing">
+      <div class="pub-title">EarDesk: An Adaptive Desktop BLE Framework for eSense IMU Data Collection and Configuration <span class="pub-badge pub-badge--wip">Artifacts Paper</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong>*, Sameeran Zhingre* and Suchetana Chakraborty (*Equal Contribution)</div>
+      <div class="pub-venue">PerCom 2025</div>
+      <div class="pub-tags"><span class="pub-tag">Systems</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2025" data-track="workshop" data-topic="healthcare sensing hci">
+      <div class="pub-title">Tracking Ephemeral and Residual Emotions via Earable Inertial Sensing During Media Consumption <span class="pub-badge pub-badge--wip">WIP Paper</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors">Sameeran Zhingre, <strong>Garvit Chugh</strong>, and Suchetana Chakraborty</div>
+      <div class="pub-venue">PerCom 2025</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2025" data-track="workshop" data-topic="hci sensing">
+      <div class="pub-title">Unlocking Eye Gestures with Earable Inertial Sensing for Accessible HCI <span class="pub-badge pub-badge--wip">Poster Paper</span></div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong>, Suchetana Chakraborty and Sandip Chakraborty</div>
+      <div class="pub-venue">COMSNETS 2025</div>
+      <div class="pub-tags"><span class="pub-tag">HCI</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <h2 class="pub-year" data-year-heading="2024">2024</h2>
+    <li class="pub-item" data-year="2024" data-track="main" data-topic="mlai">
+      <div class="pub-title">&beta;-Decode: Attention-based Decoding Temporal Artifacts via Unsupervised &beta;-Variational Autoencoder</div>
+      <div class="pub-authors">Indrajeet Ghosh, <strong>Garvit Chugh</strong>, Nirmalya Roy, and Kasthuri Jayarajah</div>
+      <div class="pub-venue">CODS-COMAD 2024, IIT Jodhpur, India</div>
+      <div class="pub-tags"><span class="pub-tag">ML / AI</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2024" data-track="workshop" data-topic="mlai sensing">
+      <div class="pub-title">Unsupervised Domain Adaptation for Action Recognition via Self-Ensembling and Conditional Embedding Alignment <span class="pub-badge pub-badge--wip">Short Paper</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors">Indrajeet Ghosh, <strong>Garvit Chugh</strong>, Abu Zaher Md Faridee, and Nirmalya Roy</div>
+      <div class="pub-venue">ICDM 2024, Abu Dhabi, UAE</div>
+      <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Sensing</span></div>
+    </li>
+
+    <h2 class="pub-year" data-year-heading="2023">2023</h2>
+    <li class="pub-item" data-year="2023" data-track="main" data-topic="healthcare sensing hci">
+      <div class="pub-title">Exploring Earables to Monitor Temporal Lack of Focus during Online Meetings to Identify Onset of Neurological Disorders</div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong>, Suchetana Chakraborty, Ravi Bhandari and Sandip Chakraborty</div>
+      <div class="pub-venue">IEEE/ACM CHASE 2023, pp. 126&ndash;137</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2023" data-track="workshop" data-topic="hci systems">
+      <div class="pub-title">Demonstration of LegalHelper: A Low-cost Tool for Smart Translation and Creation of Legal Contracts <span class="pub-badge pub-badge--wip">Demo Paper</span></div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong> and Suchetana Chakraborty</div>
+      <div class="pub-venue">COMSNETS 2023</div>
+      <div class="pub-tags"><span class="pub-tag">HCI</span><span class="pub-tag">Systems</span></div>
+    </li>
+
+    <li class="pub-item" data-year="2023" data-track="workshop" data-topic="sensing hci">
+      <div class="pub-title">enVolve+: Inertial Sensing to Reinforce Involvement of Silent Listeners during an Online Interaction <span class="pub-badge pub-badge--wip">Poster Paper</span></div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong>, Suchetana Chakraborty and Sandip Chakraborty</div>
+      <div class="pub-venue">COMSNETS 2023</div>
+      <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
+    </li>
+
+    <h2 class="pub-year" data-year-heading="2022">2022</h2>
+    <li class="pub-item" data-year="2022" data-track="main" data-topic="sensing hci">
+      <div class="pub-title">enVolve: Are You Listening? Inertial Sensing to Monitor the Involvement of Silent Listeners during an Online Interaction <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-authors"><strong>Garvit Chugh</strong>, Suchetana Chakraborty, Ravi Bhandari and Sandip Chakraborty</div>
+      <div class="pub-venue">UbiComp/ISWC &rsquo;22 Adjunct, ACM</div>
+      <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
+    </li>
+
+    <h2 class="pub-year" data-year-heading="2021">2021</h2>
+    <li class="pub-item" data-year="2021" data-track="journal" data-topic="mlai security">
+      <div class="pub-title">An Improved Ensemble Based Intrusion Detection Technique using XGBoost <span class="pub-badge pub-badge--journal">Journal</span></div>
+      <div class="pub-authors">Bhati, B. S., <strong>Chugh, G.</strong>, Al-Turjman, F., &amp; Bhati, N. S.</div>
+      <div class="pub-venue">Transactions on Emerging Telecommunications Technologies, 2021</div>
+      <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Security</span></div>
+    </li>
+
+    <h2 class="pub-year" data-year-heading="patent">Patent</h2>
+    <li class="pub-item" data-year="patent" data-track="patent" data-topic="healthcare sensing systems">
+      <div class="pub-title">A Multimodal Headband System For Activity Recognition And Biometric Data Collection <span class="pub-badge pub-badge--patent">Patent</span></div>
+      <div class="pub-authors"><strong>Chugh, G.</strong>, Chakraborty, S., &amp; Chakraborty, S.</div>
+      <div class="pub-venue">Patent Application Number 202531105540 (Filed, October 2025)</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">Systems</span></div>
+    </li>
+
+    </div>
+
+    <p class="pub-note">For the complete list, visit my <a class="link" href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> or <a class="link" href="https://dblp.org/pid/302/5075" target="_blank" rel="noopener">DBLP</a> page.</p>
+  </main>
+  <footer class="footer">
+    <p>Garvit Chugh &copy; 2026</p>
+  </footer>
+</div>
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navList = document.getElementById('navList');
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    hamburger.textContent = navList.classList.contains('active') ? '\u00D7' : '\u2630';
+  });
+
+  // Filter logic
+  const filters = { year: 'all', track: 'all', topic: 'all' };
+  const items = document.querySelectorAll('.pub-item');
+  const countEl = document.getElementById('filterCount');
+  const noResults = document.getElementById('noResults');
+
+  function applyFilters() {
+    let visible = 0;
+    items.forEach(item => {
+      const matchYear = filters.year === 'all' || item.dataset.year === filters.year;
+      const matchTrack = filters.track === 'all' || item.dataset.track === filters.track;
+      const matchTopic = filters.topic === 'all' || item.dataset.topic.includes(filters.topic);
+      const show = matchYear && matchTrack && matchTopic;
+      item.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+    // Show/hide year headings based on visible papers
+    document.querySelectorAll('[data-year-heading]').forEach(heading => {
+      const yr = heading.dataset.yearHeading;
+      const hasVisible = Array.from(items).some(i => i.dataset.year === yr && !i.classList.contains('hidden'));
+      heading.style.display = hasVisible ? '' : 'none';
+    });
+    const isFiltered = filters.year !== 'all' || filters.track !== 'all' || filters.topic !== 'all';
+    countEl.textContent = isFiltered ? 'Showing ' + visible + ' of ' + items.length : '';
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  document.querySelectorAll('.filter-btns').forEach(group => {
+    const filterType = group.id.replace('Filter', '');
+    group.addEventListener('click', e => {
+      if (!e.target.classList.contains('filter-btn')) return;
+      group.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      filters[filterType] = e.target.dataset.value;
+      applyFilters();
+    });
+  });
+</script>
+</body>
+</html>

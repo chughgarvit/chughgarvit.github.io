@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Garvit Chugh - Education and Experience" />
+  <title>Education &amp; Experience - Garvit Chugh</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { padding:0; margin:0; border:0; outline:0; background-color:inherit; color:inherit; font-family:inherit; font-size:inherit; box-shadow:none; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    a { text-decoration:none; }
+
+    .app {
+      --clr-bg: #fcfcfc;
+      --clr-bg-alt: #fff;
+      --clr-fg: #555;
+      --clr-fg-alt: #444;
+      --clr-primary: #79774c;
+      --shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5;
+      color: var(--clr-fg);
+      background-color: var(--clr-bg);
+      min-height: 100vh;
+    }
+
+    h1, h2 { line-height:1.2; color:var(--clr-fg-alt); }
+    h1 { font-size:2.5rem; }
+
+    .header { height:8em; max-width:1100px; width:95%; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .nav__list { margin-right:1.5em; display:flex; list-style:none; }
+    .nav__list-item { margin-left:1.5em; }
+    .nav__hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+    .nav__logo { font-weight:700; font-size:1.5rem; color:var(--clr-primary); text-decoration:none; }
+    nav { margin-left:auto; }
+    .link--nav { color:var(--clr-fg); text-transform:lowercase; font-weight:500; text-decoration:none; position:relative; padding-bottom:.2em; }
+    .link--nav::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--clr-primary); transition:width .2s ease; }
+    .link--nav:hover::after { width:100%; }
+    .link--nav:hover { color:var(--clr-primary); }
+    .link--nav.active { color:var(--clr-primary); font-weight:700; }
+    .center { display:flex; align-items:center; }
+    @media(max-width:600px){
+      .header { height:6em; width:88%; }
+      .nav__list { display:none; flex-direction:column; justify-content:center; align-items:center; position:fixed; inset:0; width:100%; height:100%; background-color:var(--clr-bg); z-index:2; }
+      .nav__list.active { display:flex; }
+      .nav__list-item { margin:.5em 0; font-size:1.2rem; }
+      .nav__hamburger { display:flex; z-index:3; margin-left:.8em; }
+      main { width:88%; }
+    }
+    main { max-width:1100px; width:95%; margin:0 auto; padding:2em 0 4em; }
+
+    .page-title { margin-bottom:.3em; text-transform:uppercase; }
+    .page-subtitle { color:var(--clr-fg); font-size:.95rem; margin-bottom:2em; }
+
+    .edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:2em; max-width:1100px; margin:0 auto; }
+    @media(max-width:768px){ .edu-grid { grid-template-columns:1fr; } }
+    .ach-card { background:var(--clr-bg-alt); border-radius:4px; padding:1.5em; box-shadow:var(--shadow); }
+    .ach-card h3 { margin-bottom:1em; color:var(--clr-primary); font-size:1.2rem; }
+    .edu-entry { padding:1em 0; border-bottom:1px solid rgba(0,0,0,.06); }
+    .edu-entry:last-child { border-bottom:none; padding-bottom:0; }
+    .edu-entry:first-child { padding-top:0; }
+    .edu-date { font-size:.8rem; font-weight:600; color:var(--clr-primary); }
+    .edu-entry h4 { font-size:1rem; margin-top:.2em; }
+    .edu-place { font-size:.9rem; color:var(--clr-primary); font-weight:500; }
+    .edu-detail { font-size:.85rem; margin-top:.3em; color:var(--clr-fg); }
+
+    .footer { padding:3em 0; text-align:center; font-size:.9rem; font-weight:600; color:var(--clr-fg); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="header center">
+    <a href="index.html" class="nav__logo">GC.</a>
+    <nav>
+      <ul class="nav__list" id="navList">
+        <li class="nav__list-item"><a href="index.html" class="link--nav">home</a></li>
+        <li class="nav__list-item"><a href="news.html" class="link--nav">news</a></li>
+        <li class="nav__list-item"><a href="index.html#research" class="link--nav">research</a></li>
+        <li class="nav__list-item"><a href="education.html" class="link--nav active">education</a></li>
+        <li class="nav__list-item"><a href="publications.html" class="link--nav">publications</a></li>
+        <li class="nav__list-item"><a href="awards.html" class="link--nav">awards</a></li>
+        <li class="nav__list-item"><a href="index.html#contact" class="link--nav">contact</a></li>
+      </ul>
+    </nav>
+    <div class="center">
+      <button class="btn btn--icon nav__hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Education &amp; Experience</h1>
+    <p class="page-subtitle">Academic background and professional experience.</p>
+
+      <div class="edu-grid">
+        <div class="ach-card">
+          <h3>Education</h3>
+          <div class="edu-entry">
+            <span class="edu-date">2020 &ndash; Present</span>
+            <h4>Dual Ph.D. &ndash; M.Tech. (CSE)</h4>
+            <p class="edu-place">Indian Institute of Technology, Jodhpur, India</p>
+            <p class="edu-detail">Mobile and Pervasive Computing. Under the supervision of Dr. Suchetana Chakraborty, IIT Jodhpur, and Dr. Sandip Chakraborty, IIT Kharagpur.</p>
+            <p class="edu-detail">Thesis Submitted. CGPA: 8.93/10</p>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-date">2016 &ndash; 2020</span>
+            <h4>B.Tech. (CSE)</h4>
+            <p class="edu-place">Guru Gobind Singh Indraprastha University, Delhi, India</p>
+            <p class="edu-detail">CGPA: 9.10/10</p>
+          </div>
+        </div>
+        <div class="ach-card">
+          <h3>Experience</h3>
+          <div class="edu-entry">
+            <span class="edu-date">Sep 2023 &ndash; Mar 2024</span>
+            <h4>Visiting Researcher</h4>
+            <p class="edu-place">University of Maryland, Baltimore County, USA</p>
+            <p class="edu-detail">Research at the MPSC Lab under Prof. Nirmalya Roy. Domain adaptation for wearable activity recognition.</p>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-date">Jan 2021 &ndash; Present</span>
+            <h4>Teaching Assistant</h4>
+            <p class="edu-place">Indian Institute of Technology, Jodhpur</p>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-date">Jan 2020 &ndash; Jul 2022</span>
+            <h4>Web Developer (Research)</h4>
+            <p class="edu-place">Futural Solutions, New Delhi, India</p>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-date">Jun 2019 &ndash; Aug 2019</span>
+            <h4>Android Developer (Internship)</h4>
+            <p class="edu-place">Airports Authority of India, New Delhi</p>
+          </div>
+        </div>
+      </div>
+<div class="ach-card" style="margin-top:2em;">
+  <h3>Supervision &amp; Mentorship</h3>
+  <ul class="ach-list" style="list-style:disc; padding-left:1.5em;">
+    <li>Mentored 2 Master&rsquo;s Thesis Projects (MTP), 2 Bachelor&rsquo;s Thesis Projects (BTP), and 20 research interns at UbiSys Research Lab, IIT Jodhpur (2020&ndash;2025)</li>
+    <li>Supervised ~60 undergraduate and graduate students on projects in Mobile and Pervasive Computing, Ubiquitous Sensing, and Applied Machine Learning</li>
+  </ul>
+</div>
+<div class="ach-card" style="margin-top:2em;">
+  <h3>Teaching (IIT Jodhpur)</h3>
+  <ul class="ach-list" style="list-style:disc; padding-left:1.5em;">
+    <li><strong>2025</strong> &ndash; CS7460, Mobile and Pervasive Computing [Fall], 21 students</li>
+    <li><strong>2025</strong> &ndash; CSL2020, Data Structure and Algorithms [Spring], 84 students</li>
+    <li><strong>2024</strong> &ndash; CSL3050, Database Systems [Fall], 93 students</li>
+    <li><strong>2024</strong> &ndash; CSL2020, Data Structure and Algorithms [Spring], 204 students</li>
+    <li><strong>2023</strong> &ndash; AIL7460, Fundamentals of Distributed Computing [Summer], 34 students</li>
+    <li><strong>2023</strong> &ndash; CS7460, Mobile and Pervasive Computing [Spring], 76 students</li>
+    <li><strong>2022</strong> &ndash; CSL3030, Operating Systems [Fall], 99 students</li>
+    <li><strong>2021</strong> &ndash; CSL2040, Mathematics for Computing [Fall], 89 students</li>
+    <li><strong>2021</strong> &ndash; CSL1010, Introduction to Computer Science [Spring], 245 students</li>
+    <li><strong>2021</strong> &ndash; CSL3020, Computer Architecture [Fall], 150 students</li>
+  </ul>
+</div>
+<div class="ach-card" style="margin-top:2em;">
+  <h3>PMRF Outreach &amp; External Teaching</h3>
+  <ul class="ach-list" style="list-style:disc; padding-left:1.5em;">
+    <li><strong>2025</strong> &ndash; Tutorials on IoT, IIIT Sonepat, India</li>
+    <li><strong>2024</strong> &ndash; Tutorials on Fundamentals of Computer Science, Nehru Inter College, Siddharth Nagar (U.P.), India</li>
+    <li><strong>2024</strong> &ndash; Tutorials on DBMS, IIIT Sonepat, India</li>
+    <li><strong>2023</strong> &ndash; Tutorial on Awareness on ICT Tools, Sarvodaya Boys Sr. Sec. School, Delhi, India</li>
+  </ul>
+</div>
+  </main>
+  <footer class="footer">
+    <p>Garvit Chugh &copy; 2026</p>
+  </footer>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navList = document.getElementById('navList');
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    hamburger.textContent = navList.classList.contains('active') ? '\u00D7' : '\u2630';
+  });
+</script>
+</body>
+</html>

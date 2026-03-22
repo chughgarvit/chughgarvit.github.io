@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Garvit Chugh - Awards and Service" />
+  <title>Awards &amp; Service - Garvit Chugh</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { padding:0; margin:0; border:0; outline:0; background-color:inherit; color:inherit; font-family:inherit; font-size:inherit; box-shadow:none; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    a { text-decoration:none; }
+
+    .app {
+      --clr-bg: #fcfcfc;
+      --clr-bg-alt: #fff;
+      --clr-fg: #555;
+      --clr-fg-alt: #444;
+      --clr-primary: #79774c;
+      --shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5;
+      color: var(--clr-fg);
+      background-color: var(--clr-bg);
+      min-height: 100vh;
+    }
+
+    h1, h2 { line-height:1.2; color:var(--clr-fg-alt); }
+    h1 { font-size:2.5rem; }
+
+    .header { height:8em; max-width:1100px; width:95%; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .nav__list { margin-right:1.5em; display:flex; list-style:none; }
+    .nav__list-item { margin-left:1.5em; }
+    .nav__hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+    .nav__logo { font-weight:700; font-size:1.5rem; color:var(--clr-primary); text-decoration:none; }
+    nav { margin-left:auto; }
+    .link--nav { color:var(--clr-fg); text-transform:lowercase; font-weight:500; text-decoration:none; position:relative; padding-bottom:.2em; }
+    .link--nav::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--clr-primary); transition:width .2s ease; }
+    .link--nav:hover::after { width:100%; }
+    .link--nav:hover { color:var(--clr-primary); }
+    .link--nav.active { color:var(--clr-primary); font-weight:700; }
+    .center { display:flex; align-items:center; }
+    @media(max-width:600px){
+      .header { height:6em; width:88%; }
+      .nav__list { display:none; flex-direction:column; justify-content:center; align-items:center; position:fixed; inset:0; width:100%; height:100%; background-color:var(--clr-bg); z-index:2; }
+      .nav__list.active { display:flex; }
+      .nav__list-item { margin:.5em 0; font-size:1.2rem; }
+      .nav__hamburger { display:flex; z-index:3; margin-left:.8em; }
+      main { width:88%; }
+    }
+    main { max-width:1100px; width:95%; margin:0 auto; padding:2em 0 4em; }
+
+    .page-title { margin-bottom:.3em; text-transform:uppercase; }
+    .page-subtitle { color:var(--clr-fg); font-size:.95rem; margin-bottom:2em; }
+
+    .achievements__grid { max-width:1000px; margin:0 auto; display:grid; grid-gap:2em; grid-template-columns:1fr; }
+    @media(max-width:768px){ .achievements__grid { grid-template-columns:1fr; } }
+    .ach-card { background:var(--clr-bg-alt); border-radius:4px; padding:1.5em; box-shadow:var(--shadow); }
+    .ach-card h3 { margin-bottom:1em; color:var(--clr-primary); font-size:1.2rem; }
+    .ach-list { list-style:disc; padding-left:1.5em; }
+    .ach-list li { margin-bottom:.6em; font-size:.92rem; }
+
+    .footer { padding:3em 0; text-align:center; font-size:.9rem; font-weight:600; color:var(--clr-fg); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="header center">
+    <a href="index.html" class="nav__logo">GC.</a>
+    <nav>
+      <ul class="nav__list" id="navList">
+        <li class="nav__list-item"><a href="index.html" class="link--nav">home</a></li>
+        <li class="nav__list-item"><a href="news.html" class="link--nav">news</a></li>
+        <li class="nav__list-item"><a href="index.html#research" class="link--nav">research</a></li>
+        <li class="nav__list-item"><a href="education.html" class="link--nav">education</a></li>
+        <li class="nav__list-item"><a href="publications.html" class="link--nav">publications</a></li>
+        <li class="nav__list-item"><a href="awards.html" class="link--nav active">awards</a></li>
+        <li class="nav__list-item"><a href="index.html#contact" class="link--nav">contact</a></li>
+      </ul>
+    </nav>
+    <div class="center">
+      <button class="btn btn--icon nav__hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+  <main>
+    <h1 class="page-title">Awards &amp; Service</h1>
+    <p class="page-subtitle">Honors, recognitions, and community contributions.</p>
+
+    <div class="achievements__grid">
+      <div class="ach-card">
+        <h3>Awards &amp; Recognition</h3>
+        <ul class="ach-list">
+          <li>Departmental Rank 1 &ndash; M.Tech-PhD, IIT Jodhpur (2022&ndash;Present)</li>
+          <li>CHI 2026 Honourable Mention Award (MorsEar)</li>
+          <li>Received OmniBuds earable platform by Nokia Bell Labs, UK (2025)</li>
+          <li>LRN Foundation Travel Grant Awardee for PerCom 2025</li>
+          <li>Finalist &ndash; Green Fintech Hackathon, IITJ with Reserve Bank Innovation Hub, Top 4 out of 519 (2024)</li>
+          <li>Prime Minister Research Fellowship (2023)</li>
+          <li>TCS Research Scholar Fellowship (2023)</li>
+          <li>Finalist &ndash; Stanford EPIC Data Challenge, USA, Top 5 out of 61 (2023)</li>
+          <li>Finalist | IEEE Smart Mobility Challenge, Saudi Arabia, Top 5 out of 175, Sole Rep. of India</li>
+          <li>Best Poster Award &ndash; Industry Day Poster Session, IIT Jodhpur</li>
+          <li>First Runner Up, iS3 &ndash; IIT Jodhpur ACM Student Chapter Ideathon (2022)</li>
+          <li>Outstanding TA Award 2023</li>
+          <li>Travel Grant from COMSNETS 2023</li>
+          <li>Registration Grant for EarComp 2022 by Nokia Bell Labs</li>
+          <li>Ph.D. MHRD &ndash; GATE Fellowship, 2020&ndash;2023</li>
+          <li>Merit Scholarship for academic excellence in B.Tech (2017&ndash;2020), Government of Delhi</li>
+          <li>GATE 2020, Percentile: 98.74; CAT 2019, Percentile: 94.13</li>
+        </ul>
+      </div>
+
+      <div class="ach-card">
+        <h3>Community Service</h3>
+        <ul class="ach-list">
+          <li><strong>Organizing Roles:</strong> Social Media Chair for ACM/IEEE COMSNETS 2025, 2026, 2027; Web Chair at COMSNETS 2024</li>
+          <li><strong>Program Committees:</strong> TPC Member for HeadSys @ MobiSys 2026; TPC Member of COMSNETS Poster Session 2025, 2026</li>
+          <li><strong>Conference Reviewing:</strong> IEEE CHASE, ACM CSCW, NeurIPS, ACM KDD, IEEE SmartComp, ACM CHI, IEEE COMSNETS, IEEE AIoT</li>
+          <li><strong>Journal Reviewing:</strong> Pervasive Computing, IEEE Transactions on Mobile Computing, PACMHCI</li>
+          <li><strong>Open Science:</strong> Published source code, datasets, and study materials through institutional repositories and GitHub</li>
+          <li><strong>Outreach:</strong> Tutorials and science communication at IIIT Sonepat, Nehru Inter College (U.P.), Sarvodaya Sr. Sec. School (Delhi), and colleges across India</li>
+          <li><strong>Memberships:</strong> Association for Computing Machinery (ACM), Institute of Electrical and Electronics Engineers (IEEE)</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>Garvit Chugh &copy; 2026</p>
+  </footer>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navList = document.getElementById('navList');
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    hamburger.textContent = navList.classList.contains('active') ? '\u00D7' : '\u2630';
+  });
+</script>
+</body>
+</html>

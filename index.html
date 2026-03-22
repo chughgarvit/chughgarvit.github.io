@@ -1,13 +1,576 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=https://garvitchugh.com/">
-    <title>Redirecting...</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Garvit Chugh - PMRF Scholar, Dual PhD-MTech Scholar at IIT Jodhpur. Research in Earable Computing, Health Sensing, and HCI." />
+  <title>Garvit Chugh</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { padding:0; margin:0; border:0; outline:0; background-color:inherit; color:inherit; font-family:inherit; font-size:inherit; box-shadow:none; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    ul { list-style-type:none; }
+    a { text-decoration:none; }
+    button { cursor:pointer; }
+
+    /* ── Theme variables ── */
+    .app {
+      --clr-bg: #fcfcfc;
+      --clr-bg-alt: #fff;
+      --clr-fg: #555;
+      --clr-fg-alt: #444;
+      --clr-primary: #79774c;
+      --shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+    }
+
+    /* ── App shell ── */
+    .app {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5;
+      color: var(--clr-fg);
+      background-color: var(--clr-bg);
+      min-height: 100vh;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3, h4 { line-height:1.2; color:var(--clr-fg-alt); }
+    h1 { font-size:4rem; }
+    h2 { font-size:2rem; }
+    h3 { font-size:1.5rem; }
+    h4 { font-size:1.3rem; }
+    @media(max-width:900px){ h1{font-size:2.6rem;} }
+
+    /* ── Layout ── */
+    main { max-width:1100px; width:95%; margin:0 auto; }
+    .section { margin-top:5em; }
+    .section__title { text-align:center; margin-bottom:1em; text-transform:uppercase; }
+    .center { display:flex; align-items:center; }
+    @media(max-width:600px){
+      .section { margin-top:4em; }
+      main { width:88%; }
+    }
+
+    /* ── Links & Buttons ── */
+    .link { padding:0 0 .3em; position:relative; color:var(--clr-primary); }
+    .link:hover { color:var(--clr-primary); }
+    .link::before { content:""; display:inline; width:0; height:.2em; position:absolute; bottom:0; background-color:var(--clr-primary); transition:width .2s ease-in; }
+    .link:hover::before, .link:focus::before { width:100%; }
+    .link--nav { color:var(--clr-fg); text-transform:lowercase; font-weight:500; position:relative; padding-bottom:.2em; }
+    .link--nav::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--clr-primary); transition:width .2s ease; }
+    .link--nav:hover::after { width:100%; }
+    .link--icon { color:var(--clr-fg); margin-right:.5em; }
+    .btn { display:inline-block; cursor:pointer; padding:.8em 1.4em; font-weight:500; font-size:.9rem; text-transform:lowercase; transition:transform .2s ease-in-out; }
+    .btn--outline { color:var(--clr-primary); border:2px solid var(--clr-primary); position:relative; overflow:hidden; z-index:1; }
+    .btn--outline:hover, .btn--outline:focus { color:var(--clr-bg); }
+    .btn--outline::before { content:""; position:absolute; background-color:var(--clr-primary); right:100%; bottom:0; left:0; top:0; z-index:-1; transition:right .2s ease-in-out; }
+    .btn--outline:hover::before, .btn--outline:focus::before { right:0; }
+    .btn--icon { padding:0; background:none; border:none; }
+    .btn--icon:hover, .btn--icon:focus { color:var(--clr-primary); }
+
+    /* ── Nav ── */
+    .header { height:8em; max-width:1100px; width:95%; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .nav__list { margin-right:1.5em; display:flex; }
+    .nav__list-item { margin-left:1.5em; }
+    .nav__hamburger { display:none; background:none; border:none; font-size:1.5rem; }
+    .nav__logo { font-weight:700; font-size:1.5rem; color:var(--clr-primary); }
+    nav { margin-left:auto; }
+    @media(max-width:600px){
+      .header { height:6em; width:88%; }
+      .nav__list { display:none; flex-direction:column; justify-content:center; align-items:center; position:fixed; inset:0; width:100%; height:100%; background-color:var(--clr-bg); z-index:2; }
+      .nav__list.active { display:flex; }
+      .nav__list-item { margin:.5em 0; font-size:1.2rem; }
+      .nav__hamburger { display:flex; z-index:3; margin-left:.8em; }
+    }
+
+    /* ── About ── */
+    .about { display:flex; flex-direction:column; align-items:flex-start; margin-top:2em; }
+    .about__name { color:var(--clr-primary); }
+    .about__role { margin-top:1.2em; }
+    .about__desc { font-size:1rem; text-align:justify; margin-top:1.5em; }
+    .about__contact { margin-top:2.4em; display:flex; flex-wrap:wrap; gap:.8em; align-items:center; }
+    .about__top { display:flex; gap:3em; align-items:flex-start; width:100%; }
+    .about__photo { width:200px; height:200px; border-radius:50%; object-fit:cover; flex-shrink:0; box-shadow:var(--shadow); }
+    .about__text { flex:1; }
+    .about__meta { font-size:.95rem; margin-top:.5em; color:var(--clr-fg-alt); }
+    .about__interests { margin-top:1.5em; }
+    .about__interests h3 { margin-bottom:.5em; }
+    .about__interests-list { display:flex; flex-wrap:wrap; gap:.5em; }
+    .about__interests-item { background-color:var(--clr-bg-alt); padding:.4em .8em; border-radius:4px; font-size:.85rem; font-weight:500; box-shadow:var(--shadow); }
+    .split-row { display:grid; grid-template-columns:1fr 1fr; gap:2.5em; align-items:start; }
+    .split-row .projects__grid { grid-template-columns:1fr; }
+    .split-row .project { padding:1.2em; }
+    .split-row .project__description { font-size:.85rem; }
+    .split-row .project__icon { font-size:1.8rem; margin-bottom:.3em; }
+    .split-row .project h3 { font-size:1.15rem; }
+    .news-col { display:flex; flex-direction:column; position:relative; }
+    .news-scroll { overflow-y:auto; }
+    .news-col::after { content:''; position:absolute; bottom:3em; left:0; right:0; height:3em; background:linear-gradient(transparent, var(--clr-bg)); pointer-events:none; }
+    .news-scroll::-webkit-scrollbar { width:4px; }
+    .news-scroll::-webkit-scrollbar-thumb { background:var(--clr-primary); border-radius:4px; opacity:.5; }
+    @media(max-width:900px){ .split-row { grid-template-columns:1fr; } .news-scroll { max-height:none; overflow:visible; } }
+    .social-links { display:flex; gap:.8em; margin-top:1em; }
+    .social-links a { display:inline-flex; align-items:center; }
+    .social-links svg { width:24px; height:24px; fill:var(--clr-fg); transition:fill .2s; }
+    .social-links a:hover svg { fill:var(--clr-primary); }
+    @media(max-width:600px){
+      .about__top { flex-direction:column; align-items:center; text-align:center; }
+      .about__photo { width:150px; height:150px; }
+      .about__desc { text-align:left; }
+      .about__interests-list { justify-content:center; }
+    }
+
+    /* ── Research cards ── */
+    .projects__grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(18em,1fr)); grid-gap:2em; }
+    .project { padding:2em; text-align:center; box-shadow:var(--shadow); transition:transform .2s linear; background-color:var(--clr-bg-alt); border-radius:4px; }
+    .project:hover { transform:translateY(-7px); }
+    .project__description { margin-top:1em; font-size:.95rem; text-align:justify; }
+    .project__stack { display:flex; flex-wrap:wrap; justify-content:center; margin:1.2em 0; gap:.5em; }
+    .project__stack-item { font-weight:500; font-size:.8rem; color:var(--clr-fg-alt); background-color:var(--clr-bg); padding:.3em .6em; border-radius:3px; }
+    .project__icon { font-size:2.5rem; margin-bottom:.5em; }
+
+    /* ── Education ── */
+    .edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:2em; }
+    @media(max-width:768px){ .edu-grid { grid-template-columns:1fr; } }
+    .edu-entry { padding:1em 0; border-bottom:1px solid rgba(0,0,0,.06); }
+    .edu-entry:last-child { border-bottom:none; padding-bottom:0; }
+    .edu-entry:first-child { padding-top:0; }
+    .edu-date { font-size:.8rem; font-weight:600; color:var(--clr-primary); }
+    .edu-entry h4 { font-size:1rem; margin-top:.2em; }
+    .edu-place { font-size:.9rem; color:var(--clr-primary); font-weight:500; }
+    .edu-detail { font-size:.85rem; margin-top:.3em; color:var(--clr-fg); }
+
+    /* ── News ── */
+    .news-list { list-style:none; margin:0; padding:0; display:grid; gap:10px; position:relative; padding-left:28px; }
+    .news-list::before { content:''; position:absolute; left:17px; top:8px; bottom:8px; width:2px; background:var(--clr-primary); opacity:.3; border-radius:999px; }
+    .news-item { display:grid; grid-template-columns:36px 1fr; align-items:start; gap:12px; margin-left:-28px; }
+    .news-badge { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:.75rem; color:var(--clr-bg); background:var(--clr-primary); flex-shrink:0; }
+    .news-card { background:var(--clr-bg-alt); border:1px solid rgba(0,0,0,.06); border-radius:8px; padding:10px 14px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+    .news-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--clr-primary); }
+    .news-text { margin:0; color:var(--clr-fg-alt); font-size:.92rem; line-height:1.5; font-weight:500; }
+    .news-text strong { color:var(--clr-primary); font-weight:700; }
+    .see-all { display:block; margin:1.5em auto 0; padding:.6em 1.8em; background:none; border:2px solid var(--clr-primary); color:var(--clr-primary); border-radius:4px; font-weight:600; font-size:.9rem; text-align:center; width:fit-content; transition:all .2s; }
+    .see-all:hover { background:var(--clr-primary); color:var(--clr-bg); }
+
+    /* ── Publications ── */
+    .pub-year { font-size:1.8rem; font-weight:700; color:var(--clr-primary); margin-top:2em; margin-bottom:1em; padding-bottom:.3em; border-bottom:2px solid var(--clr-primary); }
+    .pub-year:first-of-type { margin-top:0; }
+    .pub-list { list-style:none; }
+    .pub-item { padding:1.2em 1.5em; margin-bottom:1em; background:var(--clr-bg-alt); border-radius:4px; box-shadow:var(--shadow); transition:transform .2s; text-align:left; }
+    .pub-item:hover { transform:translateY(-3px); }
+    .pub-title { font-weight:600; color:var(--clr-fg-alt); font-size:1rem; }
+    .pub-authors { font-size:.9rem; margin-top:.3em; }
+    .pub-authors strong { color:var(--clr-primary); font-weight:600; }
+    .pub-venue { font-size:.85rem; margin-top:.3em; font-style:italic; color:var(--clr-fg-alt); }
+    .pub-badge { display:inline-block; font-size:.7rem; font-weight:600; padding:.15em .5em; border-radius:3px; margin-left:.3em; vertical-align:middle; }
+    .pub-badge--main { background:#06d6a0; color:#fff; }
+    .pub-badge--wip { background:#f9c74f; color:#333; }
+    .pub-badge--award { background:#e63946; color:#fff; }
+    .pub-badge--core { background:var(--clr-primary); color:var(--clr-bg); }
+    .pub-badge--journal { background:#457b9d; color:#fff; }
+    .pub-note { font-size:.85rem; color:var(--clr-fg); margin-top:1em; text-align:center; }
+
+    /* ── Achievements ── */
+    .achievements__grid { max-width:1000px; margin:0 auto; display:grid; grid-gap:2em; grid-template-columns:1fr 1fr; }
+    @media(max-width:768px){ .achievements__grid { grid-template-columns:1fr; } }
+    .ach-card { background:var(--clr-bg-alt); border-radius:4px; padding:1.5em; box-shadow:var(--shadow); }
+    .ach-card h3 { margin-bottom:1em; color:var(--clr-primary); font-size:1.2rem; }
+    .ach-list { list-style:disc; padding-left:1.5em; }
+    .ach-list li { margin-bottom:.6em; font-size:.92rem; }
+
+    /* ── Contact ── */
+    .contact { display:flex; flex-direction:column; align-items:center; text-align:center; }
+    .contact__email { font-size:1.1rem; margin-top:1em; }
+
+    /* ── Footer ── */
+    .footer { padding:3em 0; margin-top:4em; text-align:center; }
+    .footer__link { font-size:.9rem; font-weight:600; color:var(--clr-fg); }
+    @media(max-width:600px){ .footer { padding:2em; margin-top:3em; } }
+
+    /* ── Scroll to top ── */
+    .scroll-top { position:fixed; bottom:2em; right:4em; background-color:transparent; font-size:1.5rem; display:none; z-index:10; }
+    .scroll-top.visible { display:block; }
+    @media(max-width:900px){ .scroll-top { display:none !important; } }
+  </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="https://garvitchugh.com/">link to the new domain: https://garvitchugh.com/</a>.</p>
+<div class="app" id="app">
+  <!-- ── Header / Navigation ── -->
+  <header class="header center">
+    <a href="#about" class="nav__logo">GC.</a>
+    <nav>
+      <ul class="nav__list" id="navList">
+        <li class="nav__list-item"><a href="#about" class="link link--nav" onclick="closeNav()">About</a></li>
+        <li class="nav__list-item"><a href="news.html" class="link link--nav" onclick="closeNav()">News</a></li>
+        <li class="nav__list-item"><a href="#research" class="link link--nav" onclick="closeNav()">Research</a></li>
+        <li class="nav__list-item"><a href="education.html" class="link link--nav" onclick="closeNav()">Education</a></li>
+        <li class="nav__list-item"><a href="publications.html" class="link link--nav" onclick="closeNav()">Publications</a></li>
+        <li class="nav__list-item"><a href="awards.html" class="link link--nav" onclick="closeNav()">Awards</a></li>
+        <li class="nav__list-item"><a href="#contact" class="link link--nav" onclick="closeNav()">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="center">
+      <button class="btn btn--icon nav__hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── About ── -->
+    <section id="about" class="section about">
+      <div class="about__top">
+        <img src="static/media/profile.jpg" alt="Garvit Chugh" class="about__photo" />
+        <div class="about__text">
+          <h1 class="about__name">Garvit Chugh</h1>
+          <h3 class="about__role">PMRF Scholar, Dual PhD-MTech Scholar</h3>
+          <p class="about__meta">
+            UbiSys Research Group, Dept of Computer Science and Engineering<br />
+            Indian Institute of Technology Jodhpur, India<br />
+            ORCID: <a href="https://orcid.org/0000-0002-0354-9731" class="link" target="_blank" rel="noopener">0000-0002-0354-9731</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="about__desc">
+        Result-oriented, top performer, and self-starter professional with expertise in mobile computing, IoT, and operating systems.
+        I am a Ph.D. scholar (<a href="https://www.pmrf.in/" class="link" target="_blank" rel="noopener">PMRF</a>) in Mobile and Pervasive Computing at the
+        <a href="https://ubisys.iitj.ac.in/" class="link" target="_blank" rel="noopener">UbiSys Research Group</a> in IIT Jodhpur under the joint supervision of
+        <a href="https://suchetanachakraborty.github.io/" class="link" target="_blank" rel="noopener">Dr. Suchetana Chakraborty</a>, IIT Jodhpur and
+        <a href="https://cse.iitkgp.ac.in/~sandipc/" class="link" target="_blank" rel="noopener">Dr. Sandip Chakraborty</a>, IIT Kharagpur.
+        My focus converges on developing ubiquitous computing solutions for health sensing, particularly behavioural sensing.
+        My research work has featured in publications such as IEEE PerCom, ACM CHASE, COMSNETS, ICDM, and Ubicomp/ISWC.
+        I had the opportunity to advance my research as a visiting scholar under
+        <a href="https://mpsc.umbc.edu/nroy/" class="link" target="_blank" rel="noopener">Prof. Nirmalya Roy</a> at the
+        MPSC Lab, University of Maryland Baltimore County, USA.
+      </p>
+
+      <p class="about__desc" style="margin-top:1em; font-style:italic; color:var(--clr-primary); font-size:.95rem;">Research Vision: AI-driven software engineering, sustainability, functional systems for all.</p>
+
+      <div class="about__interests">
+        <h3>Research Interests</h3>
+        <div class="about__interests-list">
+          <span class="about__interests-item">Wearable Health Monitoring</span>
+          <span class="about__interests-item">Gesture-based Interaction</span>
+          <span class="about__interests-item">Mobile Health (mHealth)</span>
+          <span class="about__interests-item">Human-Centered AI for Health</span>
+          <span class="about__interests-item">Ubiquitous & Pervasive Healthcare</span>
+          <span class="about__interests-item">Behavioral Analysis</span>
+          <span class="about__interests-item">Accessibility in HCI</span>
+          <span class="about__interests-item">Context-Aware Sensing</span>
+          <span class="about__interests-item">Software Engineering</span>
+          <span class="about__interests-item">IoT &amp; AI-Driven Development</span>
+        </div>
+      </div>
+
+      <div class="about__contact">
+        <a href="static/media/Garvit_Resume.pdf" class="btn btn--outline" target="_blank" rel="noopener">Resume</a>
+        <div class="social-links">
+          <a href="https://github.com/chughgarvit" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/garvitchugh98/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+          </a>
+          <a href="https://dblp.org/pid/302/5075" target="_blank" rel="noopener" aria-label="DBLP">
+            <svg viewBox="0 0 24 24"><path d="M3 6l9-4 9 4v2l-9 4-9-4V6zm0 5l9 4 9-4v2l-9 4-9-4v-2zm0 5l9 4 9-4v2l-9 4-9-4v-2z"/></svg>
+          </a>
+          <a href="mailto:chugh.2@iitj.ac.in" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+        <p style="font-size:.8rem; margin-top:.8em; color:var(--clr-fg);">Member of ACM &amp; IEEE</p>
+      </div>
+    </section>
+
+    <!-- ── Research + News side by side ── -->
+    <section class="section split-row" id="news">
+      <div id="research">
+        <h2 class="section__title" style="text-align:left;">Research</h2>
+      <div class="projects__grid">
+        <div class="project">
+          <div class="project__icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--clr-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6.5-6 10.5"/><path d="M12 19v2"/><path d="M10 8.5a2.5 2.5 0 0 1 5 0c0 2-2.5 2.5-2.5 5"/></svg></div>
+          <h3>Earable-Based Health Sensing</h3>
+          <p class="project__description">
+            Developing health monitoring solutions using ear-worn IMU sensors &mdash; eating behaviour assessment (BiteSense),
+            hydration monitoring (HydratEar), spine movement tracking (SpineSense), and covert messaging (MorsEar).
+          </p>
+          <div class="project__stack">
+            <span class="project__stack-item">eSense</span>
+            <span class="project__stack-item">IMU</span>
+            <span class="project__stack-item">BLE</span>
+            <span class="project__stack-item">Deep Learning</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project__icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--clr-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="10" y1="23" x2="14" y2="23"/><path d="M12 7v5"/><path d="M9.5 10h5"/></svg></div>
+          <h3>Behavioural &amp; Focus Analysis</h3>
+          <p class="project__description">
+            Inertial sensing to monitor involvement and attention during online interactions (enVolve).
+            Detecting temporal lack of focus to identify onset of neurological disorders using earables.
+          </p>
+          <div class="project__stack">
+            <span class="project__stack-item">Contrastive Learning</span>
+            <span class="project__stack-item">LSTM</span>
+            <span class="project__stack-item">CNN</span>
+            <span class="project__stack-item">UbiComp</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project__icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--clr-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Gesture &amp; Accessibility</h3>
+          <p class="project__description">
+            Eye gesture recognition with earable inertial sensing for accessible HCI. Wrist strain detection in routine
+            activities via inertial tokenization and LLM-based feedback (WristSense).
+          </p>
+          <div class="project__stack">
+            <span class="project__stack-item">HCI</span>
+            <span class="project__stack-item">Accessibility</span>
+            <span class="project__stack-item">LLM</span>
+            <span class="project__stack-item">Tokenization</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project__icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--clr-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg></div>
+          <h3>AIoT &amp; Smart Systems</h3>
+          <p class="project__description">
+            Building intelligent IoT community testbeds for ambient living. Multimodal cybersickness detection
+            in consumer VR (VectionSense). Ultrasonic defense for smart earbuds (EarFence).
+          </p>
+          <div class="project__stack">
+            <span class="project__stack-item">IoT</span>
+            <span class="project__stack-item">VR</span>
+            <span class="project__stack-item">Testbed</span>
+            <span class="project__stack-item">Security</span>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- News column -->
+      <div class="news-col">
+        <h2 class="section__title" style="text-align:left;">Latest News</h2>
+        <div class="news-scroll">
+          <ol class="news-list">
+            <li class="news-item"><div class="news-badge">37</div><div class="news-card"><p class="news-text">Recipient of <strong>CHI 2026 Honourable Mention Award</strong> for <strong>MorsEar</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">36</div><div class="news-card"><p class="news-text"><strong>Gary Marsden Travel Award</strong> for <strong>CHI 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">35</div><div class="news-card"><p class="news-text"><strong>IEEE CS TCCC</strong> and <strong>TCPP STG</strong> Travel Grant for <strong>PerCom 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">34</div><div class="news-card"><p class="news-text">Invited TPC Member of <strong>HeadSys 2026</strong> at <strong>MobiSys 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">33</div><div class="news-card"><p class="news-text"><strong>ACM IARCS</strong> Grant for <strong>PerCom 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">32</div><div class="news-card"><p class="news-text"><strong>LRNF Travel Grant</strong> for <strong>SenSys 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">31</div><div class="news-card"><p class="news-text">Full paper at <strong>CHI 2026 Main Track</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">30</div><div class="news-card"><p class="news-text">2 papers at <strong>PerCom 2026 WiP Track</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">29</div><div class="news-card"><p class="news-text">Full paper at <strong>PerCom 2026 Main Track</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">28</div><div class="news-card"><p class="news-text"><strong>COMSNETS 2026</strong> Travel Grant!</p></div></li>
+            <li class="news-item"><div class="news-badge">27</div><div class="news-card"><p class="news-text">Poster on <strong>BiteSense</strong> at <strong>ARCS 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">26</div><div class="news-card"><p class="news-text">Full paper at <strong>COMSNETS 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">25</div><div class="news-card"><p class="news-text">Full paper at <strong>SenSys 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">24</div><div class="news-card"><p class="news-text">Full paper at <strong>EICS 2026</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">23</div><div class="news-card"><p class="news-text">Selected to receive <strong>OmniBuds</strong> earable platform!</p></div></li>
+            <li class="news-item"><div class="news-badge">22</div><div class="news-card"><p class="news-text"><strong>ACM/IARCS</strong> Travel Grant for <strong>PerCom 2025</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">21</div><div class="news-card"><p class="news-text"><strong>IEEE CS TCCC</strong> and <strong>TCPP STG</strong> Travel Grant for <strong>PerCom 2025</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">20</div><div class="news-card"><p class="news-text"><strong>LRN Foundation</strong> Travel Grant for <strong>PerCom 2025</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">19</div><div class="news-card"><p class="news-text">Full paper at <strong>PerCom 2025</strong> + 1 WiP + 1 Artefact!</p></div></li>
+            <li class="news-item"><div class="news-badge">18</div><div class="news-card"><p class="news-text">TPC Member of <strong>COMSNETS Poster Session</strong>.</p></div></li>
+            <li class="news-item"><div class="news-badge">17</div><div class="news-card"><p class="news-text">3 papers at <strong>IEEE ICDM</strong>, <strong>ACM CODS-COMAD</strong>, <strong>COMSNETS 2024</strong>.</p></div></li>
+            <li class="news-item"><div class="news-badge">16</div><div class="news-card"><p class="news-text">Rank 4, <strong>Green Fintech Hackathon</strong>, IITJ with <strong>RBIH</strong> (2024).</p></div></li>
+            <li class="news-item"><div class="news-badge">15</div><div class="news-card"><p class="news-text">Social Media Chair for <strong>COMSNETS 2025</strong>!</p></div></li>
+            <li class="news-item"><div class="news-badge">14</div><div class="news-card"><p class="news-text">Received the <strong>Prime Minister Research Fellowship</strong>.</p></div></li>
+          </ol>
+        </div>
+        <a href="news.html" class="see-all" style="margin-top:1em;">See all updates</a>
+      </div>
+    </section>
+
+    <!-- ── Education & Experience ── -->
+    <section id="education" class="section">
+      <h2 class="section__title">Education &amp; Experience</h2>
+      <div class="edu-grid">
+        <div class="ach-card">
+          <h3>Education</h3>
+          <div class="edu-entry">
+            <span class="edu-date">2020 &ndash; Present</span>
+            <h4>Dual Ph.D. &ndash; M.Tech. (CSE)</h4>
+            <p class="edu-place">Indian Institute of Technology, Jodhpur</p>
+            <p class="edu-detail">Mobile and Pervasive Computing. Advisors: Dr. Suchetana Chakraborty &amp; Dr. Sandip Chakraborty.</p>
+            <p class="edu-detail">Thesis Submitted. CGPA: 8.93/10</p>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-date">2016 &ndash; 2020</span>
+            <h4>B.Tech. (CSE)</h4>
+            <p class="edu-place">Guru Gobind Singh Indraprastha University, Delhi</p>
+          </div>
+        </div>
+        <div class="ach-card">
+          <h3>Experience</h3>
+          <div class="edu-entry">
+            <span class="edu-date">Sep 2023 &ndash; Mar 2024</span>
+            <h4>Visiting Researcher</h4>
+            <p class="edu-place">University of Maryland, Baltimore County, USA</p>
+            <p class="edu-detail">MPSC Lab under Prof. Nirmalya Roy.</p>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-date">Jan 2021 &ndash; Present</span>
+            <h4>Teaching Assistant</h4>
+            <p class="edu-place">Indian Institute of Technology, Jodhpur</p>
+          </div>
+          <div class="edu-entry">
+            <span class="edu-date">Jan 2020 &ndash; Jul 2022</span>
+            <h4>Web Developer (Research)</h4>
+            <p class="edu-place">Futural Solutions, New Delhi</p>
+          </div>
+        </div>
+      </div>
+      <a href="education.html" class="see-all">See all education &amp; experience</a>
+    </section>
+
+    <!-- ── Publications ── -->
+    <section id="publications" class="section">
+      <h2 class="section__title">Publications</h2>
+
+      <h3 class="pub-year">2026</h3>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <p class="pub-title">MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable-Based Inertial Sensing</p>
+          <p class="pub-authors"><strong>Chugh, G.</strong>, Ghosh, I., Roy, N., Chakraborty, S., &amp; Chakraborty, S.</p>
+          <p class="pub-venue">CHI 2026 <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span> <span class="pub-badge pub-badge--award">Honourable Mention Award</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-title">VectionSense: Multimodal Inertial-Physiological Cybersickness Detection in Consumer VR</p>
+          <p class="pub-authors">Layal, K., Kumar, A., <strong>Chugh, G.</strong> &amp; Chakraborty, S.</p>
+          <p class="pub-venue">SAXR 2026 Workshop co-located with CHI 2026 <span class="pub-badge pub-badge--wip">Workshop</span> <span class="pub-badge pub-badge--core">Core A*</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-title">HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry</p>
+          <p class="pub-authors"><strong>Chugh, G.</strong> &amp; Chakraborty, S.</p>
+          <p class="pub-venue">PerCom 2026 <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-title">EarFence: Lightweight Ultrasonic Defense for Smart Earbuds Against Hidden Commands</p>
+          <p class="pub-authors">Vadthya, S., <strong>Chugh, G.</strong> &amp; Chakraborty, S.</p>
+          <p class="pub-venue">PerCom 2026 <span class="pub-badge pub-badge--wip">WiP Track</span> <span class="pub-badge pub-badge--core">Core A*</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-title">CompulsEar: Body-focused Repetitive Behaviors Detection using Earable-Based Inertial Sensing</p>
+          <p class="pub-authors">Kumar, A.*, Sharma, S.*, <strong>Chugh, G.*</strong> &amp; Chakraborty, S. (*Equal Contribution)</p>
+          <p class="pub-venue">PerCom 2026 <span class="pub-badge pub-badge--wip">WiP Track</span> <span class="pub-badge pub-badge--core">Core A*</span></p>
+        </li>
+      </ul>
+      <a href="publications.html" class="see-all">See all 19 publications</a>
+    </section>
+
+    <!-- ── Achievements ── -->
+    <section id="achievements" class="section">
+      <h2 class="section__title">Awards &amp; Service</h2>
+      <div class="achievements__grid">
+        <div class="ach-card">
+          <h3>Awards &amp; Recognition</h3>
+          <ul class="ach-list">
+            <li>Departmental Rank 1 &ndash; M.Tech-PhD, IIT Jodhpur</li>
+            <li>CHI 2026 Honourable Mention Award (MorsEar)</li>
+            <li>Prime Minister Research Fellowship (2023)</li>
+            <li>Finalist | Stanford EPIC Data Challenge, USA, Top 5 out of 61</li>
+            <li>Finalist | IEEE Smart Mobility Challenge, Saudi Arabia, Top 5 out of 175</li>
+            <li>TCS Research Scholar Fellowship (2023)</li>
+          </ul>
+        </div>
+        <div class="ach-card">
+          <h3>Community Service</h3>
+          <ul class="ach-list">
+            <li>Social Media Chair for ACM/IEEE COMSNETS 2025, 2026, 2027</li>
+            <li>TPC Member for HeadSys @ MobiSys 2026</li>
+            <li>TPC Member of COMSNETS Poster Session 2025, 2026</li>
+            <li>Web Chair at ACM/IEEE COMSNETS 2024</li>
+            <li>Reviewer for conferences: CHI, NeurIPS, CSCW, KDD, CHASE, SmartComp</li>
+            <li>Reviewer for journals: IEEE TMC, Pervasive Computing, PACMHCI</li>
+          </ul>
+        </div>
+      </div>
+      <a href="awards.html" class="see-all">See all awards &amp; service</a>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact" class="section contact">
+      <h2 class="section__title">Contact</h2>
+      <p>Interested in collaboration, research opportunities, or just want to connect? Feel free to reach out.</p>
+      <p class="contact__email">
+        <a href="mailto:chugh.2@iitj.ac.in" class="link">chugh.2@iitj.ac.in</a>
+      </p>
+      <p style="font-size:.85rem; margin-top:.8em; color:var(--clr-fg);">UbiSys Research Group, Dept of CSE, IIT Jodhpur, Rajasthan 342030, India</p>
+      <div class="social-links" style="margin-top:1.5em;">
+        <a href="https://github.com/chughgarvit" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/garvitchugh98/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        </a>
+        <a href="https://dblp.org/pid/302/5075" target="_blank" rel="noopener" aria-label="DBLP">
+          <svg viewBox="0 0 24 24"><path d="M3 6l9-4 9 4v2l-9 4-9-4V6zm0 5l9 4 9-4v2l-9 4-9-4v-2zm0 5l9 4 9-4v2l-9 4-9-4v-2z"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <p class="footer__link">Garvit Chugh &copy; 2026</p>
+  </footer>
+
+  <!-- ── Scroll to top ── -->
+  <button class="btn btn--icon scroll-top" id="scrollTop" aria-label="Scroll to top">&#9650;</button>
+</div>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navList = document.getElementById('navList');
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    hamburger.textContent = navList.classList.contains('active') ? '\u00D7' : '\u2630';
+  });
+  function closeNav() {
+    navList.classList.remove('active');
+    hamburger.textContent = '\u2630';
+  }
+
+  // Match news column height to research column
+  function syncNewsHeight() {
+    const row = document.querySelector('.split-row');
+    const researchCol = row && row.children[0];
+    const newsCol = row && row.children[1];
+    const newsScroll = document.querySelector('.news-scroll');
+    if (researchCol && newsCol && newsScroll && window.innerWidth > 900) {
+      newsScroll.style.height = 'auto';
+      const targetH = researchCol.offsetHeight;
+      const colParts = newsCol.offsetHeight - newsScroll.offsetHeight;
+      newsScroll.style.height = (targetH - colParts) + 'px';
+      newsScroll.style.overflowY = 'auto';
+    } else if (newsScroll) {
+      newsScroll.style.height = 'auto';
+      newsScroll.style.overflowY = 'visible';
+    }
+  }
+  syncNewsHeight();
+  window.addEventListener('resize', syncNewsHeight);
+
+  // Scroll to top
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
+  });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
- -->
-
- <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Portfolio"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"><title>Garvit Chugh</title><link href="/static/css/2.c7f2e399.chunk.css" rel="stylesheet"><link href="/static/css/main.643913dc.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(e){function r(r){for(var n,i,l=r[0],f=r[1],a=r[2],c=0,s=[];c<l.length;c++)i=l[c],Object.prototype.hasOwnProperty.call(o,i)&&o[i]&&s.push(o[i][0]),o[i]=0;for(n in f)Object.prototype.hasOwnProperty.call(f,n)&&(e[n]=f[n]);for(p&&p(r);s.length;)s.shift()();return u.push.apply(u,a||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,l=1;l<t.length;l++){var f=t[l];0!==o[f]&&(n=!1)}n&&(u.splice(r--,1),e=i(i.s=t[0]))}return e}var n={},o={1:0},u=[];function i(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.m=e,i.c=n,i.d=function(e,r,t){i.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,r){if(1&r&&(e=i(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(i.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)i.d(t,n,function(r){return e[r]}.bind(null,n));return t},i.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(r,"a",r),r},i.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},i.p="/";var l=this["webpackJsonpgarvit-portfolio"]=this["webpackJsonpgarvit-portfolio"]||[],f=l.push.bind(l);l.push=r,l=l.slice();for(var a=0;a<l.length;a++)r(l[a]);var p=f;t()}([])</script><script src="/static/js/2.46237f0e.chunk.js"></script><script src="/static/js/main.2d003272.chunk.js"></script></body></html>
