@@ -1,0 +1,5 @@
+*.png
+*.zip
+.DS_Store
+.playwright-mcp/
+Takeout/
