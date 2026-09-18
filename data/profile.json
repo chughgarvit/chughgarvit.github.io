@@ -1,0 +1,89 @@
+{
+ "name": "Garvit Chugh",
+ "headline": "Postdoctoral Researcher, Singapore Management University",
+ "tagline": "Earable &amp; wearable sensing &middot; Human-computer interaction &middot; Pervasive computing",
+ "location": "Singapore",
+ "email": "chughgarvit98@gmail.com",
+ "highlights": [
+  "CHI 2026 Honourable Mention",
+  "Prime Minister Research Fellow, 2023&#8209;26"
+ ],
+ "intro": "Building deployable earable and wearable sensing systems for health and everyday interaction, with Prof. Archan Misra at SMU. Ph.D. from IIT Jodhpur (2026), supervised by Dr. Suchetana Chakraborty and Dr. Sandip Chakraborty.",
+ "open_to": "Open to collaborations on wearable and earable sensing, digital health, guest lectures, and student mentoring.",
+ "interests": [
+  "Human-Computer Interaction",
+  "Mobile &amp; Pervasive Computing",
+  "Wearable and Earable Sensing",
+  "Human-Centered AI",
+  "Ubiquitous Computing",
+  "Context-Aware Sensing"
+ ],
+ "affiliations": [
+  {
+   "logo": "smu-logo.svg",
+   "name": "Singapore Management University",
+   "short": "SMU",
+   "url": "https://www.smu.edu.sg/"
+  },
+  {
+   "logo": "iitj-logo.png",
+   "name": "IIT Jodhpur",
+   "short": "IIT Jodhpur",
+   "url": "https://iitj.ac.in/"
+  }
+ ],
+ "links": [
+  {
+   "kind": "mail",
+   "label": "chughgarvit98@gmail.com",
+   "url": "mailto:chughgarvit98@gmail.com"
+  },
+  {
+   "kind": "scholar",
+   "label": "Google Scholar",
+   "url": "https://scholar.google.com/citations?user=15XfuxMAAAAJ&hl=en"
+  },
+  {
+   "kind": "linkedin",
+   "label": "LinkedIn",
+   "url": "https://www.linkedin.com/in/garvitchugh98/"
+  },
+  {
+   "kind": "github",
+   "label": "GitHub",
+   "url": "https://github.com/chughgarvit"
+  },
+  {
+   "kind": "dblp",
+   "label": "DBLP",
+   "url": "https://dblp.org/pid/302/5075"
+  },
+  {
+   "kind": "orcid",
+   "label": "ORCID 0000-0002-0354-9731",
+   "url": "https://orcid.org/0000-0002-0354-9731"
+  }
+ ],
+ "languages": [
+  "<strong>English</strong> &ndash; Fluent (C1)",
+  "<strong>Hindi</strong> &ndash; Native",
+  "<strong>French</strong> &ndash; Basic (A1)"
+ ],
+ "skills": [
+  "Python",
+  "C / C++",
+  "Java",
+  "Swift",
+  "JavaScript / React",
+  "Machine Learning for Sensing",
+  "Human Activity Recognition",
+  "Edge Computing",
+  "User Study Design",
+  "Statistical Analysis"
+ ],
+ "service_short": [
+  "Social Media Chair, ACM/IEEE COMSNETS 2025&ndash;2027",
+  "TPC, HeadSys @ ACM MobiSys 2026; COMSNETS Posters 2025&ndash;2026",
+  "Reviewer: ACM CHI, CSCW, NeurIPS, KDD, IEEE TMC, PACMHCI"
+ ]
+}

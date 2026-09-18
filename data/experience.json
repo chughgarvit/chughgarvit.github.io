@@ -1,0 +1,48 @@
+[
+ {
+  "logo": "smu-logo.svg",
+  "title": "Postdoctoral Researcher",
+  "org": "Singapore Management University",
+  "kind": "Full-time",
+  "dates": "Sep 2026 &ndash; Present",
+  "place": "Singapore",
+  "desc": "School of Computing and Information Systems. Advisor: Prof. Archan Misra. Human-centred pervasive computing, wearable sensing, and intelligent ubiquitous systems."
+ },
+ {
+  "logo": "umbc-logo.svg",
+  "title": "Visiting Researcher",
+  "org": "University of Maryland, Baltimore County",
+  "kind": "",
+  "dates": "Sep 2023 &ndash; Mar 2024",
+  "place": "Baltimore, MD, USA",
+  "desc": "MPSC Lab under Prof. Nirmalya Roy. Domain adaptation for wearable human activity recognition."
+ },
+ {
+  "logo": "iitj-logo.png",
+  "title": "Teaching Assistant",
+  "org": "Indian Institute of Technology Jodhpur",
+  "kind": "",
+  "dates": "Jan 2021 &ndash; 2026",
+  "place": "Jodhpur, India",
+  "desc": "Ten courses across Mobile and Pervasive Computing, Data Structures, Database Systems, Operating Systems, and more. Outstanding TA Award, 2022."
+ },
+ {
+  "logo": "",
+  "mono": "FS",
+  "title": "Web Developer (Research)",
+  "org": "Futural Solutions",
+  "kind": "",
+  "dates": "Jan 2020 &ndash; Jul 2022",
+  "place": "New Delhi, India",
+  "desc": ""
+ },
+ {
+  "logo": "aai-logo.svg",
+  "title": "Android Developer (Internship)",
+  "org": "Airports Authority of India",
+  "kind": "",
+  "dates": "Jun 2019 &ndash; Aug 2019",
+  "place": "New Delhi, India",
+  "desc": ""
+ }
+]

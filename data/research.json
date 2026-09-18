@@ -1,0 +1,46 @@
+[
+ {
+  "icon": "<svg viewBox=\"0 0 24 24\" width=\"40\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6.5-6 10.5\"/><path d=\"M12 19v2\"/><path d=\"M10 8.5a2.5 2.5 0 0 1 5 0c0 2-2.5 2.5-2.5 5\"/></svg>",
+  "title": "Earable-Based Health Sensing",
+  "description": "Developing health monitoring solutions using ear-worn IMU sensors: eating behaviour assessment (BiteSense), hydration monitoring (HydratEar), spine movement tracking (SpineSense), and covert messaging (MorsEar).",
+  "tags": [
+   "eSense",
+   "IMU",
+   "BLE",
+   "Deep Learning"
+  ]
+ },
+ {
+  "icon": "<svg viewBox=\"0 0 24 24\" width=\"40\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z\"/><line x1=\"9\" y1=\"21\" x2=\"15\" y2=\"21\"/><line x1=\"10\" y1=\"23\" x2=\"14\" y2=\"23\"/><path d=\"M12 7v5\"/><path d=\"M9.5 10h5\"/></svg>",
+  "title": "Behavioural &amp; Focus Analysis",
+  "description": "Inertial sensing to monitor involvement and attention during online interactions (enVolve). Detecting temporal lack of focus to identify onset of neurological disorders using earables.",
+  "tags": [
+   "Contrastive Learning",
+   "LSTM",
+   "CNN",
+   "UbiComp"
+  ]
+ },
+ {
+  "icon": "<svg viewBox=\"0 0 24 24\" width=\"40\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>",
+  "title": "Gesture &amp; Accessibility",
+  "description": "Eye gesture recognition with earable inertial sensing for accessible HCI. Wrist strain detection in routine activities via inertial tokenization and LLM-based feedback (WristSense).",
+  "tags": [
+   "HCI",
+   "Accessibility",
+   "LLM",
+   "Tokenization"
+  ]
+ },
+ {
+  "icon": "<svg viewBox=\"0 0 24 24\" width=\"40\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><path d=\"M9 9h6v6H9z\"/><path d=\"M9 1v3\"/><path d=\"M15 1v3\"/><path d=\"M9 20v3\"/><path d=\"M15 20v3\"/><path d=\"M20 9h3\"/><path d=\"M20 15h3\"/><path d=\"M1 9h3\"/><path d=\"M1 15h3\"/></svg>",
+  "title": "AIoT &amp; Smart Systems",
+  "description": "Building intelligent IoT community testbeds for ambient living. Multimodal cybersickness detection in consumer VR (VectionSense). Ultrasonic defense for smart earbuds (EarFence).",
+  "tags": [
+   "IoT",
+   "VR",
+   "Testbed",
+   "Security"
+  ]
+ }
+]

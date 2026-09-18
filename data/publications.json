@@ -1,0 +1,632 @@
+[
+ {
+  "year": "2026",
+  "track": "main",
+  "topics": [
+   "sensing",
+   "hci",
+   "security"
+  ],
+  "title": "MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable-Based Inertial Sensing",
+  "url": "https://dl.acm.org/doi/10.1145/3772318.3791436",
+  "authors": "<strong>Chugh, G.</strong>, Ghosh, I., Roy, N., Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "CHI 2026",
+  "badges": [
+   {
+    "kind": "main",
+    "text": "Main Track"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   },
+   {
+    "kind": "award",
+    "text": "Honourable Mention Award"
+   }
+  ],
+  "tags": [
+   "Sensing",
+   "HCI",
+   "Security"
+  ]
+ },
+ {
+  "year": "2026",
+  "track": "workshop",
+  "topics": [
+   "healthcare",
+   "sensing"
+  ],
+  "title": "VectionSense: Multimodal Inertial-Physiological Cybersickness Detection in Consumer VR",
+  "url": null,
+  "authors": "Layal, K., Kumar, A., <strong>Chugh, G.</strong> &amp; Chakraborty, S.",
+  "venue": "SAXR 2026 Workshop co-located with CHI 2026",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "Workshop"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2026",
+  "track": "main",
+  "topics": [
+   "healthcare",
+   "sensing"
+  ],
+  "title": "HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong> &amp; Chakraborty, S.",
+  "venue": "PerCom 2026",
+  "badges": [
+   {
+    "kind": "main",
+    "text": "Main Track"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2026",
+  "track": "main",
+  "topics": [
+   "mlai",
+   "systems"
+  ],
+  "title": "Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization",
+  "url": null,
+  "authors": "Dey, E., Ravi, A., Shinde, G., <strong>Chugh, G.</strong>, Ghosh, I., Misra, A. &amp; Roy, N.",
+  "venue": "PerCom 2026",
+  "badges": [
+   {
+    "kind": "main",
+    "text": "Main Track"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "ML / AI",
+   "Systems"
+  ]
+ },
+ {
+  "year": "2026",
+  "track": "workshop",
+  "topics": [
+   "sensing",
+   "security"
+  ],
+  "title": "EarFence: Lightweight Ultrasonic Defense for Smart Earbuds Against Hidden Commands",
+  "url": null,
+  "authors": "Vadthya, S., <strong>Chugh, G.</strong> &amp; Chakraborty, S.",
+  "venue": "PerCom 2026",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "WiP Track"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Sensing",
+   "Security"
+  ]
+ },
+ {
+  "year": "2026",
+  "track": "workshop",
+  "topics": [
+   "healthcare",
+   "sensing",
+   "hci"
+  ],
+  "title": "CompulsEar: Body-focused Repetitive Behaviors Detection using Earable-Based Inertial Sensing",
+  "url": null,
+  "authors": "Kumar, A.*, Sharma, S.*, <strong>Chugh, G.</strong>* &amp; Chakraborty, S. (*Equal Contribution)",
+  "venue": "PerCom 2026",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "WiP Track"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing",
+   "HCI"
+  ]
+ },
+ {
+  "year": "2026",
+  "track": "journal",
+  "topics": [
+   "healthcare",
+   "sensing"
+  ],
+  "title": "SpineSense: Earable-Based Inertial Sensing for Spine Movement Monitoring to Combat Neck Pain",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "PACMHCI (EICS) 2026",
+  "badges": [
+   {
+    "kind": "journal",
+    "text": "Q1 Journal"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2026",
+  "track": "main",
+  "topics": [
+   "healthcare",
+   "sensing",
+   "mlai",
+   "hci"
+  ],
+  "title": "WristSense: Sensing Hidden Wrist Strain in Routine Activities via Inertial Tokenization and LLM-Based Feedback",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Mondal, A., Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "SenSys 2026",
+  "badges": [
+   {
+    "kind": "main",
+    "text": "Main Track"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing",
+   "ML / AI",
+   "HCI"
+  ]
+ },
+ {
+  "year": "2026",
+  "track": "main",
+  "topics": [
+   "systems",
+   "sensing"
+  ],
+  "title": "Experience: From Sensors to Service: Advancing Ambient Living with an AIoT Community Testbed",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Mondal, A., Osho &amp; Chakraborty, S.",
+  "venue": "COMSNETS 2026",
+  "badges": [
+   {
+    "kind": "main",
+    "text": "Main Track"
+   }
+  ],
+  "tags": [
+   "Systems",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2025",
+  "track": "main",
+  "topics": [
+   "mlai",
+   "sensing"
+  ],
+  "title": "High-Order Moments Conditional Domain Adaptation Networks for Wearable Human Activity Recognition",
+  "url": "https://dl.acm.org/doi/10.1145/3746252.3761225",
+  "authors": "Ghosh, I., <strong>Chugh, G.</strong>, Faridee, A.Z.M. &amp; Roy, N.",
+  "venue": "CIKM 2025, Seoul, South Korea",
+  "badges": [
+   {
+    "kind": "main",
+    "text": "Main Track"
+   },
+   {
+    "kind": "core",
+    "text": "Core A"
+   }
+  ],
+  "tags": [
+   "ML / AI",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2025",
+  "track": "main",
+  "topics": [
+   "healthcare",
+   "sensing"
+  ],
+  "title": "BiteSense: Earable-Based Inertial Sensing for Eating Behaviour Assessment",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Ghosh, I., Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "PerCom 2025",
+  "badges": [
+   {
+    "kind": "main",
+    "text": "Main Track"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2025",
+  "track": "workshop",
+  "topics": [
+   "systems",
+   "sensing"
+  ],
+  "title": "EarDesk: An Adaptive Desktop BLE Framework for eSense IMU Data Collection and Configuration",
+  "url": null,
+  "authors": "<strong>Chugh, G.*</strong>, Zhingre, S.* &amp; Chakraborty, S. (*Equal Contribution)",
+  "venue": "PerCom 2025",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "Artifacts Paper"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Systems",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2025",
+  "track": "workshop",
+  "topics": [
+   "healthcare",
+   "sensing",
+   "hci"
+  ],
+  "title": "Tracking Ephemeral and Residual Emotions via Earable Inertial Sensing During Media Consumption",
+  "url": null,
+  "authors": "Zhingre, S., <strong>Chugh, G.</strong> &amp; Chakraborty, S.",
+  "venue": "PerCom 2025",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "WIP Paper"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing",
+   "HCI"
+  ]
+ },
+ {
+  "year": "2025",
+  "track": "workshop",
+  "topics": [
+   "hci",
+   "sensing"
+  ],
+  "title": "Unlocking Eye Gestures with Earable Inertial Sensing for Accessible HCI",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "COMSNETS 2025",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "Poster Paper"
+   }
+  ],
+  "tags": [
+   "HCI",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2024",
+  "track": "main",
+  "topics": [
+   "mlai"
+  ],
+  "title": "&beta;-Decode: Attention-based Decoding Temporal Artifacts via Unsupervised &beta;-Variational Autoencoder",
+  "url": null,
+  "authors": "Ghosh, I., <strong>Chugh, G.</strong>, Faridee, A.Z.M. &amp; Roy, N.",
+  "venue": "CODS-COMAD 2024, IIT Jodhpur, India",
+  "badges": [],
+  "tags": [
+   "ML / AI"
+  ]
+ },
+ {
+  "year": "2024",
+  "track": "workshop",
+  "topics": [
+   "mlai",
+   "sensing"
+  ],
+  "title": "Unsupervised Domain Adaptation for Action Recognition via Self-Ensembling and Conditional Embedding Alignment",
+  "url": null,
+  "authors": "Ghosh, I., <strong>Chugh, G.</strong>, Roy, N. &amp; Jayarajah, K.",
+  "venue": "ICDM 2024, Abu Dhabi, UAE",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "Short Paper"
+   },
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "ML / AI",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "2023",
+  "track": "main",
+  "topics": [
+   "healthcare",
+   "sensing",
+   "hci"
+  ],
+  "title": "Exploring Earables to Monitor Temporal Lack of Focus during Online Meetings to Identify Onset of Neurological Disorders",
+  "url": "https://doi.org/10.1145/3580252.3586981",
+  "authors": "<strong>Chugh, G.</strong>, Chakraborty, S., Bhandari, R. &amp; Chakraborty, S.",
+  "venue": "IEEE/ACM CHASE 2023, pp. 126&ndash;137",
+  "badges": [],
+  "tags": [
+   "Healthcare",
+   "Sensing",
+   "HCI"
+  ]
+ },
+ {
+  "year": "2023",
+  "track": "workshop",
+  "topics": [
+   "hci",
+   "systems"
+  ],
+  "title": "Demonstration of LegalHelper: A Low-cost Tool for Smart Translation and Creation of Legal Contracts",
+  "url": "https://ieeexplore.ieee.org/document/10041386/",
+  "authors": "<strong>Chugh, G.</strong> &amp; Chakraborty, S.",
+  "venue": "COMSNETS 2023",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "Demo Paper"
+   }
+  ],
+  "tags": [
+   "HCI",
+   "Systems"
+  ]
+ },
+ {
+  "year": "2023",
+  "track": "workshop",
+  "topics": [
+   "sensing",
+   "hci"
+  ],
+  "title": "enVolve+: Inertial Sensing to Reinforce Involvement of Silent Listeners during an Online Interaction",
+  "url": "https://ieeexplore.ieee.org/document/10041409",
+  "authors": "<strong>Chugh, G.</strong>, Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "COMSNETS 2023",
+  "badges": [
+   {
+    "kind": "wip",
+    "text": "Poster Paper"
+   }
+  ],
+  "tags": [
+   "Sensing",
+   "HCI"
+  ]
+ },
+ {
+  "year": "2022",
+  "track": "main",
+  "topics": [
+   "sensing",
+   "hci"
+  ],
+  "title": "enVolve: Are You Listening? Inertial Sensing to Monitor the Involvement of Silent Listeners during an Online Interaction",
+  "url": "https://dl.acm.org/doi/abs/10.1145/3544793.3563419",
+  "authors": "<strong>Chugh, G.</strong>, Chakraborty, S., Bhandari, R. &amp; Chakraborty, S.",
+  "venue": "UbiComp/ISWC &rsquo;22 Adjunct, ACM",
+  "badges": [
+   {
+    "kind": "core",
+    "text": "Core A*"
+   }
+  ],
+  "tags": [
+   "Sensing",
+   "HCI"
+  ]
+ },
+ {
+  "year": "2021",
+  "track": "journal",
+  "topics": [
+   "mlai",
+   "security"
+  ],
+  "title": "An Improved Ensemble Based Intrusion Detection Technique using XGBoost",
+  "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ett.4076",
+  "authors": "Bhati, S., B., <strong>Chugh, G.</strong>, Al-Turjman, F., Bhati &amp; S., N.",
+  "venue": "Transactions on Emerging Telecommunications Technologies, 2021",
+  "badges": [
+   {
+    "kind": "journal",
+    "text": "Journal"
+   }
+  ],
+  "tags": [
+   "ML / AI",
+   "Security"
+  ]
+ },
+ {
+  "year": "patent",
+  "track": "patent",
+  "topics": [
+   "healthcare",
+   "sensing",
+   "systems"
+  ],
+  "title": "A Multimodal Headband System For Activity Recognition And Biometric Data Collection",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "Patent Application Number 202531105540 (Filed, October 2025)",
+  "badges": [
+   {
+    "kind": "patent",
+    "text": "Patent"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing",
+   "Systems"
+  ]
+ },
+ {
+  "year": "review",
+  "track": "review",
+  "topics": [
+   "hci",
+   "sensing"
+  ],
+  "title": "EarControl: Towards Earable-Based Hands-Free Interaction for Mobile Devices",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Ghosh, I., Faridee, A.N.Z., Roy, N., Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "Under review, 2026",
+  "badges": [
+   {
+    "kind": "review",
+    "text": "Under Review"
+   }
+  ],
+  "tags": [
+   "HCI",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "review",
+  "track": "review",
+  "topics": [
+   "healthcare",
+   "sensing"
+  ],
+  "title": "An Evaluation of Earable-Based Inertial Sensing for Understanding Eating Behaviour",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Ghosh, I., Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "Under review, 2026",
+  "badges": [
+   {
+    "kind": "review",
+    "text": "Under Review"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing"
+  ]
+ },
+ {
+  "year": "review",
+  "track": "review",
+  "topics": [
+   "mlai",
+   "sensing",
+   "systems"
+  ],
+  "title": "MSSL: Real-Time Complex Activity Recognition from Multiple Unlabeled IMU Data Streams",
+  "url": null,
+  "authors": "Mondal, A., <strong>Chugh, G.</strong> &amp; Chakraborty, S.",
+  "venue": "Under review, 2026",
+  "badges": [
+   {
+    "kind": "review",
+    "text": "Under Review"
+   }
+  ],
+  "tags": [
+   "ML / AI",
+   "Sensing",
+   "Systems"
+  ]
+ },
+ {
+  "year": "review",
+  "track": "review",
+  "topics": [
+   "healthcare",
+   "sensing",
+   "hci"
+  ],
+  "title": "Efficacy of Earables to Monitor Spontaneous Reactions (A Proxy for Mental Health) to On-Screen Stimuli in Real Time",
+  "url": null,
+  "authors": "Zhingre, S.*, <strong>Chugh, G.</strong>* &amp; Chakraborty, S. (*Equal Contribution)",
+  "venue": "Under review, 2026",
+  "badges": [
+   {
+    "kind": "review",
+    "text": "Under Review"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing",
+   "HCI"
+  ]
+ }
+]

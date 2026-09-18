@@ -1,0 +1,44 @@
+[
+ {
+  "key": "pubs",
+  "number": "auto",
+  "label": "Publications",
+  "detail": "Peer-reviewed at ACM CHI, IEEE PerCom (&times;7), ACM SenSys, PACMHCI, CIKM, ICDM, CHASE, UbiComp and COMSNETS, plus a filed patent and papers under review.",
+  "hero": true
+ },
+ {
+  "key": "systems",
+  "number": "12",
+  "label": "Sensing systems built",
+  "detail": "From prototype to user study: MorsEar, HydratEar, BiteSense, SpineSense, WristSense, EarControl, CompulsEar, EarFence, EarDesk, enVolve and more.",
+  "hero": false
+ },
+ {
+  "key": "grants",
+  "number": "16",
+  "label": "Fellowships &amp; grants",
+  "detail": "Prime Minister Research Fellowship, TCS Research Fellowship, SIGBED and Gary Marsden travel awards, PerCom, SenSys and COMSNETS travel grants.",
+  "hero": true
+ },
+ {
+  "key": "students",
+  "number": "1,095",
+  "label": "Students taught",
+  "detail": "Teaching assistant for 10 IIT Jodhpur courses, from Introduction to Computer Science to Mobile and Pervasive Computing.",
+  "hero": true
+ },
+ {
+  "key": "mentees",
+  "number": "24",
+  "label": "Researchers mentored",
+  "detail": "2 M.Tech. theses, 2 B.Tech. theses and 20 research interns, plus ~60 project students supervised.",
+  "hero": true
+ },
+ {
+  "key": "venues",
+  "number": "11",
+  "label": "Venues reviewed for",
+  "detail": "CHI, CSCW, NeurIPS, KDD, TMC, PACMHCI and more. TPC for HeadSys at MobiSys 2026. COMSNETS chair roles 2024&ndash;2027.",
+  "hero": false
+ }
+]
