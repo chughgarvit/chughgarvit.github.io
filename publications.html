@@ -74,10 +74,12 @@
     /* ── Publications ── */
     .pub-year { font-size:1.8rem; font-weight:700; color:var(--clr-primary); margin-top:2em; margin-bottom:1em; padding-bottom:.3em; border-bottom:2px solid var(--clr-primary); }
     .pub-year:first-of-type { margin-top:0; }
-    .pub-item { padding:1.2em 1.5em; margin-bottom:1em; background:var(--clr-bg-alt); border-radius:4px; box-shadow:var(--shadow); transition:all .2s; text-align:left; }
+    .pub-item { list-style:none; padding:1.2em 1.5em; margin-bottom:1em; background:var(--clr-bg-alt); border-radius:4px; box-shadow:var(--shadow); transition:all .2s; text-align:left; }
     .pub-item:hover { transform:translateY(-3px); }
     .pub-item.hidden { display:none; }
     .pub-title { font-weight:600; color:var(--clr-fg-alt); font-size:1rem; }
+    .pub-title a { color:inherit; border-bottom:1px dotted rgba(0,0,0,.25); }
+    .pub-title a:hover { color:var(--clr-primary); border-bottom-color:var(--clr-primary); }
     .pub-authors { font-size:.9rem; margin-top:.3em; }
     .pub-authors strong { color:var(--clr-primary); font-weight:600; }
     .pub-venue { font-size:.85rem; margin-top:.3em; font-style:italic; color:var(--clr-fg-alt); }
@@ -88,6 +90,7 @@
     .pub-badge--core { background:var(--clr-primary); color:var(--clr-bg); }
     .pub-badge--journal { background:#457b9d; color:#fff; }
     .pub-badge--patent { background:#6c757d; color:#fff; }
+    .pub-badge--review { background:#8d99ae; color:#fff; }
     .pub-tags { margin-top:.4em; display:flex; flex-wrap:wrap; gap:.3em; }
     .pub-tag { font-size:.65rem; padding:.15em .5em; border-radius:3px; background:rgba(121,119,76,.1); color:var(--clr-primary); font-weight:600; }
     .pub-note { font-size:.85rem; color:var(--clr-fg); margin-top:1em; text-align:center; }
@@ -118,7 +121,7 @@
   </header>
   <main>
     <h1 class="page-title">Publications</h1>
-    <p class="page-subtitle">22 peer-reviewed publications, 1 patent. <span class="filter-count" id="filterCount"></span></p>
+    <p class="page-subtitle">27 publications: 22 peer-reviewed, 1 filed patent, 4 under review. <span class="filter-count" id="filterCount"></span></p>
 
     <!-- ── Filters ── -->
     <div class="filters">
@@ -133,6 +136,7 @@
           <button class="filter-btn" data-value="2022">2022</button>
           <button class="filter-btn" data-value="2021">2021</button>
           <button class="filter-btn" data-value="patent">Patent</button>
+          <button class="filter-btn" data-value="review">Under Review</button>
         </div>
       </div>
       <div class="filter-group">
@@ -143,6 +147,7 @@
           <button class="filter-btn" data-value="workshop">Workshop / WiP</button>
           <button class="filter-btn" data-value="journal">Journal</button>
           <button class="filter-btn" data-value="patent">Patent</button>
+          <button class="filter-btn" data-value="review">Under Review</button>
         </div>
       </div>
       <div class="filter-group">
@@ -164,11 +169,9 @@
     <!-- ── Publications ── -->
     <div id="pubContainer">
 
-        <h2 class="pub-year" data-year-heading=""></h2>
-
     <h2 class="pub-year" data-year-heading="2026">2026</h2>
     <li class="pub-item" data-year="2026" data-track="main" data-topic="sensing hci security">
-      <div class="pub-title">MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable-Based Inertial Sensing <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span> <span class="pub-badge pub-badge--award">Honourable Mention Award</span></div>
+      <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3772318.3791436" target="_blank" rel="noopener">MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable-Based Inertial Sensing</a> <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A*</span> <span class="pub-badge pub-badge--award">Honourable Mention Award</span></div>
       <div class="pub-authors"><strong>Chugh, G.</strong>, Ghosh, I., Roy, N., Chakraborty, S., &amp; Chakraborty, S.</div>
       <div class="pub-venue">CHI 2026</div>
       <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span><span class="pub-tag">Security</span></div>
@@ -232,7 +235,7 @@
 
     <h2 class="pub-year" data-year-heading="2025">2025</h2>
     <li class="pub-item" data-year="2025" data-track="main" data-topic="mlai sensing">
-      <div class="pub-title">High-Order Moments Conditional Domain Adaptation Networks for Wearable Human Activity Recognition <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A</span></div>
+      <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3746252.3761225" target="_blank" rel="noopener">High-Order Moments Conditional Domain Adaptation Networks for Wearable Human Activity Recognition</a> <span class="pub-badge pub-badge--main">Main Track</span> <span class="pub-badge pub-badge--core">Core A</span></div>
       <div class="pub-authors">Indrajeet Ghosh, <strong>Garvit Chugh</strong>, Abu Zaher Md Faridee, Nirmalya Roy</div>
       <div class="pub-venue">CIKM 2025, Seoul, South Korea</div>
       <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Sensing</span></div>
@@ -269,35 +272,35 @@
     <h2 class="pub-year" data-year-heading="2024">2024</h2>
     <li class="pub-item" data-year="2024" data-track="main" data-topic="mlai">
       <div class="pub-title">&beta;-Decode: Attention-based Decoding Temporal Artifacts via Unsupervised &beta;-Variational Autoencoder</div>
-      <div class="pub-authors">Indrajeet Ghosh, <strong>Garvit Chugh</strong>, Nirmalya Roy, and Kasthuri Jayarajah</div>
+      <div class="pub-authors">Indrajeet Ghosh, <strong>Garvit Chugh</strong>, Abu Zaher Md Faridee, and Nirmalya Roy</div>
       <div class="pub-venue">CODS-COMAD 2024, IIT Jodhpur, India</div>
       <div class="pub-tags"><span class="pub-tag">ML / AI</span></div>
     </li>
 
     <li class="pub-item" data-year="2024" data-track="workshop" data-topic="mlai sensing">
       <div class="pub-title">Unsupervised Domain Adaptation for Action Recognition via Self-Ensembling and Conditional Embedding Alignment <span class="pub-badge pub-badge--wip">Short Paper</span> <span class="pub-badge pub-badge--core">Core A*</span></div>
-      <div class="pub-authors">Indrajeet Ghosh, <strong>Garvit Chugh</strong>, Abu Zaher Md Faridee, and Nirmalya Roy</div>
+      <div class="pub-authors">Indrajeet Ghosh, <strong>Garvit Chugh</strong>, Nirmalya Roy, and Kasthuri Jayarajah</div>
       <div class="pub-venue">ICDM 2024, Abu Dhabi, UAE</div>
       <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Sensing</span></div>
     </li>
 
     <h2 class="pub-year" data-year-heading="2023">2023</h2>
     <li class="pub-item" data-year="2023" data-track="main" data-topic="healthcare sensing hci">
-      <div class="pub-title">Exploring Earables to Monitor Temporal Lack of Focus during Online Meetings to Identify Onset of Neurological Disorders</div>
+      <div class="pub-title"><a href="https://doi.org/10.1145/3580252.3586981" target="_blank" rel="noopener">Exploring Earables to Monitor Temporal Lack of Focus during Online Meetings to Identify Onset of Neurological Disorders</a></div>
       <div class="pub-authors"><strong>Garvit Chugh</strong>, Suchetana Chakraborty, Ravi Bhandari and Sandip Chakraborty</div>
       <div class="pub-venue">IEEE/ACM CHASE 2023, pp. 126&ndash;137</div>
       <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
     </li>
 
     <li class="pub-item" data-year="2023" data-track="workshop" data-topic="hci systems">
-      <div class="pub-title">Demonstration of LegalHelper: A Low-cost Tool for Smart Translation and Creation of Legal Contracts <span class="pub-badge pub-badge--wip">Demo Paper</span></div>
+      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10041386/" target="_blank" rel="noopener">Demonstration of LegalHelper: A Low-cost Tool for Smart Translation and Creation of Legal Contracts</a> <span class="pub-badge pub-badge--wip">Demo Paper</span></div>
       <div class="pub-authors"><strong>Garvit Chugh</strong> and Suchetana Chakraborty</div>
       <div class="pub-venue">COMSNETS 2023</div>
       <div class="pub-tags"><span class="pub-tag">HCI</span><span class="pub-tag">Systems</span></div>
     </li>
 
     <li class="pub-item" data-year="2023" data-track="workshop" data-topic="sensing hci">
-      <div class="pub-title">enVolve+: Inertial Sensing to Reinforce Involvement of Silent Listeners during an Online Interaction <span class="pub-badge pub-badge--wip">Poster Paper</span></div>
+      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10041409" target="_blank" rel="noopener">enVolve+: Inertial Sensing to Reinforce Involvement of Silent Listeners during an Online Interaction</a> <span class="pub-badge pub-badge--wip">Poster Paper</span></div>
       <div class="pub-authors"><strong>Garvit Chugh</strong>, Suchetana Chakraborty and Sandip Chakraborty</div>
       <div class="pub-venue">COMSNETS 2023</div>
       <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
@@ -305,7 +308,7 @@
 
     <h2 class="pub-year" data-year-heading="2022">2022</h2>
     <li class="pub-item" data-year="2022" data-track="main" data-topic="sensing hci">
-      <div class="pub-title">enVolve: Are You Listening? Inertial Sensing to Monitor the Involvement of Silent Listeners during an Online Interaction <span class="pub-badge pub-badge--core">Core A*</span></div>
+      <div class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3544793.3563419" target="_blank" rel="noopener">enVolve: Are You Listening? Inertial Sensing to Monitor the Involvement of Silent Listeners during an Online Interaction</a> <span class="pub-badge pub-badge--core">Core A*</span></div>
       <div class="pub-authors"><strong>Garvit Chugh</strong>, Suchetana Chakraborty, Ravi Bhandari and Sandip Chakraborty</div>
       <div class="pub-venue">UbiComp/ISWC &rsquo;22 Adjunct, ACM</div>
       <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
@@ -313,7 +316,7 @@
 
     <h2 class="pub-year" data-year-heading="2021">2021</h2>
     <li class="pub-item" data-year="2021" data-track="journal" data-topic="mlai security">
-      <div class="pub-title">An Improved Ensemble Based Intrusion Detection Technique using XGBoost <span class="pub-badge pub-badge--journal">Journal</span></div>
+      <div class="pub-title"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ett.4076" target="_blank" rel="noopener">An Improved Ensemble Based Intrusion Detection Technique using XGBoost</a> <span class="pub-badge pub-badge--journal">Journal</span></div>
       <div class="pub-authors">Bhati, B. S., <strong>Chugh, G.</strong>, Al-Turjman, F., &amp; Bhati, N. S.</div>
       <div class="pub-venue">Transactions on Emerging Telecommunications Technologies, 2021</div>
       <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Security</span></div>
@@ -325,6 +328,32 @@
       <div class="pub-authors"><strong>Chugh, G.</strong>, Chakraborty, S., &amp; Chakraborty, S.</div>
       <div class="pub-venue">Patent Application Number 202531105540 (Filed, October 2025)</div>
       <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">Systems</span></div>
+    </li>
+
+    <h2 class="pub-year" data-year-heading="review">Under Review</h2>
+    <li class="pub-item" data-year="review" data-track="review" data-topic="hci sensing">
+      <div class="pub-title">EarControl: Towards Earable-Based Hands-Free Interaction for Mobile Devices <span class="pub-badge pub-badge--review">Under Review</span></div>
+      <div class="pub-authors"><strong>Chugh, G.</strong>, Ghosh, I., Faridee, A.N.Z., Roy, N., Chakraborty, S., &amp; Chakraborty, S.</div>
+      <div class="pub-venue">Under review, 2026</div>
+      <div class="pub-tags"><span class="pub-tag">HCI</span><span class="pub-tag">Sensing</span></div>
+    </li>
+    <li class="pub-item" data-year="review" data-track="review" data-topic="healthcare sensing">
+      <div class="pub-title">An Evaluation of Earable-Based Inertial Sensing for Understanding Eating Behaviour <span class="pub-badge pub-badge--review">Under Review</span></div>
+      <div class="pub-authors"><strong>Chugh, G.</strong>, Ghosh, I., Chakraborty, S., &amp; Chakraborty, S.</div>
+      <div class="pub-venue">Under review, 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+    </li>
+    <li class="pub-item" data-year="review" data-track="review" data-topic="mlai sensing systems">
+      <div class="pub-title">MSSL: Real-Time Complex Activity Recognition from Multiple Unlabeled IMU Data Streams <span class="pub-badge pub-badge--review">Under Review</span></div>
+      <div class="pub-authors">Mondal, A., <strong>Chugh, G.</strong>, &amp; Chakraborty, S.</div>
+      <div class="pub-venue">Under review, 2026</div>
+      <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Sensing</span><span class="pub-tag">Systems</span></div>
+    </li>
+    <li class="pub-item" data-year="review" data-track="review" data-topic="healthcare sensing hci">
+      <div class="pub-title">Efficacy of Earables to Monitor Spontaneous Reactions (A Proxy for Mental Health) to On-Screen Stimuli in Real Time <span class="pub-badge pub-badge--review">Under Review</span></div>
+      <div class="pub-authors">Zhingre, S.*, <strong>Chugh, G.</strong>*, &amp; Chakraborty, S. (*Equal Contribution)</div>
+      <div class="pub-venue">Under review, 2026</div>
+      <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span></div>
     </li>
 
     </div>
