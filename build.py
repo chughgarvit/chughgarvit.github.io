@@ -11,6 +11,8 @@ ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / "data"
 SITE = "https://www.garvitchugh.com"
 TODAY = datetime.date.today().isoformat()
+import hashlib
+CSS_HASH = hashlib.sha1((ROOT / "static/css/site.css").read_bytes()).hexdigest()[:8]
 
 def load(name):
     return json.loads((DATA / f"{name}.json").read_text())
@@ -90,7 +92,7 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
   <link rel="icon" href="static/media/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="static/media/apple-touch-icon.png" />
   <link rel="preload" href="static/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="static/css/site.css" />
+  <link rel="stylesheet" href="static/css/site.css?v={CSS_HASH}" />
 {extra_head}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
