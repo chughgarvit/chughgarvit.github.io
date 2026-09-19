@@ -116,9 +116,6 @@ ul, ol { list-style: none; }
 .vcard__name { font-size: var(--t-3xl); font-weight: 800; letter-spacing: -.025em; line-height: 1.1; color: var(--heading); }
 .vcard__headline { font-size: var(--t-lg); font-weight: 700; color: var(--accent-strong); margin-top: 6px; }
 .vcard__tagline { font-size: var(--t-md); color: var(--text-2); margin-top: 6px; }
-.vcard__highlights { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.vcard__highlights li { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--amber-soft); color: var(--amber); font-size: var(--t-xs); font-weight: 800; white-space: nowrap; }
-.vcard__highlights svg { width: 16px; height: 16px; }
 .vcard__meta { display: flex; align-items: center; gap: 6px; font-size: var(--t-sm); color: var(--text-2); font-weight: 600; }
 .vcard__meta svg { width: 18px; height: 18px; }
 .vcard__affil { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -127,11 +124,6 @@ ul, ol { list-style: none; }
 .affil__logo { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; background: #fff; border-radius: 50%; padding: 2px; }
 .affil__short { display: none; }
 .vcard__actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.vcard__stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); background: var(--tile); }
-.stat { padding: 16px 24px; border-right: 1px solid var(--border); }
-.stat:last-child { border-right: 0; }
-.stat strong { display: block; font-size: var(--t-xl); font-weight: 800; letter-spacing: -.02em; line-height: 1.15; color: var(--heading); }
-.stat span { font-size: var(--t-xs); color: var(--text-2); font-weight: 700; }
 
 /* ── Buttons & pills ────────────────────────────────────── */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 999px; font-size: var(--t-sm); font-weight: 800; border: 1px solid transparent; transition: background .15s, color .15s, box-shadow .15s, transform .15s; cursor: pointer; }
@@ -147,15 +139,10 @@ ul, ol { list-style: none; }
 .pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .pill { display: inline-block; padding: 6px 13px; border-radius: 999px; background: var(--tile); border: 1px solid var(--border); font-size: var(--t-sm); font-weight: 700; color: var(--text); }
 
-/* ── About: intro + facts ───────────────────────────────── */
+/* ── About ───────────────────────────────────────────────── */
 .about-intro, .about-open { max-width: var(--measure); }
+.about-intro + .ach-list { margin-top: 16px; }
 .about-open { margin-top: 18px; color: var(--text-2); font-size: var(--t-sm); }
-.about-intro + .facts { margin-top: 18px; }
-.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.fact { background: var(--tile); border-radius: 12px; padding: 16px 18px; }
-.fact__number { display: block; font-size: var(--t-2xl); font-weight: 800; letter-spacing: -.02em; line-height: 1.1; color: var(--heading); }
-.fact__label { display: block; font-weight: 800; margin-top: 4px; }
-.fact__detail { display: block; font-size: var(--t-xs); color: var(--text-2); margin-top: 6px; line-height: 1.5; }
 .about-open + .pills { margin-top: 14px; }
 
 /* ── Research ───────────────────────────────────────────── */
@@ -252,7 +239,6 @@ ul, ol { list-style: none; }
 @media (max-width: 1100px) {
   .vcard { grid-template-columns: 260px minmax(0,1fr); }
   .vcard__photo { width: 200px; height: 200px; }
-  .facts { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Phone ──────────────────────────────────────────────── */
@@ -278,22 +264,13 @@ ul, ol { list-style: none; }
   .vcard__photo { width: 150px; height: 150px; border-radius: 20px; }
   .vcard__main { padding: 18px 16px 20px; gap: 16px; text-align: center; justify-content: center; }
   .vcard__id, .vcard__ctas { flex: 1 1 100%; }
-  .vcard__highlights, .vcard__meta, .vcard__affil, .vcard__actions { justify-content: center; }
+  .vcard__meta, .vcard__affil, .vcard__actions { justify-content: center; }
   .vcard__ctas { gap: 12px; align-items: center; }
   .affil { padding: 4px 12px 4px 4px; min-height: 44px; font-size: var(--t-xs); }
   .affil__long { display: none; } .affil__short { display: inline; }
   .vcard__actions { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; gap: 8px; }
   .btn { padding: 0 10px; font-size: var(--t-xs); }
-  .vcard__stats { grid-template-columns: repeat(4, 1fr); }
-  .stat { padding: 12px 6px; text-align: center; }
-  .stat strong { font-size: 1.15rem; }
-  .stat span { font-size: .72rem; line-height: 1.25; display: block; }
   /* about */
-  .facts { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .fact { padding: 12px; border-radius: 10px; }
-  .fact__number { font-size: 1.5rem; }
-  .fact__label { font-size: var(--t-sm); }
-  .fact__detail { font-size: .8rem; }
   .pill { font-size: var(--t-xs); padding: 5px 10px; }
   /* research: compact rows */
   .research { grid-template-columns: 1fr; gap: 10px; }

@@ -18,7 +18,7 @@ def load(name):
 P = load("profile"); PUBS = load("publications"); NEWS = load("news"); RESEARCH = load("research")
 EXPERIENCE = load("experience"); EDUCATION = load("education"); TEACHING = load("teaching"); OUTREACH = load("outreach")
 MENTORSHIP = load("mentorship"); SKILLS_FULL = load("skills"); AWARDS = load("awards"); FUNDING = load("funding")
-SERVICE = load("service"); FACTS = load("facts")
+SERVICE = load("service")
 
 # ── derived counts ────────────────────────────────────────────────
 N_PEER = sum(p["track"] in ("main", "workshop", "journal") for p in PUBS)
@@ -26,8 +26,6 @@ N_PATENT = sum(p["track"] == "patent" for p in PUBS)
 N_REVIEW = sum(p["track"] == "review" for p in PUBS)
 N_PUBS = len(PUBS)
 PUB_SUMMARY = f"{N_PUBS} publications: {N_PEER} peer-reviewed, {N_PATENT} filed patent, {N_REVIEW} under review."
-for f in FACTS:
-    if f["number"] == "auto": f["number"] = str(N_PUBS)
 
 # ── icons (stroke) and brand marks (fill) ─────────────────────────
 def ico(paths):
@@ -163,14 +161,9 @@ def links_card():
     rows = "".join(f'<a href="{esc_attr(l["url"])}"{"" if l["url"].startswith("mailto:") else " target=\"_blank\" rel=\"noopener\""}>{B.get(l["kind"], I.get(l["kind"], ""))}<span>{l["label"]}</span></a>' for l in P["links"])
     return f'<section class="card"><h2 class="card__title">Contact &amp; links</h2><div class="links">{rows}</div></section>'
 
-def fact_tile(f):
-    return f'<li class="fact"><strong class="fact__number">{f["number"]}</strong><span class="fact__label">{f["label"]}</span><span class="fact__detail">{f["detail"]}</span></li>'
-
 # ── index ────────────────────────────────────────────────────────
 def build_index():
-    highlights = "".join(f'<li>{I["star"]}{h}</li>' for h in P["highlights"])
     affils = "".join(f'<a class="affil" href="{a["url"]}" target="_blank" rel="noopener"><img class="affil__logo" src="static/media/{a["logo"]}" alt="" width="36" height="36" /><span class="affil__long">{a["name"]}</span><span class="affil__short">{a["short"]}</span></a>' for a in P["affiliations"])
-    hero_stats = "".join(f'<li class="stat"><strong>{f["number"]}</strong><span>{f["label"]}</span></li>' for f in FACTS if f["hero"])
     interests = "".join(f'<span class="pill">{i}</span>' for i in P["interests"])
     research = "".join(f"""        <li class="project">
           <div class="project__icon">{r["icon"]}</div>
@@ -190,7 +183,6 @@ def build_index():
       <h1 class="vcard__name" id="name">{P["name"]}</h1>
       <p class="vcard__headline">{P["headline"]}</p>
       <p class="vcard__tagline">{P["tagline"]}</p>
-      <ul class="vcard__highlights">{highlights}</ul>
     </div>
     <div class="vcard__ctas">
     <p class="vcard__meta">{I["pin"]}{P["location"]}</p>
@@ -202,7 +194,6 @@ def build_index():
     </div>
     </div>
   </div>
-  <ul class="vcard__stats" aria-label="Key numbers">{hero_stats}</ul>
 </section>
 
 <div class="grid">
@@ -219,7 +210,7 @@ def build_index():
     <section class="card" id="about" aria-labelledby="about-title">
       <h2 class="card__title" id="about-title">About</h2>
       <p class="about-intro">{P["intro"]}</p>
-      <ul class="facts">{"".join(fact_tile(f) for f in FACTS)}</ul>
+      {bullets(P["about_points"])}
       <p class="about-open">{P["open_to"]}</p>
       <div class="pills">{interests}</div>
     </section>

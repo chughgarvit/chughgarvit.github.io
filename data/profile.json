@@ -4,10 +4,6 @@
  "tagline": "Earable &amp; wearable sensing &middot; Human-computer interaction &middot; Pervasive computing",
  "location": "Singapore",
  "email": "chughgarvit98@gmail.com",
- "highlights": [
-  "CHI 2026 Honourable Mention",
-  "Prime Minister Research Fellow, 2023&#8209;26"
- ],
  "intro": "Building deployable earable and wearable sensing systems for health and everyday interaction, with Prof. Archan Misra at SMU. Ph.D. from IIT Jodhpur (2026), supervised by Dr. Suchetana Chakraborty and Dr. Sandip Chakraborty.",
  "open_to": "Open to collaborations on wearable and earable sensing, digital health, guest lectures, and student mentoring.",
  "interests": [
@@ -85,5 +81,12 @@
   "Social Media Chair, ACM/IEEE COMSNETS 2025&ndash;2027",
   "TPC, HeadSys @ ACM MobiSys 2026; COMSNETS Posters 2025&ndash;2026",
   "Reviewer: ACM CHI, CSCW, NeurIPS, KDD, IEEE TMC, PACMHCI"
+ ],
+ "about_points": [
+  "<strong>26 publications</strong> at ACM CHI, IEEE PerCom, ACM SenSys, PACMHCI, CIKM, ICDM, CHASE and UbiComp; 1 patent filed; CHI 2026 Honourable Mention.",
+  "<strong>12 sensing systems</strong> taken from prototype to user study, including MorsEar, HydratEar, BiteSense, SpineSense and WristSense.",
+  "<strong>16 fellowships and grants</strong>, including the Prime Minister Research Fellowship and the TCS Research Fellowship.",
+  "<strong>1,095 students taught</strong> across 10 courses; <strong>24 researchers mentored</strong> and ~60 project students supervised.",
+  "<strong>Reviewer for 11 venues</strong>; TPC for HeadSys at MobiSys 2026; COMSNETS chair roles 2024&ndash;2027."
  ]
 }
