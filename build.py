@@ -209,9 +209,7 @@ def build_index():
   <div class="main stack">
     <section class="card" id="about" aria-labelledby="about-title">
       <h2 class="card__title" id="about-title">About</h2>
-      <p class="about-intro">{P["intro"]}</p>
-      {bullets(P["about_points"])}
-      <p class="about-open">{P["open_to"]}</p>
+      <div class="about-text">{"".join(f"<p>{p}</p>" for p in P["about"])}</div>
       <div class="pills">{interests}</div>
     </section>
 
