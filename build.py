@@ -73,8 +73,8 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="{desc}" />
-  <meta name="theme-color" content="#0f7b73" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0f1a1f" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#2f6feb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1520" media="(prefers-color-scheme: dark)" />
   <meta property="og:title" content="{title}" />
   <meta property="og:description" content="{desc}" />
   <meta property="og:image" content="{SITE}/static/media/og-image.jpg" />
@@ -95,6 +95,14 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
   <link rel="stylesheet" href="static/css/site.css?v={CSS_HASH}" />
 {extra_head}</head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="lg-refract" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feImage href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='rgb(0,128,128)'/%3E%3Cstop offset='.18' stop-color='rgb(128,128,128)'/%3E%3Cstop offset='.82' stop-color='rgb(128,128,128)'/%3E%3Cstop offset='1' stop-color='rgb(255,128,128)'/%3E%3C/linearGradient%3E%3Crect width='100' height='100' fill='url(%23g)'/%3E%3C/svg%3E" preserveAspectRatio="none" result="mx" />
+    <feImage href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='rgb(128,0,128)'/%3E%3Cstop offset='.3' stop-color='rgb(128,128,128)'/%3E%3Cstop offset='.7' stop-color='rgb(128,128,128)'/%3E%3Cstop offset='1' stop-color='rgb(128,255,128)'/%3E%3C/linearGradient%3E%3Crect width='100' height='100' fill='url(%23g)'/%3E%3C/svg%3E" preserveAspectRatio="none" result="my" />
+    <feComposite in="mx" in2="my" operator="arithmetic" k2="1" k3="1" k4="-0.5" result="map" />
+    <feDisplacementMap in="SourceGraphic" in2="map" scale="-22" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <div class="topbar__inner glass">
@@ -106,6 +114,8 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
 </main>
 <footer class="footer">Garvit Chugh &copy; {TODAY[:4]} &middot; Updated {TODAY}</footer>
 <script>
+  // Light follows the pointer across glass surfaces.
+  document.querySelectorAll('.glass, .btn--outline, .btn--ghost').forEach(el => el.addEventListener('pointermove', e => {{ const r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); }}, {{ passive: true }}));
   // Tab bar minimises while scrolling down and returns on scroll up (phones only).
   (() => {{ let last = scrollY, ticking = false;
     addEventListener('scroll', () => {{ if (ticking) return; ticking = true; requestAnimationFrame(() => {{
