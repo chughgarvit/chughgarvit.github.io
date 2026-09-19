@@ -20,7 +20,7 @@ def load(name):
 P = load("profile"); PUBS = load("publications"); NEWS = load("news"); RESEARCH = load("research")
 EXPERIENCE = load("experience"); EDUCATION = load("education"); TEACHING = load("teaching"); OUTREACH = load("outreach")
 MENTORSHIP = load("mentorship"); SKILLS_FULL = load("skills")
-SERVICE = load("service"); SYSTEMS = load("systems"); HONOURS = load("honours")
+SERVICE = load("service"); SYSTEMS = load("systems"); HONOURS = load("honours"); LABS = load("labs")
 
 # ── derived counts ────────────────────────────────────────────────
 N_PEER = sum(p["track"] in ("main", "workshop", "journal") for p in PUBS)
@@ -116,6 +116,7 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
   <link rel="icon" href="static/media/favicon-32.png?v={CSS_HASH}" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="static/media/apple-touch-icon.png?v={CSS_HASH}" />
   <link rel="preload" href="static/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
+{'  <link rel="preload" href="static/media/profile.jpg" as="image" fetchpriority="high" />' + chr(10) if active == "index.html" else ""}  <script type="speculationrules">{{"prerender":[{{"where":{{"and":[{{"href_matches":"/*"}},{{"not":{{"href_matches":"/*.pdf"}}}},{{"not":{{"href_matches":"/*.xml"}}}}]}},"eagerness":"moderate"}}],"prefetch":[{{"where":{{"and":[{{"href_matches":"/*"}},{{"not":{{"href_matches":"/*.pdf"}}}}]}},"eagerness":"moderate"}}]}}</script>
   <link rel="stylesheet" href="static/css/site.css?v={CSS_HASH}" />
 {extra_head}</head>
 <body>
@@ -172,7 +173,7 @@ def title_h(level, text, cls="card__title", extra=""):
 # ── components ───────────────────────────────────────────────────
 def logo_tile(item):
     if item.get("logo"):
-        return f'<img src="static/media/{item["logo"]}" alt="" width="64" height="64" />'
+        return f'<img src="static/media/{item["logo"]}" alt="" width="64" height="64" loading="lazy" decoding="async" />'
     return item.get("mono", "")
 
 def entry(e, level=3):
@@ -498,6 +499,7 @@ def build_education():
     </section>
   </div>
   <aside class="aside aside--bottom">
+    <section class="card"><h2 class="card__title">Labs I have been a part of</h2><ul class="labs">{"".join(f'<li class="lab"><a class="lab__link" href="{l["url"]}" target="_blank" rel="noopener"><span class="entry__logo lab__logo"><img src="static/media/{l["logo"]}" alt="" width="64" height="64" loading="lazy" decoding="async" /></span><span class="lab__body"><span class="lab__name">{l["name"]}</span><span class="lab__org">{l["org"]}</span><span class="entry__meta">{l["role"]} &middot; {l["years"]}</span></span></a></li>' for l in LABS)}</ul></section>
     <section class="card"><h2 class="card__title">Supervision &amp; mentorship</h2>{bullets(MENTORSHIP)}</section>
     <section class="card"><h2 class="card__title">Skills &amp; languages</h2>{bullets(SKILLS_FULL)}</section>
   </aside>

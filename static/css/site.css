@@ -98,7 +98,8 @@ ul, ol { list-style: none; }
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
 .glass > * { position: relative; z-index: 1; }
 /* edge refraction (Chromium): pixels near the rim are bent by an SVG displacement map defined inline in the page */
-@supports (backdrop-filter: url("#lg-refract")) { .glass { -webkit-backdrop-filter: url("#lg-refract") blur(var(--glass-blur)) saturate(1.7) brightness(1.04); backdrop-filter: url("#lg-refract") blur(var(--glass-blur)) saturate(1.7) brightness(1.04); } }
+@supports (backdrop-filter: url("#lg-refract")) { @media (pointer: fine) { .glass { -webkit-backdrop-filter: url("#lg-refract") blur(var(--glass-blur)) saturate(1.7) brightness(1.04); backdrop-filter: url("#lg-refract") blur(var(--glass-blur)) saturate(1.7) brightness(1.04); } } }
+@media (pointer: coarse) { :root { --glass-blur: 14px; } .glass::after { display: none; } }
 /* pages cross-fade and the active nav pill morphs between them */
 @view-transition { navigation: auto; }
 .topbar__inner { view-transition-name: nav-bar; }
@@ -110,7 +111,7 @@ ul, ol { list-style: none; }
 
 /* ── Floating nav (desktop) ─────────────────────────────── */
 .topbar { position: fixed; top: 14px; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; pointer-events: none; }
-.topbar__inner { pointer-events: auto; display: flex; align-items: center; gap: 2px; padding: 5px; border-radius: 999px; }
+.topbar__inner { pointer-events: auto; display: flex; align-items: center; gap: 2px; padding: 5px; border-radius: 999px; will-change: transform; transform: translateZ(0); }
 .nav { display: flex; align-items: center; gap: 2px; }
 .nav a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: var(--t-sm); font-weight: 700; color: var(--text); transition: background .25s, color .25s, transform .45s cubic-bezier(.34,1.56,.64,1); }
 .nav a svg { display: none; width: 24px; height: 24px; }
@@ -205,6 +206,15 @@ body::after { content: ""; position: fixed; left: 0; right: 0; top: 0; height: 9
 /* ── About ───────────────────────────────────────────────── */
 .about-text { display: grid; gap: 12px; }
 .about-text + .pills { margin-top: 16px; }
+
+/* ── Labs ───────────────────────────────────────────────── */
+.labs { display: grid; gap: 4px; margin: 0 -8px; }
+.lab__link { display: flex; gap: 12px; align-items: center; padding: 8px; border-radius: 12px; transition: background .15s; }
+.lab__link:hover { background: var(--tile); }
+.lab__logo { width: 52px; height: 52px; border-radius: 12px; }
+.lab__body { display: grid; gap: 1px; min-width: 0; }
+.lab__name { font-weight: 800; color: var(--heading); font-size: var(--t-md); }
+.lab__org { font-size: var(--t-sm); font-weight: 600; }
 
 /* ── Research ───────────────────────────────────────────── */
 .research { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }

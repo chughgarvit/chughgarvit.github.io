@@ -1,0 +1,26 @@
+[
+ {
+  "logo": "smu-logo.png",
+  "name": "School of Computing and Information Systems",
+  "org": "Singapore Management University",
+  "role": "Postdoctoral Researcher with Prof. Archan Misra",
+  "years": "2026 &ndash; present",
+  "url": "https://scis.smu.edu.sg/"
+ },
+ {
+  "logo": "ubisys-logo.png",
+  "name": "UbiSys Research Group",
+  "org": "IIT Jodhpur",
+  "role": "Ph.D. researcher with Dr. Suchetana Chakraborty",
+  "years": "2020 &ndash; 2026",
+  "url": "https://ubisysresearch.github.io/index.html"
+ },
+ {
+  "logo": "mpsc-logo.png",
+  "name": "MPSC Lab (Mobile, Pervasive &amp; Sensor Computing)",
+  "org": "University of Maryland, Baltimore County",
+  "role": "Visiting researcher with Prof. Nirmalya Roy",
+  "years": "2023 &ndash; 2024",
+  "url": "https://mpsc.umbc.edu/"
+ }
+]

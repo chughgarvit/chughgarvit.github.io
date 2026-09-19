@@ -12,7 +12,7 @@ All content lives in `data/*.json`. The HTML pages are **generated**; do not edi
 | `data/publications.json` | One object per paper: `year`, `track` (`main` / `workshop` / `journal` / `patent` / `review`), `topics`, `title`, `url`, `authors` (HTML, "Last, F." style, `<strong>` around your name), `venue`, `badges`, `tags`, `selected` (true = shown on the homepage), `links` (`paper`, `pdf`, `code`, `video`) |
 | `data/news.json` | One object per update: `id`, `year`, `text` (HTML), `kind` (`paper` / `award` / `grant` / `milestone` / `service` / `talk` / `update`, picks the icon), `featured` (true = ochre bar and Highlights). Newest first. |
 | `data/systems.json` | The "Systems I built" grid: `name`, `description`, `kind` (`earable` / `wearable` / `tool`), `venue`, `links` (`paper`, `code`, `video`; empty strings are hidden) |
-| `data/experience.json`, `data/education.json` | Roles and degrees with logo file names |
+| `data/experience.json`, `data/education.json`, `data/labs.json` | Roles, degrees, and labs with logo file names |
 | `data/facts.json` | The quantified tiles on the homepage; `"number": "auto"` is filled from the publication count |
 | `data/honours.json` | One object per honour or grant: `text`, `year`, `when` (display range), `kind` (`award` / `competition` / `fellowship` / `travel` / `scholarship` / `recognition` / `exam` / `talk`), `featured`, `source` (`awards` or `funding`) |
 | `data/service.json`, `data/teaching.json`, `data/outreach.json`, `data/mentorship.json`, `data/skills.json` | Plain lists of HTML strings |
