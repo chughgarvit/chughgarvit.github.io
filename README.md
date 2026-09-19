@@ -8,12 +8,14 @@ All content lives in `data/*.json`. The HTML pages are **generated**; do not edi
 
 | File | What it holds |
 |---|---|
-| `data/profile.json` | Name, headline, tagline, highlights, affiliations, links, skills, languages |
-| `data/publications.json` | One object per paper: `year`, `track` (`main` / `workshop` / `journal` / `patent` / `review`), `topics`, `title`, `url`, `authors` (HTML, "Last, F." style, `<strong>` around your name), `venue`, `badges`, `tags` |
-| `data/news.json` | One object per update: `id`, `year`, `text` (HTML). Newest first. |
+| `data/profile.json` | Name, honorific, headline, tagline, `now` (the status line in the hero), about paragraphs, affiliations, links, skills, languages |
+| `data/publications.json` | One object per paper: `year`, `track` (`main` / `workshop` / `journal` / `patent` / `review`), `topics`, `title`, `url`, `authors` (HTML, "Last, F." style, `<strong>` around your name), `venue`, `badges`, `tags`, `selected` (true = shown on the homepage), `links` (`paper`, `pdf`, `code`, `video`) |
+| `data/news.json` | One object per update: `id`, `year`, `text` (HTML), `kind` (`paper` / `award` / `grant` / `milestone` / `service` / `talk` / `update`, picks the icon), `featured` (true = ochre bar and Highlights). Newest first. |
+| `data/systems.json` | The "Systems I built" grid: `name`, `description`, `kind` (`earable` / `wearable` / `tool`), `venue`, `links` (`paper`, `code`, `video`; empty strings are hidden) |
 | `data/experience.json`, `data/education.json` | Roles and degrees with logo file names |
 | `data/facts.json` | The quantified tiles on the homepage; `"number": "auto"` is filled from the publication count |
-| `data/awards.json`, `data/funding.json`, `data/service.json`, `data/teaching.json`, `data/outreach.json`, `data/mentorship.json`, `data/skills.json` | Plain lists of HTML strings |
+| `data/honours.json` | One object per honour or grant: `text`, `year`, `when` (display range), `kind` (`award` / `competition` / `fellowship` / `travel` / `scholarship` / `recognition` / `exam` / `talk`), `featured`, `source` (`awards` or `funding`) |
+| `data/service.json`, `data/teaching.json`, `data/outreach.json`, `data/mentorship.json`, `data/skills.json` | Plain lists of HTML strings |
 
 Then rebuild and push:
 
@@ -22,7 +24,9 @@ python3 build.py
 git add -A && git commit -m "content: ..." && git push origin gh-pages
 ```
 
-`build.py` derives every count (publication totals, "Show all N" links, the hero stats) from the data, writes the six pages, and refreshes `sitemap.xml` with today's date.
+`build.py` derives every count from the data, writes the six pages, `sitemap.xml` (with today's date) and `news.xml` (RSS), and generates BibTeX for every paper and ScholarlyArticle structured data for the publications page.
+
+Typography variant: add `data-type="editorial"` to `<html>` (via the `shell()` function in `build.py`) to switch headings to Source Serif 4.
 
 **Adding a paper:** append an object to `data/publications.json` in the right year order. **Adding news:** prepend an object to `data/news.json` with the next `id` and the year it happened.
 

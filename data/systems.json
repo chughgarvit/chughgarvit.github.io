@@ -1,0 +1,146 @@
+[
+ {
+  "name": "MorsEar",
+  "description": "Covert messaging through jaw-tap Morse code sensed by earable IMUs.",
+  "kind": "earable",
+  "venue": "CHI 2026 · Honourable Mention",
+  "year": "2026",
+  "links": {
+   "paper": "https://dl.acm.org/doi/10.1145/3772318.3791436",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "HydratEar",
+  "description": "Non-invasive hydration monitoring with in-ear acoustic reflectometry.",
+  "kind": "earable",
+  "venue": "PerCom 2026",
+  "year": "2026",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "BiteSense",
+  "description": "Eating-behaviour assessment from earable inertial signals.",
+  "kind": "earable",
+  "venue": "PerCom 2025",
+  "year": "2025",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "SpineSense",
+  "description": "Spine and neck movement monitoring to combat neck pain.",
+  "kind": "earable",
+  "venue": "PACMHCI 2026",
+  "year": "2026",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "WristSense",
+  "description": "Hidden wrist strain in routine activities via inertial tokenisation and LLM feedback.",
+  "kind": "wearable",
+  "venue": "SenSys 2026",
+  "year": "2026",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "EarControl",
+  "description": "Hands-free mobile interaction driven by earable gestures.",
+  "kind": "earable",
+  "venue": "Under review",
+  "year": "review",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "CompulsEar",
+  "description": "Detection of body-focused repetitive behaviours with earables.",
+  "kind": "earable",
+  "venue": "PerCom 2026 WiP",
+  "year": "2026",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "EarFence",
+  "description": "Lightweight ultrasonic defence for smart earbuds against hidden commands.",
+  "kind": "earable",
+  "venue": "PerCom 2026 WiP",
+  "year": "2026",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "EarDesk",
+  "description": "Desktop BLE framework for eSense IMU data collection and configuration.",
+  "kind": "tool",
+  "venue": "PerCom 2025 artefact",
+  "year": "2025",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "enVolve",
+  "description": "Monitoring involvement of silent listeners in online meetings.",
+  "kind": "earable",
+  "venue": "UbiComp 2022 · COMSNETS 2023",
+  "year": "2023",
+  "links": {
+   "paper": "https://ieeexplore.ieee.org/document/10041409",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "VectionSense",
+  "description": "Multimodal inertial-physiological cybersickness detection in consumer VR.",
+  "kind": "wearable",
+  "venue": "CHI 2026 workshop",
+  "year": "2026",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ },
+ {
+  "name": "LegalHelper",
+  "description": "Low-cost tool for smart translation and creation of legal contracts.",
+  "kind": "tool",
+  "venue": "COMSNETS 2023 demo",
+  "year": "",
+  "links": {
+   "paper": "publications.html",
+   "code": "",
+   "video": ""
+  }
+ }
+]

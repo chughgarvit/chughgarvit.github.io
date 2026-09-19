@@ -29,7 +29,14 @@
    "Sensing",
    "HCI",
    "Security"
-  ]
+  ],
+  "selected": true,
+  "links": {
+   "paper": "https://dl.acm.org/doi/10.1145/3772318.3791436",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2026",
@@ -55,7 +62,14 @@
   "tags": [
    "Healthcare",
    "Sensing"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2026",
@@ -81,7 +95,14 @@
   "tags": [
    "Healthcare",
    "Sensing"
-  ]
+  ],
+  "selected": true,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2026",
@@ -107,7 +128,14 @@
   "tags": [
    "ML / AI",
    "Systems"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2026",
@@ -133,7 +161,14 @@
   "tags": [
    "Sensing",
    "Security"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2026",
@@ -161,7 +196,14 @@
    "Healthcare",
    "Sensing",
    "HCI"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2026",
@@ -183,7 +225,14 @@
   "tags": [
    "Healthcare",
    "Sensing"
-  ]
+  ],
+  "selected": true,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2026",
@@ -213,7 +262,14 @@
    "Sensing",
    "ML / AI",
    "HCI"
-  ]
+  ],
+  "selected": true,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2026",
@@ -235,7 +291,14 @@
   "tags": [
    "Systems",
    "Sensing"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2025",
@@ -261,7 +324,14 @@
   "tags": [
    "ML / AI",
    "Sensing"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "https://dl.acm.org/doi/10.1145/3746252.3761225",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2025",
@@ -287,7 +357,14 @@
   "tags": [
    "Healthcare",
    "Sensing"
-  ]
+  ],
+  "selected": true,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2025",
@@ -313,7 +390,14 @@
   "tags": [
    "Systems",
    "Sensing"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2025",
@@ -341,7 +425,14 @@
    "Healthcare",
    "Sensing",
    "HCI"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2025",
@@ -363,7 +454,14 @@
   "tags": [
    "HCI",
    "Sensing"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2024",
@@ -378,7 +476,14 @@
   "badges": [],
   "tags": [
    "ML / AI"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2024",
@@ -404,7 +509,14 @@
   "tags": [
    "ML / AI",
    "Sensing"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2023",
@@ -423,7 +535,14 @@
    "Healthcare",
    "Sensing",
    "HCI"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "https://doi.org/10.1145/3580252.3586981",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2023",
@@ -445,7 +564,14 @@
   "tags": [
    "HCI",
    "Systems"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "https://ieeexplore.ieee.org/document/10041386/",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2023",
@@ -467,7 +593,14 @@
   "tags": [
    "Sensing",
    "HCI"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "https://ieeexplore.ieee.org/document/10041409",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2022",
@@ -489,7 +622,14 @@
   "tags": [
    "Sensing",
    "HCI"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "https://dl.acm.org/doi/abs/10.1145/3544793.3563419",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "2021",
@@ -511,7 +651,14 @@
   "tags": [
    "ML / AI",
    "Security"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ett.4076",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "patent",
@@ -535,7 +682,14 @@
    "Healthcare",
    "Sensing",
    "Systems"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "review",
@@ -557,7 +711,14 @@
   "tags": [
    "HCI",
    "Sensing"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "review",
@@ -579,7 +740,14 @@
   "tags": [
    "Healthcare",
    "Sensing"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "review",
@@ -603,7 +771,14 @@
    "ML / AI",
    "Sensing",
    "Systems"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  },
  {
   "year": "review",
@@ -627,6 +802,13 @@
    "Healthcare",
    "Sensing",
    "HCI"
-  ]
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  }
  }
 ]

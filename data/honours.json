@@ -1,0 +1,186 @@
+[
+ {
+  "text": "Departmental Rank 1 &ndash; M.Tech.&ndash;Ph.D., IIT Jodhpur",
+  "year": 2026,
+  "when": "2026",
+  "kind": "award",
+  "featured": true,
+  "source": "awards"
+ },
+ {
+  "text": "CHI 2026 Honourable Mention Award for MorsEar",
+  "year": 2026,
+  "when": "2026",
+  "kind": "award",
+  "featured": true,
+  "source": "awards"
+ },
+ {
+  "text": "Invited poster presentation at ACM ARCS 2026, IIT Hyderabad",
+  "year": 2026,
+  "when": "2026",
+  "kind": "talk",
+  "featured": false,
+  "source": "awards"
+ },
+ {
+  "text": "SIGBED Student Travel Award to attend CPS-IoT Week 2026, Saint Malo, France",
+  "year": 2026,
+  "when": "2026",
+  "kind": "travel",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "Gary Marsden Travel Award for CHI 2026",
+  "year": 2026,
+  "when": "2026",
+  "kind": "travel",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "International Travel Grants &ndash; PerCom 2026 (ACM/IARCS, IEEE TCCC/TCPP)",
+  "year": 2026,
+  "when": "2026",
+  "kind": "travel",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "International Travel Grant &ndash; SenSys 2026 (LRN Foundation)",
+  "year": 2026,
+  "when": "2026",
+  "kind": "travel",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "National Travel Grant &ndash; COMSNETS 2026",
+  "year": 2026,
+  "when": "2026",
+  "kind": "travel",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "Received OmniBuds earable platform by Nokia Bell Labs, UK",
+  "year": 2025,
+  "when": "2025",
+  "kind": "recognition",
+  "featured": false,
+  "source": "awards"
+ },
+ {
+  "text": "International Travel Grants &ndash; PerCom 2025 (ACM/IARCS, IEEE TCCC/TCPP, LRN Foundation)",
+  "year": 2025,
+  "when": "2025",
+  "kind": "travel",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "Finalist &ndash; Green Fintech Hackathon, RBI Innovation Hub with IIT Jodhpur, Top 4 out of 519",
+  "year": 2024,
+  "when": "2024",
+  "kind": "competition",
+  "featured": false,
+  "source": "awards"
+ },
+ {
+  "text": "Finalist &ndash; Stanford EPIC Data Challenge, USA, Top 5 out of 61",
+  "year": 2023,
+  "when": "2023",
+  "kind": "competition",
+  "featured": true,
+  "source": "awards"
+ },
+ {
+  "text": "Finalist &ndash; IEEE Smart Mobility Challenge, Saudi Arabia, Top 5 out of 175, Sole Representative of India",
+  "year": 2023,
+  "when": "2023",
+  "kind": "competition",
+  "featured": true,
+  "source": "awards"
+ },
+ {
+  "text": "Best Poster Award &ndash; Industry Day Poster Session, IIT Jodhpur",
+  "year": 2023,
+  "when": "2023",
+  "kind": "award",
+  "featured": false,
+  "source": "awards"
+ },
+ {
+  "text": "Prime Minister Research Fellowship (PMRF), Government of India",
+  "year": 2023,
+  "when": "2023&ndash;2026",
+  "kind": "fellowship",
+  "featured": true,
+  "source": "funding"
+ },
+ {
+  "text": "National Travel Grants &ndash; COMSNETS 2023 and 2025 Author Travel Grant",
+  "year": 2023,
+  "when": "2023, 2025",
+  "kind": "travel",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "TCS Research Fellowship, Tata Consultancy Services",
+  "year": 2023,
+  "when": "2023",
+  "kind": "fellowship",
+  "featured": true,
+  "source": "funding"
+ },
+ {
+  "text": "First Runner Up, iS<sup>3</sup> &ndash; IIT Jodhpur ACM Student Chapter Ideathon",
+  "year": 2022,
+  "when": "2022",
+  "kind": "competition",
+  "featured": false,
+  "source": "awards"
+ },
+ {
+  "text": "Outstanding TA Award &ndash; Mobile and Pervasive Computing, IIT Jodhpur",
+  "year": 2022,
+  "when": "2022",
+  "kind": "award",
+  "featured": false,
+  "source": "awards"
+ },
+ {
+  "text": "UbiComp Workshops (EarComp 2022) Registration Grant, Nokia Bell Labs",
+  "year": 2022,
+  "when": "2022",
+  "kind": "travel",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "GATE 2020, Percentile: 98.74; CAT 2019, Percentile: 94.13",
+  "year": 2020,
+  "when": "",
+  "kind": "exam",
+  "featured": false,
+  "source": "awards"
+ },
+ {
+  "text": "Ph.D. MHRD &ndash; GATE Fellowship, Central Government of India",
+  "year": 2020,
+  "when": "2020&ndash;2023",
+  "kind": "fellowship",
+  "featured": false,
+  "source": "funding"
+ },
+ {
+  "text": "Merit Scholarship for Academic Excellence in B.Tech., Government of Delhi",
+  "year": 2017,
+  "when": "2017&ndash;2020",
+  "kind": "scholarship",
+  "featured": false,
+  "source": "funding"
+ }
+]

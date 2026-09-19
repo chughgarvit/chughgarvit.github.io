@@ -19,15 +19,18 @@
   <meta name="twitter:image" content="https://www.garvitchugh.com/static/media/og-image.jpg" />
   <title>Garvit Chugh</title>
   <link rel="canonical" href="https://www.garvitchugh.com/" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="static/media/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="apple-touch-icon" href="static/media/apple-touch-icon.png" />
+  <link rel="alternate" type="application/rss+xml" title="Garvit Chugh: news" href="https://www.garvitchugh.com/news.xml" />
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;document.documentElement.classList.add('js');}catch(e){}</script>
+  <link rel="icon" href="favicon.svg?v=16d83a65" type="image/svg+xml" />
+  <link rel="icon" href="static/media/favicon-32.png?v=16d83a65" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="static/media/apple-touch-icon.png?v=16d83a65" />
   <link rel="preload" href="static/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="static/css/site.css?v=d7b81b2e" />
+  <link rel="stylesheet" href="static/css/site.css?v=16d83a65" />
   <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@type": "Person",
  "name": "Garvit Chugh",
+ "honorificPrefix": "Dr",
  "url": "https://www.garvitchugh.com/",
  "image": "https://www.garvitchugh.com/static/media/profile.jpg",
  "email": "mailto:chughgarvit98@gmail.com",
@@ -77,6 +80,7 @@
   <div class="topbar__inner glass">
     <nav class="nav" aria-label="Primary"><a href="index.html" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h5v-6h4v6h5V9.5"/></svg><span>Home</span></a><a href="publications.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M9 7h7M9 11h7"/></svg><span>Publications</span></a><a href="education.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></svg><span>Experience</span></a><a href="awards.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg><span>Honours</span></a><a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span>News</span></a></nav>
   </div>
+  <button type="button" class="theme-toggle glass" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"><span class="ico-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span><span class="ico-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
 </header>
 <main id="main" class="page">
 <section class="card vcard" aria-labelledby="name">
@@ -85,9 +89,10 @@
   </div>
   <div class="vcard__main">
     <div class="vcard__id">
-      <h1 class="vcard__name" id="name">Garvit Chugh</h1>
+      <h1 class="vcard__name" id="name">Dr Garvit Chugh</h1>
       <p class="vcard__headline">Postdoctoral Researcher, Singapore Management University</p>
       <p class="vcard__tagline">Earable &amp; wearable sensing &middot; Human-computer interaction &middot; Pervasive computing</p>
+      <p class="vcard__now"><span class="vcard__now-dot" aria-hidden="true"></span>Now at SMU: building the next generation of earable health-sensing systems with Prof. Archan Misra.</p>
     </div>
     <div class="vcard__ctas">
     <p class="vcard__meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Singapore</p>
@@ -105,13 +110,14 @@
   <aside class="aside aside--top">
     <section class="card" id="news" aria-labelledby="news-title">
       <h2 class="card__title" id="news-title">Latest</h2>
-      <ol class="news-list">
-      <li class="news-item"><span class="news-year">2026</span><p class="news-text">Joined <strong>Singapore Management University (SMU)</strong> as a <strong>Postdoctoral Researcher</strong> in the School of Computing and Information Systems, working with Prof. Archan Misra (Sept 2026)!</p></li>
-      <li class="news-item"><span class="news-year">2026</span><p class="news-text">Completed my <strong>Ph.D.</strong> at <strong>IIT Jodhpur</strong> (2020&ndash;2026). Thesis: <em>Wearables for Personal Well Being and Digital Health: A Pervasive Sensing Perspective</em>.</p></li>
-      <li class="news-item"><span class="news-year">2026</span><p class="news-text"><strong>Departmental Rank 1</strong>, M.Tech.&ndash;Ph.D., <strong>IIT Jodhpur</strong> (2026)!</p></li>
-      <li class="news-item"><span class="news-year">2026</span><p class="news-text"><strong>SIGBED Student Travel Award</strong> to attend <strong>CPS-IoT Week 2026</strong>, Saint Malo, France!</p></li>
-      <li class="news-item"><span class="news-year">2026</span><p class="news-text">Recipient of <strong>CHI 2026 Honourable Mention Award</strong> for <strong>MorsEar</strong>!</p></li>
-      <li class="news-item"><span class="news-year">2026</span><p class="news-text"><strong>Gary Marsden Travel Award</strong> for <strong>CHI 2026</strong>!</p></li>
+      <a class="news-hero" href="news.html#y2026"><span class="news-hero__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg></span><span class="news-hero__body"><span class="news-hero__label">Milestone &middot; 2026</span><span class="news-hero__text">Joined <strong>Singapore Management University (SMU)</strong> as a <strong>Postdoctoral Researcher</strong> in the School of Computing and Information Systems, working with Prof. Archan Misra (Sept 2026)!</span></span></a>
+      <ol class="news-list news-list--timeline">
+      <li class="news-item news-item--milestone news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg></span><div class="news-body"><p class="news-text">Completed my <strong>Ph.D.</strong> at <strong>IIT Jodhpur</strong> (2020&ndash;2026). Thesis: <em>Wearables for Personal Well Being and Digital Health: A Pervasive Sensing Perspective</em>.</p><span class="news-meta">Milestone &middot; 2026</span></div></li>
+      <li class="news-item news-item--award news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span><div class="news-body"><p class="news-text"><strong>Departmental Rank 1</strong>, M.Tech.&ndash;Ph.D., <strong>IIT Jodhpur</strong> (2026)!</p><span class="news-meta">Award &middot; 2026</span></div></li>
+      <li class="news-item news-item--grant"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v3a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3a3 3 0 0 1 0-6V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg></span><div class="news-body"><p class="news-text"><strong>SIGBED Student Travel Award</strong> to attend <strong>CPS-IoT Week 2026</strong>, Saint Malo, France!</p><span class="news-meta">Grant &middot; 2026</span></div></li>
+      <li class="news-item news-item--award news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span><div class="news-body"><p class="news-text">Recipient of <strong>CHI 2026 Honourable Mention Award</strong> for <strong>MorsEar</strong>!</p><span class="news-meta">Award &middot; 2026</span></div></li>
+      <li class="news-item news-item--grant"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v3a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3a3 3 0 0 1 0-6V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg></span><div class="news-body"><p class="news-text"><strong>Gary Marsden Travel Award</strong> for <strong>CHI 2026</strong>!</p><span class="news-meta">Grant &middot; 2026</span></div></li>
+      <li class="news-item news-item--grant"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v3a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3a3 3 0 0 1 0-6V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg></span><div class="news-body"><p class="news-text"><strong>IEEE CS TCCC</strong> and <strong>TCPP STG</strong> Travel Grant Awardee for <strong>PerCom 2026</strong>!</p><span class="news-meta">Grant &middot; 2026</span></div></li>
       </ol>
       <a class="card__footer" href="news.html">Show all 41 updates <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </section>
@@ -162,9 +168,16 @@
       </ul>
     </section>
 
+    <section class="card" id="systems" aria-labelledby="systems-title">
+      <h2 class="card__title" id="systems-title">Systems I built</h2>
+      <p class="card__sub">12 sensing systems and tools, from prototype to user study.</p>
+      <ul class="systems systems--top"><li class="system system--earable"><span class="system__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8.5a6.5 6.5 0 0 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></span><div class="system__body"><h3 class="system__name">MorsEar</h3><p class="system__desc">Covert messaging through jaw-tap Morse code sensed by earable IMUs.</p><div class="system__meta"><span class="system__venue">CHI 2026 · Honourable Mention</span><a class="iconbtn" href="https://dl.acm.org/doi/10.1145/3772318.3791436" target="_blank" rel="noopener" title="Paper" aria-label="MorsEar Paper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span>Paper</span></a></div></div></li><li class="system system--earable"><span class="system__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8.5a6.5 6.5 0 0 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></span><div class="system__body"><h3 class="system__name">HydratEar</h3><p class="system__desc">Non-invasive hydration monitoring with in-ear acoustic reflectometry.</p><div class="system__meta"><span class="system__venue">PerCom 2026</span><a class="iconbtn" href="publications.html" title="Paper" aria-label="HydratEar Paper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span>Paper</span></a></div></div></li></ul>
+      <a class="card__footer" href="education.html#systems">Show all 12 systems <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </section>
+
     <section class="card" id="experience" aria-labelledby="experience-title">
       <h2 class="card__title" id="experience-title">Experience</h2>
-      <ul class="entries">
+      <ul class="entries entries--timeline">
       <li class="entry">
         <div class="entry__logo"><img src="static/media/smu-logo.svg" alt="" width="64" height="64" /></div>
         <div class="entry__body">
@@ -195,7 +208,7 @@
 
     <section class="card" id="education" aria-labelledby="education-title">
       <h2 class="card__title" id="education-title">Education</h2>
-      <ul class="entries">
+      <ul class="entries entries--timeline">
       <li class="entry">
         <div class="entry__logo"><img src="static/media/iitj-logo.png" alt="" width="64" height="64" /></div>
         <div class="entry__body">
@@ -218,42 +231,63 @@
 
     <section class="card" id="publications" aria-labelledby="publications-title">
       <h2 class="card__title" id="publications-title">Publications</h2>
-      <p class="card__sub">Selected recent work. 26 publications: 21 peer-reviewed, 1 filed patent, 4 under review.</p>
+      <p class="card__sub">Selected papers. 26 publications: 21 peer-reviewed, 1 filed patent, 4 under review.</p>
       <ul class="pub-list">
       <li class="pub-item" data-year="2026" data-track="main" data-topic="sensing hci security">
         <h3 class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3772318.3791436" target="_blank" rel="noopener">MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable-Based Inertial Sensing</a></h3>
-        <div class="pub-badges"><span class="pub-badge pub-badge--main" title="Full paper in the main research track">Main Track</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span> <span class="pub-badge pub-badge--award" title="Paper award">Honourable Mention Award</span></div>
         <div class="pub-authors"><strong>Chugh, G.</strong>, Ghosh, I., Roy, N., Chakraborty, S. &amp; Chakraborty, S.</div>
-        <div class="pub-venue">CHI 2026</div>
-        <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span><span class="pub-tag">Security</span></div>
-      </li>
-      <li class="pub-item" data-year="2026" data-track="workshop" data-topic="healthcare sensing">
-        <h3 class="pub-title">VectionSense: Multimodal Inertial-Physiological Cybersickness Detection in Consumer VR</h3>
-        <div class="pub-badges"><span class="pub-badge pub-badge--wip" title="Short paper: workshop, work-in-progress, poster, demo or artefact track">Workshop</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span></div>
-        <div class="pub-authors">Layal, K., Kumar, A., <strong>Chugh, G.</strong> &amp; Chakraborty, S.</div>
-        <div class="pub-venue">SAXR 2026 Workshop co-located with CHI 2026</div>
-        <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+        <div class="pub-meta"><span class="pub-venue">CHI 2026</span> <span class="pub-badge pub-badge--main" title="Full paper in the main research track">Main Track</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span> <span class="pub-badge pub-badge--award" title="Paper award">Honourable Mention Award</span><span class="pub-tag">Sensing</span><span class="pub-tag">HCI</span><span class="pub-tag">Security</span></div>
+        <div class="pub-links"><a class="iconbtn" href="https://dl.acm.org/doi/10.1145/3772318.3791436" target="_blank" rel="noopener" title="Paper" aria-label="Paper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span>Paper</span></a><button type="button" class="iconbtn iconbtn--copy" data-bib="@inproceedings{chugh2026morsear,
+  title={MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable-Based Inertial Sensing},
+  author={Chugh, G. and Ghosh, I. and Roy, N. and Chakraborty, S. and Chakraborty, S.},
+  booktitle={CHI 2026},
+  year={2026},
+  url={https://dl.acm.org/doi/10.1145/3772318.3791436}
+}" title="Copy BibTeX" aria-label="Copy BibTeX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg><span>BibTeX</span></button></div>
       </li>
       <li class="pub-item" data-year="2026" data-track="main" data-topic="healthcare sensing">
         <h3 class="pub-title">HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry</h3>
-        <div class="pub-badges"><span class="pub-badge pub-badge--main" title="Full paper in the main research track">Main Track</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span></div>
         <div class="pub-authors"><strong>Chugh, G.</strong> &amp; Chakraborty, S.</div>
-        <div class="pub-venue">PerCom 2026</div>
-        <div class="pub-tags"><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+        <div class="pub-meta"><span class="pub-venue">PerCom 2026</span> <span class="pub-badge pub-badge--main" title="Full paper in the main research track">Main Track</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+        <div class="pub-links"><button type="button" class="iconbtn iconbtn--copy" data-bib="@inproceedings{chugh2026hydratear,
+  title={HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry},
+  author={Chugh, G. and Chakraborty, S.},
+  booktitle={PerCom 2026},
+  year={2026}
+}" title="Copy BibTeX" aria-label="Copy BibTeX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg><span>BibTeX</span></button></div>
       </li>
-      <li class="pub-item" data-year="2026" data-track="main" data-topic="mlai systems">
-        <h3 class="pub-title">Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization</h3>
-        <div class="pub-badges"><span class="pub-badge pub-badge--main" title="Full paper in the main research track">Main Track</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span></div>
-        <div class="pub-authors">Dey, E., Ravi, A., Shinde, G., <strong>Chugh, G.</strong>, Ghosh, I., Misra, A. &amp; Roy, N.</div>
-        <div class="pub-venue">PerCom 2026</div>
-        <div class="pub-tags"><span class="pub-tag">ML / AI</span><span class="pub-tag">Systems</span></div>
+      <li class="pub-item" data-year="2026" data-track="journal" data-topic="healthcare sensing">
+        <h3 class="pub-title">SpineSense: Earable-Based Inertial Sensing for Spine Movement Monitoring to Combat Neck Pain</h3>
+        <div class="pub-authors"><strong>Chugh, G.</strong>, Chakraborty, S. &amp; Chakraborty, S.</div>
+        <div class="pub-meta"><span class="pub-venue">PACMHCI (EICS) 2026</span> <span class="pub-badge pub-badge--journal" title="Journal article">Q1 Journal</span><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+        <div class="pub-links"><button type="button" class="iconbtn iconbtn--copy" data-bib="@article{chugh2026spinesense,
+  title={SpineSense: Earable-Based Inertial Sensing for Spine Movement Monitoring to Combat Neck Pain},
+  author={Chugh, G. and Chakraborty, S. and Chakraborty, S.},
+  journal={PACMHCI (EICS) 2026},
+  year={2026}
+}" title="Copy BibTeX" aria-label="Copy BibTeX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg><span>BibTeX</span></button></div>
       </li>
-      <li class="pub-item" data-year="2026" data-track="workshop" data-topic="sensing security">
-        <h3 class="pub-title">EarFence: Lightweight Ultrasonic Defense for Smart Earbuds Against Hidden Commands</h3>
-        <div class="pub-badges"><span class="pub-badge pub-badge--wip" title="Short paper: workshop, work-in-progress, poster, demo or artefact track">WiP Track</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span></div>
-        <div class="pub-authors">Vadthya, S., <strong>Chugh, G.</strong> &amp; Chakraborty, S.</div>
-        <div class="pub-venue">PerCom 2026</div>
-        <div class="pub-tags"><span class="pub-tag">Sensing</span><span class="pub-tag">Security</span></div>
+      <li class="pub-item" data-year="2026" data-track="main" data-topic="healthcare sensing mlai hci">
+        <h3 class="pub-title">WristSense: Sensing Hidden Wrist Strain in Routine Activities via Inertial Tokenization and LLM-Based Feedback</h3>
+        <div class="pub-authors"><strong>Chugh, G.</strong>, Mondal, A., Chakraborty, S. &amp; Chakraborty, S.</div>
+        <div class="pub-meta"><span class="pub-venue">SenSys 2026</span> <span class="pub-badge pub-badge--main" title="Full paper in the main research track">Main Track</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span><span class="pub-tag">ML / AI</span><span class="pub-tag">HCI</span></div>
+        <div class="pub-links"><button type="button" class="iconbtn iconbtn--copy" data-bib="@inproceedings{chugh2026wristsense,
+  title={WristSense: Sensing Hidden Wrist Strain in Routine Activities via Inertial Tokenization and LLM-Based Feedback},
+  author={Chugh, G. and Mondal, A. and Chakraborty, S. and Chakraborty, S.},
+  booktitle={SenSys 2026},
+  year={2026}
+}" title="Copy BibTeX" aria-label="Copy BibTeX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg><span>BibTeX</span></button></div>
+      </li>
+      <li class="pub-item" data-year="2025" data-track="main" data-topic="healthcare sensing">
+        <h3 class="pub-title">BiteSense: Earable-Based Inertial Sensing for Eating Behaviour Assessment</h3>
+        <div class="pub-authors"><strong>Chugh, G.</strong>, Ghosh, I., Chakraborty, S. &amp; Chakraborty, S.</div>
+        <div class="pub-meta"><span class="pub-venue">PerCom 2025</span> <span class="pub-badge pub-badge--main" title="Full paper in the main research track">Main Track</span> <span class="pub-badge pub-badge--core" title="Ranked A* (top tier) in the CORE conference ranking">Core A*</span><span class="pub-tag">Healthcare</span><span class="pub-tag">Sensing</span></div>
+        <div class="pub-links"><button type="button" class="iconbtn iconbtn--copy" data-bib="@inproceedings{chugh2025bitesense,
+  title={BiteSense: Earable-Based Inertial Sensing for Eating Behaviour Assessment},
+  author={Chugh, G. and Ghosh, I. and Chakraborty, S. and Chakraborty, S.},
+  booktitle={PerCom 2025},
+  year={2025}
+}" title="Copy BibTeX" aria-label="Copy BibTeX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg><span>BibTeX</span></button></div>
       </li>
       </ul>
       <a class="card__footer" href="publications.html">Show all 26 publications <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -261,7 +295,14 @@
 
     <section class="card" id="honours" aria-labelledby="honours-title">
       <h2 class="card__title" id="honours-title">Honours &amp; awards</h2>
-      <ul class="ach-list"><li>Departmental Rank 1 &ndash; M.Tech.&ndash;Ph.D., IIT Jodhpur (2026)</li><li>CHI 2026 Honourable Mention Award for MorsEar (2026)</li><li>Invited poster presentation at ACM ARCS 2026, IIT Hyderabad (2026)</li><li>Received OmniBuds earable platform by Nokia Bell Labs, UK (2025)</li><li>Finalist &ndash; Green Fintech Hackathon, RBI Innovation Hub with IIT Jodhpur, Top 4 out of 519 (2024)</li><li>Finalist &ndash; Stanford EPIC Data Challenge, USA, Top 5 out of 61 (2023)</li></ul>
+      <ol class="news-list">
+      <li class="news-item news-item--award news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span><div class="news-body"><p class="news-text">Departmental Rank 1 &ndash; M.Tech.&ndash;Ph.D., IIT Jodhpur</p><span class="news-meta">Award &middot; 2026</span></div></li>
+      <li class="news-item news-item--award news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span><div class="news-body"><p class="news-text">CHI 2026 Honourable Mention Award for MorsEar</p><span class="news-meta">Award &middot; 2026</span></div></li>
+      <li class="news-item news-item--competition news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span><div class="news-body"><p class="news-text">Finalist &ndash; Stanford EPIC Data Challenge, USA, Top 5 out of 61</p><span class="news-meta">Competition &middot; 2023</span></div></li>
+      <li class="news-item news-item--competition news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span><div class="news-body"><p class="news-text">Finalist &ndash; IEEE Smart Mobility Challenge, Saudi Arabia, Top 5 out of 175, Sole Representative of India</p><span class="news-meta">Competition &middot; 2023</span></div></li>
+      <li class="news-item news-item--fellowship news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><div class="news-body"><p class="news-text">Prime Minister Research Fellowship (PMRF), Government of India</p><span class="news-meta">Fellowship &middot; 2023&ndash;2026</span></div></li>
+      <li class="news-item news-item--fellowship news-item--featured"><span class="news-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><div class="news-body"><p class="news-text">TCS Research Fellowship, Tata Consultancy Services</p><span class="news-meta">Fellowship &middot; 2023</span></div></li>
+      </ol>
       <a class="card__footer" href="awards.html">Show all 23 honours &amp; grants <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </section>
   </div>
@@ -273,8 +314,20 @@
   </aside>
 </div>
 </main>
-<footer class="footer">Garvit Chugh &copy; 2026 &middot; Updated 2026-09-19</footer>
+<footer class="footer">
+  <nav class="footer__links" aria-label="Footer"><a href="index.html">Home</a><a href="publications.html">Publications</a><a href="education.html">Experience</a><a href="awards.html">Honours</a><a href="news.html">News</a><a href="education.html#systems">Systems</a><a href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">Resume</a><a href="news.xml">RSS</a></nav>
+  <p class="footer__meta">Garvit Chugh &copy; 2026 &middot; Updated 2026-09-19 &middot; <a href="#main" class="footer__top">Back to top <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a></p>
+</footer>
 <script>
+  // Theme toggle (remembers the choice; otherwise follows the system).
+  document.getElementById('themeToggle').addEventListener('click', () => { const dark = matchMedia('(prefers-color-scheme: dark)').matches; const cur = document.documentElement.dataset.theme || (dark ? 'dark' : 'light'); const next = cur === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = next; try { localStorage.setItem('theme', next); } catch (e) {} });
+  // Copy BibTeX.
+  document.querySelectorAll('.iconbtn--copy').forEach(btn => btn.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btn.dataset.bib); btn.classList.add('copied'); btn.querySelector('span').textContent = 'Copied'; setTimeout(() => { btn.classList.remove('copied'); btn.querySelector('span').textContent = 'BibTeX'; }, 1600); } catch (e) { prompt('BibTeX', btn.dataset.bib); } }));
+  // Reveal cards as they scroll in (skipped under reduced motion).
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.card').forEach(c => { if (c.getBoundingClientRect().top > innerHeight) { c.classList.add('reveal'); io.observe(c); } });
+  }
   // Light follows the pointer across glass surfaces.
   document.querySelectorAll('.glass, .btn--outline, .btn--ghost').forEach(el => el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); }, { passive: true }));
   // Tab bar minimises while scrolling down and returns on scroll up (phones only).
