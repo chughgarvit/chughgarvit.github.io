@@ -96,7 +96,6 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <div class="topbar__inner">
-    <a href="index.html" class="brand" aria-label="Garvit Chugh, home"><span class="brand__mark" aria-hidden="true">GC</span><span class="brand__name">Garvit Chugh</span></a>
     <nav class="nav" aria-label="Primary">{nav(active)}</nav>
   </div>
 </header>
