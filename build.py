@@ -97,7 +97,7 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
-  <div class="topbar__inner">
+  <div class="topbar__inner glass">
     <nav class="nav" aria-label="Primary">{nav(active)}</nav>
   </div>
 </header>
@@ -105,6 +105,13 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
 {body}
 </main>
 <footer class="footer">Garvit Chugh &copy; {TODAY[:4]} &middot; Updated {TODAY}</footer>
+<script>
+  // Tab bar minimises while scrolling down and returns on scroll up (phones only).
+  (() => {{ let last = scrollY, ticking = false;
+    addEventListener('scroll', () => {{ if (ticking) return; ticking = true; requestAnimationFrame(() => {{
+      const y = scrollY; document.body.classList.toggle('nav-min', innerWidth <= 600 && y > last + 4 && y > 120); if (y < last - 4 || y < 120) document.body.classList.remove('nav-min'); last = y; ticking = false; }}); }}, {{ passive: true }});
+  }})();
+</script>
 </body>
 </html>
 """
