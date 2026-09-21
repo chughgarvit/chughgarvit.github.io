@@ -21,6 +21,18 @@ P = load("profile"); PUBS = load("publications"); NEWS = load("news"); RESEARCH 
 EXPERIENCE = load("experience"); EDUCATION = load("education"); TEACHING = load("teaching"); OUTREACH = load("outreach")
 MENTORSHIP = load("mentorship"); SKILLS_FULL = load("skills")
 SERVICE = load("service"); SYSTEMS = load("systems"); HONOURS = load("honours"); LABS = load("labs")
+try: OPENALEX = load("openalex")
+except FileNotFoundError: OPENALEX = {"author": {}, "works": {}}
+def _norm(t): return re.sub(r"[^a-z0-9]", "", re.sub(r"<[^>]+>", "", t or "").lower())[:40]
+for p in PUBS:  # merge the OpenAlex cache; hand-set fields in publications.json win
+    oa = OPENALEX["works"].get(_norm(p["title"]), {}); links = p.setdefault("links", {})
+    if oa.get("doi") and not p.get("url"): p["url"] = oa["doi"]
+    if p.get("url") and not links.get("paper"): links["paper"] = p["url"]
+    if oa.get("oa_url") and not links.get("pdf"): links["pdf"] = oa["oa_url"]
+    if oa.get("abstract") and not p.get("abstract"): p["abstract"] = oa["abstract"]
+    p["cited"] = oa.get("cited_by_count", 0); p["openalex_id"] = oa.get("openalex_id")
+CITES_TOTAL = OPENALEX["author"].get("cited_by_count") or sum(p["cited"] for p in PUBS)
+H_INDEX = OPENALEX["author"].get("h_index")
 
 # ── derived counts ────────────────────────────────────────────────
 N_PEER = sum(p["track"] in ("main", "workshop", "journal") for p in PUBS)
@@ -66,7 +78,7 @@ HON_KIND = {"award": ("award", "Award"), "competition": ("trophy", "Competition"
 NEWS_KIND = {"paper": ("file", "Paper"), "award": ("award", "Award"), "grant": ("ticket", "Grant"), "milestone": ("flag", "Milestone"),
              "service": ("users", "Service"), "talk": ("talk", "Talk"), "update": ("news", "Update")}
 SYS_ICON = {"earable": "ear", "wearable": "watch", "tool": "wrench"}
-LINK_ICON = {"paper": ("external", "Paper"), "pdf": ("file", "PDF"), "code": ("code", "Code"), "video": ("video", "Video")}
+LINK_ICON = {"paper": ("external", "DOI"), "pdf": ("file", "PDF"), "code": ("code", "Code"), "video": ("video", "Video")}
 B = {
  "github": '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="brand-github"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>',
  "linkedin": '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="brand-linkedin"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>',
@@ -139,7 +151,7 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
 {body}
 </main>
 <footer class="footer">
-  <nav class="footer__links" aria-label="Footer">{"".join(f'<a href="{h}">{l}</a>' for h, l, _ in NAV)}<a href="education.html#systems">Systems</a><a href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">Resume</a><a href="news.xml">RSS</a></nav>
+  <nav class="footer__links" aria-label="Footer">{"".join(f'<a href="{h}">{l}</a>' for h, l, _ in NAV)}<a href="education.html#systems">Systems</a><a href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">CV ({P.get("cv_updated", "PDF")})</a><a href="news.xml">RSS</a></nav>
   <p class="footer__meta">Garvit Chugh &copy; {TODAY[:4]} &middot; Updated {TODAY} &middot; <a href="#main" class="footer__top">Back to top {I["up"]}</a></p>
 </footer>
 <script>
@@ -212,9 +224,10 @@ def bibtex(p):
 
 def pub_item(p, heading_level=3):
     badges = "".join(f' <span class="pub-badge pub-badge--{b["kind"]}" title="{esc_attr(BADGE_TITLES.get(b["kind"], b["text"]))}">{b["text"]}</span>' for b in p["badges"])
-    title = f'<a href="{p["url"]}" target="_blank" rel="noopener">{p["title"]}</a>' if p.get("url") else p["title"]
+    title = f'<a href="papers/{p["slug"]}.html">{p["title"]}</a>'
     tags = "".join(f'<span class="pub-tag">{t}</span>' for t in p["tags"])
-    links = "".join(f'<a class="iconbtn" href="{esc_attr(u)}" target="_blank" rel="noopener" title="{LINK_ICON[k][1]}" aria-label="{LINK_ICON[k][1]}">{I[LINK_ICON[k][0]]}<span>{LINK_ICON[k][1]}</span></a>' for k, u in (p.get("links") or {}).items() if u and k in LINK_ICON)
+    cited = f'<span class="pub-cited" title="Citations counted by OpenAlex">{I["quote"]}Cited {p["cited"]}</span>' if p.get("cited") else ""
+    links = "".join(f'<a class="iconbtn" href="{esc_attr(u)}" target="_blank" rel="noopener" title="{LINK_ICON[k][1]}" aria-label="{LINK_ICON[k][1]}">{I[LINK_ICON[k][0]]}<span>{LINK_ICON[k][1]}</span></a>' for k, u in (p.get("links") or {}).items() if u and k in LINK_ICON) + cited
     links += f'<button type="button" class="iconbtn iconbtn--copy" data-bib="{esc_attr(bibtex(p))}" title="Copy BibTeX" aria-label="Copy BibTeX">{I["quote"]}<span>BibTeX</span></button>'
     return f"""      <li class="pub-item" data-year="{p["year"]}" data-track="{p["track"]}" data-topic="{' '.join(p["topics"])}">
         <h{heading_level} class="pub-title">{title}</h{heading_level}>
@@ -274,7 +287,7 @@ def build_index():
     <div class="vcard__affil">{affils}</div>
     <div class="vcard__actions">
       <a class="btn btn--primary" href="mailto:{P["email"]}">{I["mail"]}<span>Contact</span></a>
-      <a class="btn btn--outline" href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">{I["file"]}<span>Resume</span></a>
+      <a class="btn btn--outline" href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener" title="Curriculum vitae, {P.get("cv_updated", "")}">{I["file"]}<span>CV</span></a>
       <a class="btn btn--ghost" href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&amp;hl=en" target="_blank" rel="noopener">{I["scholar"]}<span>Scholar</span></a>
     </div>
     </div>
@@ -282,7 +295,7 @@ def build_index():
 </section>
 
 <div class="grid">
-  <aside class="aside aside--top">
+  <aside class="aside aside--top" aria-label="Latest news">
     <section class="card" id="news" aria-labelledby="news-title">
       <h2 class="card__title" id="news-title">Latest</h2>
       {news_hero(next(n for n in NEWS if n.get("featured")))}
@@ -340,7 +353,7 @@ def build_index():
     </section>
   </div>
 
-  <aside class="aside aside--bottom">
+  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
     <section class="card"><h2 class="card__title">Skills &amp; languages</h2><div class="pills">{"".join(f'<span class="pill">{s}</span>' for s in P["skills"])}</div><div class="stack" style="gap:0;margin-top:14px">{bullets(P["languages"])}</div></section>
     <section class="card"><h2 class="card__title">Service</h2>{bullets(P["service_short"])}</section>
     {links_card()}
@@ -381,7 +394,10 @@ def build_publications():
         <div><dt>Peer-reviewed</dt><dd>{N_PEER}</dd></div>
         <div><dt>Patent filed</dt><dd>{N_PATENT}</dd></div>
         <div><dt>Under review</dt><dd>{N_REVIEW}</dd></div>
+        <div><dt>Citations</dt><dd>{CITES_TOTAL}</dd></div>
+        <div><dt>h-index</dt><dd>{H_INDEX if H_INDEX is not None else "&ndash;"}</dd></div>
       </dl>
+      <p class="muted" style="font-size:var(--t-xs);margin-top:6px">Citation counts from <a class="link" href="{OPENALEX["author"].get("openalex_id", "https://openalex.org")}" target="_blank" rel="noopener">OpenAlex</a>; Google Scholar usually reads higher.</p>
       <h3 class="card__sub-title">By track</h3>
       <div class="pills">{"".join(f'<button type="button" class="pill pill--btn" data-filter="track" data-value="{k}">{t} <b>{track_counts[k]}</b></button>' for k, t in TRACKS)}</div>
       <h3 class="card__sub-title">By topic</h3>
@@ -406,7 +422,7 @@ def build_publications():
 {groups}      </div>
     </section>
   </div>
-  <aside class="aside aside--bottom">
+  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
     {overview}
   </aside>
 </div>
@@ -465,7 +481,7 @@ def build_news():
       <p class="page-subtitle">{len(NEWS)} updates, newest first.</p>
 {groups}    </section>
   </div>
-  <aside class="aside aside--bottom">
+  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
     <section class="card"><h2 class="card__title">Jump to year</h2><div class="pills">{jump}</div></section>
     <section class="card"><h2 class="card__title">Highlights</h2><ol class="news-list">{"".join(news_item(n) for n in NEWS if n.get("featured"))}</ol></section>
   </aside>
@@ -498,7 +514,7 @@ def build_education():
       {bullets(OUTREACH)}
     </section>
   </div>
-  <aside class="aside aside--bottom">
+  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
     <section class="card"><h2 class="card__title">Labs I have been a part of</h2><ul class="labs">{"".join(f'<li class="lab"><a class="lab__link" href="{l["url"]}" target="_blank" rel="noopener"><span class="entry__logo lab__logo"><img src="static/media/{l["logo"]}" alt="" width="64" height="64" loading="lazy" decoding="async" /></span><span class="lab__body"><span class="lab__name">{l["name"]}</span><span class="lab__org">{l["org"]}</span><span class="entry__meta">{l["role"]} &middot; {l["years"]}</span></span></a></li>' for l in LABS)}</ul></section>
     <section class="card"><h2 class="card__title">Supervision &amp; mentorship</h2>{bullets(MENTORSHIP)}</section>
     <section class="card"><h2 class="card__title">Skills &amp; languages</h2>{bullets(SKILLS_FULL)}</section>
@@ -535,13 +551,60 @@ def build_awards():
       <p class="page-subtitle">{len(HONOURS)} in total: {n_awards} honours and {n_fund} fellowships and grants, newest first.</p>
 {groups}    </section>
   </div>
-  <aside class="aside aside--bottom">
+  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
     <section class="card"><h2 class="card__title">Highlights</h2><ol class="news-list">{"".join(honour_item(h) for h in HONOURS if h["featured"])}</ol></section>
     <section class="card"><h2 class="card__title">By kind</h2><div class="pills">{"".join(f'<span class="pill">{I[HON_KIND[k][0]]} {HON_KIND[k][1]} <b>{v}</b></span>' for k, v in counts.items())}</div></section>
     <section class="card"><h2 class="card__title">Community service</h2>{bullets(SERVICE)}</section>
   </aside>
 </div>"""
     return shell("Honours - Garvit Chugh", "Honours, awards, fellowships, grants, and professional service of Garvit Chugh.", "awards.html", "awards.html", body)
+
+# ── one page per paper (Google Scholar indexes these) ────────────
+def build_paper(p):
+    plain_title = re.sub(r"<[^>]+>", "", p["title"]).replace("&amp;", "&")
+    plain_authors = re.sub(r"\s*\(\*Equal Contributions?\)", "", re.sub(r"<[^>]+>", "", p["authors"])).replace("&amp;", "&").replace("*", "")
+    names = [a.strip() for a in re.split(r",\s(?=[A-Z][A-Za-z'\-]+,)|\s&\s", plain_authors) if a.strip()]
+    year = p["year"] if p["year"].isdigit() else ("2025" if p["year"] == "patent" else "2026")
+    venue = p["venue"].replace("&amp;", "&")
+    links = p.get("links") or {}
+    meta = [("citation_title", plain_title), ("citation_publication_date", year), ("citation_journal_title" if p["track"] == "journal" else "citation_conference_title", venue)]
+    meta += [("citation_author", n) for n in names]
+    if p.get("url") and "doi.org/" in p["url"]: meta.append(("citation_doi", p["url"].split("doi.org/")[1]))
+    if links.get("pdf"): meta.append(("citation_pdf_url", links["pdf"]))
+    meta_html = "".join(f'  <meta name="{k}" content="{esc_attr(v)}" />\n' for k, v in meta)
+    badges = "".join(f' <span class="pub-badge pub-badge--{b["kind"]}" title="{esc_attr(BADGE_TITLES.get(b["kind"], b["text"]))}">{b["text"]}</span>' for b in p["badges"])
+    btns = "".join(f'<a class="btn btn--outline" href="{esc_attr(u)}" target="_blank" rel="noopener">{I[LINK_ICON[k][0]]}<span>{LINK_ICON[k][1]}</span></a>' for k, u in links.items() if u and k in LINK_ICON)
+    abstract = f'<h2 class="card__title">Abstract</h2><p class="paper__abstract">{p["abstract"]}</p>' if p.get("abstract") else ""
+    cited = f'<div><dt>Citations</dt><dd>{p["cited"]}</dd></div>' if p.get("cited") else ""
+    related = [q for q in PUBS if q is not p and set(q["topics"]) & set(p["topics"])][:4]
+    related_html = "".join(f'<li><a class="link" href="papers/{q["slug"]}.html">{q["title"]}</a> <span class="muted">&middot; {q["venue"]}</span></li>' for q in related)
+    ld = {"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": plain_title, "author": [{"@type": "Person", "name": n} for n in names],
+          "datePublished": year, "isPartOf": {"@type": "Periodical" if p["track"] == "journal" else "Event", "name": venue}, "url": f"{SITE}/papers/{p['slug']}.html"}
+    if p.get("url"): ld["sameAs"] = p["url"]
+    if p.get("abstract"): ld["abstract"] = p["abstract"]
+    body = f"""<div class="grid grid--2">
+  <div class="main stack">
+    <article class="card paper">
+      <p class="paper__kicker"><a class="link" href="publications.html">Publications</a> &rsaquo; {p["venue"]}</p>
+      <h1 class="page-title paper__title">{p["title"]}</h1>
+      <p class="paper__authors">{p["authors"]}</p>
+      <p class="pub-meta"><span class="pub-venue">{p["venue"]}</span>{badges}{"".join(f'<span class="pub-tag">{t}</span>' for t in p["tags"])}</p>
+      <div class="paper__actions">{btns}<button type="button" class="btn btn--ghost iconbtn--copy" data-bib="{esc_attr(bibtex(p))}">{I["quote"]}<span>BibTeX</span></button></div>
+      {abstract}
+      <h2 class="card__title">BibTeX</h2>
+      <pre class="bibtex">{bibtex(p).replace("&", "&amp;").replace("<", "&lt;")}</pre>
+    </article>
+  </div>
+  <aside class="aside aside--bottom" aria-label="Paper details" tabindex="0">
+    <section class="card"><h2 class="card__title">At a glance</h2>
+      <dl class="stats-list"><div><dt>Year</dt><dd>{year}</dd></div><div><dt>Track</dt><dd>{dict(TRACKS).get(p["track"], p["track"]).split(" /")[0]}</dd></div>{cited}</dl>
+      {'<h3 class="card__sub-title">Related</h3><ul class="ach-list">' + related_html + '</ul>' if related_html else ''}
+    </section>
+  </aside>
+</div>"""
+    desc = (p.get("abstract") or f"{plain_title}. {plain_authors}. {venue}.")[:300].rsplit(" ", 1)[0]
+    return shell(f"{plain_title} - Garvit Chugh", esc_attr(desc), f"papers/{p['slug']}.html", "publications.html", body,
+                 extra_head=meta_html + f'  <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n', ogtype="article")
 
 def build_404():
     return shell("Page not found - Garvit Chugh", "This page does not exist.", "404.html", "", """<section class="card notfound">
@@ -559,13 +622,17 @@ def build_rss():
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Garvit Chugh: news</title><link>{SITE}/news.html</link><description>Updates from Garvit Chugh</description>\n{items}</channel></rss>\n'
 
 def build_sitemap():
-    pages = [("", "1.0"), ("publications.html", "0.9"), ("news.html", "0.8"), ("education.html", "0.7"), ("awards.html", "0.7")]
+    pages = [("", "1.0"), ("publications.html", "0.9"), ("news.html", "0.8"), ("education.html", "0.7"), ("awards.html", "0.7")] + [(f"papers/{p['slug']}.html", "0.6") for p in PUBS]
     urls = "".join(f"  <url><loc>{SITE}/{p}</loc><lastmod>{TODAY}</lastmod><priority>{pr}</priority></url>\n" for p, pr in pages)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n'
 
 if __name__ == "__main__":
     out = {"index.html": build_index(), "publications.html": build_publications(), "news.html": build_news(),
            "education.html": build_education(), "awards.html": build_awards(), "404.html": build_404(), "sitemap.xml": build_sitemap(), "news.xml": build_rss()}
+    (ROOT / "papers").mkdir(exist_ok=True)
+    for p in PUBS: out[f"papers/{p['slug']}.html"] = build_paper(p)
     for name, html in out.items():
+        if name.endswith(".html"):  # relative page/asset links -> root-relative, so /papers/* resolve the same shell
+            html = re.sub(r'((?:href|src)=")(?!(?:https?:|mailto:|#|/|data:))', r'\1/', html)
         (ROOT / name).write_text(html)
     print(f"built {len(out)} files · {PUB_SUMMARY} · {len(NEWS)} news items")

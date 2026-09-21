@@ -1,0 +1,231 @@
+{
+ "author": {
+  "openalex_id": "https://openalex.org/A5066226035",
+  "works_count": 22,
+  "cited_by_count": 155,
+  "h_index": 4,
+  "i10_index": 2
+ },
+ "works": {
+  "animprovedensemblebasedintrusiondetectio": {
+   "title": "An improved ensemble based intrusion detection technique using XGBoost",
+   "doi": "https://doi.org/10.1002/ett.4076",
+   "year": 2020,
+   "cited_by_count": 108,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1002/ett.4076",
+   "pdf": null,
+   "abstract": "Abstract Network attacks are increasing day by day. In order to detect them, a system has been created, which actively detects intrusions and attacks in a network or an intranet. The system that detects these types of attacks and intrusions is called intrusion detection system (IDS). The attacks are of two kinds, known and unknown. The IDSs are able to protect against known attacks as they are designed specifically for them. As the usage of the Internet is growing every day, the attacks are increasing as well and all of them are not known to an IDS without proper upgradation, which is harmful as it will not be detected by the IDS and leave the system open to threats. Therefore, an IDS should not just detect the known attacks but even provide security from unknown attacks. Motivated by this, in this article, an ensemble‐based IDS using XGBoost is presented. There has been previous research on the topic and with the help of improved technologies, it becomes possible to improve the efficiency and accuracy of the ensemble based IDS. This article proposes to present a scheme that shows the usage of XGBoost with ensemble based IDS can provide better results as XGBoost is based on the tree boosting machine learning algorithms, which helps dealing with a smoother “bias‐variance” trade‐off. The experiment is performed on the KDDCup99 dataset and the recorded accuracy of the proposed method through this experiment is 99.95%.",
+   "openalex_id": "https://openalex.org/W3048053677"
+  },
+  "bitesenseearablebasedinertialsensingfore": {
+   "title": "BiteSense: Earable-Based Inertial Sensing for Eating Behaviour Assessment",
+   "doi": "https://doi.org/10.1109/percom64205.2025.00030",
+   "year": 2025,
+   "cited_by_count": 9,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/percom64205.2025.00030",
+   "pdf": null,
+   "abstract": "Automated dietary monitoring is essential for gaining insights into eating behaviors, especially for managing chronic conditions such as obesity, diabetes, and hypercholesterolemia. Earable-based inertial sensing has been found promising for detecting chewing and eating activities; however, further insights like what, when, and how much is being eaten are crucial information for effective dietary assessment. Therefore, we propose BiteSense, an earable-based system that leverages inertial sensors (IMU) to monitor food intake and classify various food types. Using a hierarchical classification model, the system analyzes masticatory kinematics to detect food states, textures, nutritional value, and cooking methods, ultimately identifying specific foods consumed, as well as estimating food intake amount and meal type. A semi-controlled user study involving 38 participants from diverse backgrounds demonstrated the system’s high accuracy, with an F1 score of 0.86 for detecting the masticatory process using a leave-one-subject-out (LOSO) approach, while exhibiting significant improvement over benchmark algorithms in extensive experiments by 8-12%.",
+   "openalex_id": "https://openalex.org/W4410987227"
+  },
+  "exploringearablestomonitortemporallackof": {
+   "title": "Exploring Earables to Monitor Temporal Lack of Focus during Online Meetings to Identify Onset of Neurological Disorders",
+   "doi": "https://doi.org/10.1145/3580252.3586981",
+   "year": 2023,
+   "cited_by_count": 6,
+   "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3580252.3586981",
+   "landing": "https://doi.org/10.1145/3580252.3586981",
+   "pdf": "https://dl.acm.org/doi/pdf/10.1145/3580252.3586981",
+   "abstract": "This paper presents a framework called enGauge that leverages ear-based inertial sensing to continuously monitor listener focus levels in online meetings and provide feedback to the speaker about audience engagement. This allows for the identification of the onset of several neurodevelopmental disorders, including attention deficit hyperactivity disorder (ADHD), and can help to improve the effectiveness of online meetings by allowing speakers to adjust their speaking pace and style based on audience engagement. We explore a contrastive learning-based approach coupled with a judicial selection of anchor events from the meeting contents to model the system. enGauge can detect patterns or shifts in behavior and focus levels of passive listeners to accurately identify changes in focus. Results from a user study with 38 participants showed an overall F1-score of 0.89 for detecting passive listeners' focus levels. Our study suggests that ear-based inertial sensing has the potential to be a valuable tool for the early detection and monitoring of several neurodevelopmental disorders among individuals.",
+   "openalex_id": "https://openalex.org/W4391100412"
+  },
+  "unlockingeyegestureswithearableinertials": {
+   "title": "Unlocking Eye Gestures with Earable Inertial Sensing for Accessible HCI",
+   "doi": "https://doi.org/10.1109/comsnets63942.2025.10885707",
+   "year": 2025,
+   "cited_by_count": 4,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/comsnets63942.2025.10885707",
+   "pdf": null,
+   "abstract": "Eye gestures are widely used in many applications, including device control, biometrics, visual analytics, and health-care, like Alzheimer’s, accessibility, etc. The conventional method for eye gesture detection needs visual information processing devices or smart glasses to capture the movement patterns of the eyeballs. In this paper, we present a novel framework that utilizes inertial measurement unit (IMU) sensors embedded in earable devices for real-time eye gesture detection, which can work as a complementary to visual information processing devices. The framework translates specific eye movements into actionable commands, enabling hands-free interaction for users with limited mobility. Through extensive experimentation with 14 participants across diverse activities such as sitting, walking, running, and driving, the framework demonstrated high accuracy in eye gesture recognition, achieving a macro F1 score of 0.85 on our self-collected dataset.",
+   "openalex_id": "https://openalex.org/W4407783555"
+  },
+  "envolveinertialsensingtoreinforceinvolve": {
+   "title": "enVolve+: Inertial Sensing to Reinforce Involvement of Silent Listeners during an Online Interaction",
+   "doi": "https://doi.org/10.1109/comsnets56262.2023.10041409",
+   "year": 2023,
+   "cited_by_count": 3,
+   "oa_url": null,
+   "landing": "http://dx.doi.org/10.1109/comsnets56262.2023.10041409",
+   "pdf": null,
+   "abstract": "Learning how engaged a remote participant is in an online meeting can lead to more productive discussions. If online meeting attendees turn off their mics and cameras, the presenter can't tell if they're paying attention. The research in [1] shows how earables could help remedy the issue at hand. While the prior study focused on offering speakers feedback of the classroom, the same results may be utilized to help students with their attention spans and bring back their attention to the screen during a lecture. Therefore, the proposed study adds a listener interface to previous work. The premise is, that if listeners start to doze off or drift away in an interaction, vibrations from the smartwatch might wake them up. Wearable IMU data from an in-lab user study was utilized to train machine learning models that obtained an F1 Score of 80% or above across the board. Additionally, we give persuasive evidence for the adoption of earables over other sensory modalities by analyzing experimental findings, user analysis, and current research needs in this field.",
+   "openalex_id": "https://openalex.org/W4321606777"
+  },
+  "unsuperviseddomainadaptationforactionrec": {
+   "title": "Unsupervised Domain Adaptation for Action Recognition via Self-Ensembling and Conditional Embedding Alignment",
+   "doi": "https://doi.org/10.48550/arxiv.2410.17489",
+   "year": 2024,
+   "cited_by_count": 0,
+   "oa_url": "https://arxiv.org/pdf/2410.17489",
+   "landing": "http://arxiv.org/abs/2410.17489",
+   "pdf": "https://arxiv.org/pdf/2410.17489",
+   "abstract": "Recent advancements in deep learning-based wearable human action recognition (wHAR) have improved the capture and classification of complex motions, but adoption remains limited due to the lack of expert annotations and domain discrepancies from user variations. Limited annotations hinder the model's ability to generalize to out-of-distribution samples. While data augmentation can improve generalizability, unsupervised augmentation techniques must be applied carefully to avoid introducing noise. Unsupervised domain adaptation (UDA) addresses domain discrepancies by aligning conditional distributions with labeled target samples, but vanilla pseudo-labeling can lead to error propagation. To address these challenges, we propose $μ$DAR, a novel joint optimization architecture comprised of three functions: (i) consistency regularizer between augmented samples to improve model classification generalizability, (ii) temporal ensemble for robust pseudo-label generation and (iii) conditional distribution alignment to improve domain generalizability. The temporal ensemble works by aggregating predictions from past epochs to smooth out noisy pseudo-label predictions, which are then used in the conditional distribution alignment module to minimize kernel-based class-wise conditional maximum mean discrepancy ($k$CMMD) between the source and target feature space to learn a domain invariant embedding. The consistency-regularized augmentations ensure that multiple augmentations of the same sample share the same labels; this results in (a) strong generalization with limited source domain samples and (b) consistent pseudo-label generation in target samples. The novel integration of these three modules in $μ$DAR results in a range of $\\approx$ 4-12% average macro-F1 score improvement over six state-of-the-art UDA methods in four benchmark wHAR datasets",
+   "openalex_id": "https://openalex.org/W4404305070"
+  },
+  "highordermomentsconditionaldomainadaptat": {
+   "title": "High-Order Moments Conditional Domain Adaptation Networks for Wearable Human Activity Recognition",
+   "doi": "https://doi.org/10.1145/3746252.3761225",
+   "year": 2025,
+   "cited_by_count": 1,
+   "oa_url": "https://doi.org/10.1145/3746252.3761225",
+   "landing": "https://doi.org/10.1145/3746252.3761225",
+   "pdf": null,
+   "abstract": "Developing scalable wearable human activity recognition (wHAR) models is challenging due to domain shifts that substantially degrade performance across downstream tasks. Unsupervised domain adaptation (UDA) seeks to improve generalization by transferring knowledge from labeled source domains to unlabeled target domains. However, conventional UDA methods primarily align marginal feature distributions while neglecting feature-label dependencies, often leading to negative transfer and sub-optimal performance. Motivated by these limitations, we propose a novel optimization framework that tackles two key challenges: (i) generating reliable pseudo-labels for the unlabeled target domain and (ii) minimizing conditional discrepancies across domains. To address (i), we employ temperature-based entropy minimization (TEM), which calibrates prediction confidence by scaling logits with a temperature parameter to produce robust pseudo-labels. For (ii), we introduce a polynomial kernel-based cross-covariance (PkCC) loss, a high-order statistics-driven approach that maps features into a reproducing kernel hilbert space (RKHS) to capture richer feature-label dependencies and reduce conditional distribution gaps between domains. In addition, we demonstrate that CoDAN readily extends to partial UDA (pUDA), where the target label space is a subset of the source, and extensive evaluations on public wHAR datasets with diverse label spaces validate its superior performance over state-of-the-art methods in both UDA and pUDA scenarios.",
+   "openalex_id": "https://openalex.org/W4416016048"
+  },
+  "trackingephemeralandresidualemotionsviae": {
+   "title": "Tracking Ephemeral and Residual Emotions via Earable Inertial Sensing During Media Consumption",
+   "doi": "https://doi.org/10.1109/percomworkshops65533.2025.00153",
+   "year": 2025,
+   "cited_by_count": 1,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/percomworkshops65533.2025.00153",
+   "pdf": null,
+   "abstract": "The extended screen time with the exponential rise of mobile applications has raised concerns about its impact on users’ mental health and frequent episodes of sudden emotional outbursts. Conventional emotion detection systems rely on intrusive physiological data or computationally intensive visual processing devices leading to a usability barrier. To address this challenge, we propose a novel method to detect ephemeral (immediate) and residual (lingering) emotional effects induced by media content by observing facial expression changes during content consumption. Our approach is based on predicting various facial expressions across different emotional behaviors using an earable-based Inertial Measurement Unit (IMU) to detect the ephemeral state and then map it to the circumplex model of affect to predict the residual state. A pilot study validates the potential of the proposed earable-based solution to offer a non-intrusive, efficient alternative for identifying the state of emotional turbulence of the user during screen time interaction.",
+   "openalex_id": "https://openalex.org/W4411447061"
+  },
+  "federatedmachinelearningwithdataminingin": {
+   "title": "Federated Machine Learning with Data Mining in Healthcare",
+   "doi": "https://doi.org/10.1007/978-3-030-85559-8_15",
+   "year": 2022,
+   "cited_by_count": 2,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1007/978-3-030-85559-8_15",
+   "pdf": null,
+   "abstract": "",
+   "openalex_id": "https://openalex.org/W4210337857"
+  },
+  "astudyonparallelclusteringalgorithmsbase": {
+   "title": "A Study on Parallel Clustering Algorithms based on MapReduce",
+   "doi": "https://doi.org/10.5573/ieiespc.2022.11.4.276",
+   "year": 2022,
+   "cited_by_count": 1,
+   "oa_url": null,
+   "landing": "https://doi.org/10.5573/ieiespc.2022.11.4.276",
+   "pdf": null,
+   "abstract": "Since the advent of the global computerized market, the volume of digital information has grown exponentially, as has the demand for storing it. As the price of storage devices decreases, the necessity to analyze vast quantities of unstructured digital data to retain only essential information increases. MapReduce is a programming paradigm for producing and generating massive information indices. Using MapReduce to produce meaningful clusters from such a massive amount of raw data is an efficient way to manage such voluminous amounts of data. On the other hand, the existing industry standard for data clustering algorithms presents significant obstacles. The conventional clustering calculation efficiently handles a great deal of information from various sources, such as online media, business, and the web. Nevertheless, the sequential count in clustering approaches is time-intensive in these conventional calculations. The wide varieties of K-Means, including K-Harmonic Means, are sensitive to forming cluster centers in huge datasets. This work suggests a logical evaluation of such calculations. It offers a study of the various k-means clustering algorithms employed in MapReduce, as well as the study on the introduction and the open challenges of parallelism in MapReduce.",
+   "openalex_id": "https://openalex.org/W4295863788"
+  },
+  "envolveareyoulisteninginertialsensingtom": {
+   "title": "enVolve: Are You Listening? Inertial Sensing to Monitor the Involvement of Silent Listeners during an Online Interaction",
+   "doi": "https://doi.org/10.1145/3544793.3563419",
+   "year": 2022,
+   "cited_by_count": 1,
+   "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3544793.3563419",
+   "landing": "https://doi.org/10.1145/3544793.3563419",
+   "pdf": "https://dl.acm.org/doi/pdf/10.1145/3544793.3563419",
+   "abstract": "Understanding the level of participation for a remote attendee in an online meeting setup could significantly improve the quality of experience for virtual interaction. However, gauging audience involvement over an online meeting becomes particularly challenging when the attendees prefer to turn off the cameras. IMU data have shown promising results in the past to pervasively monitor users’ body language, including the determination of various bodily gestures, postures, and facial expressions. This paper demonstrates how earables could help address the stated problem. We provide a motivational study to assess earables for detecting body language corresponding to involved listeners. We further compare it with other sensing modalities like smartwatches and smartphones and accordingly develop a platform called enVolve. A lab-scale study with 17 participants demonstrates the efficacy of the proposed system with an average F1 score of more than .",
+   "openalex_id": "https://openalex.org/W4366967954"
+  },
+  "acomprehensivestudyofintrusiondetectiona": {
+   "title": "A Comprehensive Study of Intrusion Detection and Prevention Systems",
+   "doi": "https://doi.org/10.1002/9781119777465.ch7",
+   "year": 2022,
+   "cited_by_count": 16,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1002/9781119777465.ch7",
+   "pdf": null,
+   "abstract": "A computer network is simply an interconnection of several computers that follow common communication protocols. As network intrusion has been increasingly affecting organizational systems and crucial data, it is imperative that there exists an effective network security system in place. This is where the role of a sound intrusion detection system becomes important in an era where attempts at unauthorized access have become the norm rather than the exception. Such a system helps to keep malicious traffic at a distance and protects the computer network from a variety of threats. In this chapter, a study has been done in order to understand the system of an Intrusion Detection and Prevension System (IDPS), which not only helps detecting an ongoing intrusion, but also helps prevent it for future cases. Its functioning and comparison between the two divisions. Towards the end, an attempt has been made to enlist the administrator's functions towards ensuring the security of the computer network and understand what current challenges are being faced by the researchers and how they have tried to solve it.",
+   "openalex_id": "https://openalex.org/W4320027659"
+  },
+  "morseartowardgeneralizablelowresourcecov": {
+   "title": "MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable based Inertial Sensing",
+   "doi": "https://doi.org/10.13016/m2lrg4-ufrd",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": "https://doi.org/10.13016/m2lrg4-ufrd",
+   "landing": "https://doi.org/10.13016/m2lrg4-ufrd",
+   "pdf": null,
+   "abstract": "Silent, eyes-free text entry remains challenging when speech and conventional touch input are impractical. Prior wearable systems often required custom sensors or limited users to a small vocabulary. We present MorsEar, an IMU-only earable framework that maps near-ear micro-gestures such as taps for dot/dash; slide/pull/circle for space/delete/send into character-level Morse, enabling unrestricted character composition while using a compact lexicon solely for lightweight on-device autocorrect. The result is a low-bandwidth, reduced-exposure communication channel that works eyes-free and voice-free in accessibility scenarios, silent zones, and constrained environments. MorsEar infers words using a physics-aware preprocessing stack and compact CNN feed a tempo-adaptive segmentation with rolling buffers; an on-device decoder with lightweight autocorrect provides real-time feedback entirely on-phone. In a 24-participant study (with four accessibility users) across Silent, Cafe, and Metro, MorsEar achieved CER 7.3% and WER 12.5% ? 7.8% (Autocorrect), with median 9.3/9.1/5.8 WPM, respectively. Similar to other accessibility-oriented encodings such as Braille, Morse requires a brief familiarization period to learn the timing and rhythm of dots and dashes; after which, MorsEar shows that commodity earable IMUs can support discreet, low-exposure text entry that scales beyond discrete commands to language-level interaction.",
+   "openalex_id": "https://openalex.org/W7161410902"
+  },
+  "fastimplementationofaesmodesbasedonturin": {
+   "title": "Fast Implementation of AES Modes Based on Turing Architecture",
+   "doi": "https://doi.org/10.1007/978-3-031-23724-9_44",
+   "year": 2022,
+   "cited_by_count": 0,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1007/978-3-031-23724-9_44",
+   "pdf": null,
+   "abstract": "",
+   "openalex_id": "https://openalex.org/W4320154000"
+  },
+  "demonstrationoflegalhelperalowcosttoolfo": {
+   "title": "Demonstration of LegalHelper: A Low-cost tool for Smart Translation and Creation of Legal Contracts",
+   "doi": "https://doi.org/10.1109/comsnets56262.2023.10041386",
+   "year": 2023,
+   "cited_by_count": 0,
+   "oa_url": null,
+   "landing": "http://dx.doi.org/10.1109/comsnets56262.2023.10041386",
+   "pdf": null,
+   "abstract": "In this demonstration, we present the working principles and key features of a unique mobile application named LegalHelper. The application is developed to address the existing challenges in terms of reduced interpretability and low perception of the legal documents as commonly faced by the general public. The core software is built up by leveraging the power of cutting-edge technologies such as Blockchain, Computer Vision, and Natural Language Processing. The main components to be demonstrated include Prominent Language Translator, Legal Maxim Library, and Contract Digitizer.",
+   "openalex_id": "https://openalex.org/W4321606954"
+  },
+  "artifacteardeskanadaptivedesktopbleframe": {
+   "title": "Artifact: EarDesk: An Adaptive Desktop BLE Framework for eSense IMU Data Collection and Configuration",
+   "doi": "https://doi.org/10.1109/percomworkshops65533.2025.00165",
+   "year": 2025,
+   "cited_by_count": 0,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/percomworkshops65533.2025.00165",
+   "pdf": null,
+   "abstract": "We introduce EarDesk, an adaptive desktop BLE framework tailored for eSense [1] earable device for IMU data capture and parameter configuration. It simplifies offset calibration, sensing range adjustments, low-pass filter settings, and sampling rate selection, ensuring flexible data acquisition across diverse scenarios directly to the desktop and eliminating reliance on smartphones or other edge devices, thus reducing their associated latency constraints. The system continuously logs IMU readings to a CSV file for immediate or offline analysis. By lowering technical barriers, EarDesk encourages novel explorations of earable sensing applications.",
+   "openalex_id": "https://openalex.org/W4411447142"
+  },
+  "decodeattentionbaseddecodingtemporalarti": {
+   "title": "β-Decode: Attention-based Decoding Temporal Artifacts via Unsupervised β-Variational Autoencoder",
+   "doi": "https://doi.org/10.1145/3703323.3703758",
+   "year": 2024,
+   "cited_by_count": 0,
+   "oa_url": "https://doi.org/10.1145/3703323.3703758",
+   "landing": "https://doi.org/10.1145/3703323.3703758",
+   "pdf": null,
+   "abstract": "Physiological sensing modalities, such as Electroencephalography (EEG), Galvanic Skin Response (GSR), and Photoplethysmography (PPG), provide detailed representations of cognitive and physiological states, proving invaluable for applications in human-computer interaction and digital health. However, these time-series signals are frequently affected by stationary and non-stationary noise, temporal fluctuations, and user-specific physiological variations, compromising signal integrity. To address these challenges, we propose β -Decode, a generative, unsupervised denoising framework tailored for multi-modal time series data. β -Decode achieves two main objectives: (i) learning global and local temporal dependencies within time-series representations to enhance denoising and (ii) handling unseen temporal noise variations. β -Decode leverages a β -variational autoencoder (β -VAE) combined with an attention mechanism, capturing the data distribution via latent representations. Additionally, we introduce a modal-specific noise-coupling strategy (NCS) to simulate diverse noise patterns, enhancing β -Decode’s adaptability across datasets. We evaluate β -Decode on two public uni-modal datasets and an in-house multi-modal dataset, demonstrating that it consistently outperforms five state-of-the-art denoising algorithms, quantifying this superiority across three denoising metrics by a significant margin (e.g., Pearson Correlation Coefficients of 0.73 ± (0.0102) between original and denoised signals).",
+   "openalex_id": "https://openalex.org/W4411624750"
+  },
+  "wristsensesensinghiddenwriststraininrout": {
+   "title": "WristSense: Sensing Hidden Wrist Strain in Routine Activities via Inertial Tokenization and LLM-Based Feedback",
+   "doi": "https://doi.org/10.1145/3774906.3800489",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": "https://doi.org/10.1145/3774906.3800489",
+   "landing": "https://doi.org/10.1145/3774906.3800489",
+   "pdf": null,
+   "abstract": "Wrist micro-behaviors during daily activities such as typing, handwriting, cooking, or carrying objects are valuable indicators for early detection of wrist disorders like Carpal Tunnel Syndrome and tendonitis. However, continuous personalized monitoring remains challenging without intrusive setups or hand-crafted rules. We present WristSense, a real-time, wrist-worn sensing system that introduces: (i) a magnetometer-stabilized quaternion fusion pipeline for orientation-agnostic tracking, (ii) a lightweight 1D-CNN + HMM model to distinguish functional gestures from strain-related coping behaviors, and (iii) an inertial tokenization scheme that converts events into structured prompts for a pretrained LLM. This enables zero-shot ergonomic feedback without per-user calibration. Evaluations across 12 participants show accurate posture tracking (< 10° MAE), high gesture recognition (macro F1 = 0.91), and improved usability (SUS = 85.2), with significantly higher user compliance compared to rule-based methods. WristSense demonstrates the potential of combining inertial sensing with LLMs for scalable, personalized ergonomic monitoring and early intervention.",
+   "openalex_id": "https://openalex.org/W7160629186"
+  },
+  "fedcasqenhancingclasswiseaccuracyinperva": {
+   "title": "Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization",
+   "doi": "https://doi.org/10.1109/percom67906.2026.11524552",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/percom67906.2026.11524552",
+   "pdf": null,
+   "abstract": "Federated Learning (FL) enables collaborative machine learning across decentralized devices and data sources, but resource constraints on pervasive devices necessitate efficient model compression. Existing approaches, such as quantization for on-device training, often degrade accuracy, especially for classes that are difficult to learn due to imbalance, poor-quality samples, or inherent complexity. This results in persistent accuracy gaps across classes. We propose Fed-CASQ's a novel framework that couples class-aware strategies into the quantization process to jointly improve efficiency and accuracy in pervasive FL. Unlike prior works that address quantization and imbalance separately, Fed-CASQ adaptively selects quantization levels based on device resources and leverages Layer-wise Relevance Propagation (LRP) to assess class-relevant convolutional neural network (CNN) filters on the client side. An adaptive weight scaling mechanism is then applied to amplify critical information for low-accuracy classes before aggregation. At the server, a complementary novel aggregation strategy mitigates global imbalance across clients, ensuring that underperforming classes receive proportional attention during model updates. We theoretically establish that Fed-CASQ achieves a convergence rate of ${\\mathcal{O}}\\left({\\frac{{\\kappa *\\hat \\sigma *\\hat \\delta }}{{\\sqrt T }}}\\right)$ under non-convex settings. We empirically establish that quantization directly influences the performance of under sampled (minority) classes. Experimental results further show that Fed-CASQ substantially narrows the performance gap for low-accuracy classes, improving their accuracy by ≈30%, while reducing training latency by over 56% on resource-constrained pervasive devices.",
+   "openalex_id": "https://openalex.org/W7162142154"
+  },
+  "spinesenseaninteractivesystemforcervical": {
+   "title": "SpineSense: An Interactive System for Cervical Spine Monitoring and Clinician-Oriented Summaries using COTS Earables EICS005",
+   "doi": "https://doi.org/10.1145/3815368",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": "https://doi.org/10.1145/3815368",
+   "landing": "https://doi.org/10.1145/3815368",
+   "pdf": null,
+   "abstract": "We present SpineSense , an interactive earable-based framework for continuous monitoring of cervical spine posture and discomfort-related behavior in daily life. Leveraging inertial data from commercial off-the-shelf (COTS) earables (e.g., Apple AirPods Pro 2), SpineSense models the cervical vertebral chain (C1–C7) using SLERP-interpolated quaternions to estimate craniovertebral (CV) angles and identify early pain-relief gestures (e.g., neck rubbing, circular head rolls) that are associated with early signs of musculoskeletal fatigue, as informed by clinical observation. A real-time feedback loop delivers posture-based alerts and weekly compliance summaries to support user awareness and long-term posture correction. Central to our design is a clinician-in-the-loop methodology: clinical experts (including orthopedic surgeons and physiotherapists) informed threshold selection (e.g., CV angle cutoffs), interpreted common discomfort behaviors, and iteratively guided the structure of weekly feedback reports. We evaluate the system on 20 participants and achieve low spine angle estimation error (MAE: 0.876° , RMSE: 1.02° , r = 0.95), and discomfort gesture classification accuracy of F 1 = 0.97. Usability studies across diverse activities show high acceptance (SUS = 84.75, NASA-TLX = 32.7, PSSUQ = 2.13), with formal ANOVA tests validating statistically significant improvements over baseline interfaces. Together, our findings establish the feasibility of engineering interactive cervical health systems using COTS earables that support real-time feedback, clinician-informed reporting, and pervasive deployment in naturalistic settings.",
+   "openalex_id": "https://openalex.org/W7166561067"
+  }
+ }
+}

@@ -175,7 +175,7 @@ body::after { content: ""; position: fixed; left: 0; right: 0; top: 0; height: 9
 .vcard__headline { font-size: var(--t-lg); font-weight: 700; color: var(--accent-strong); margin-top: 6px; }
 .vcard__tagline { font-size: var(--t-md); color: var(--text-2); margin-top: 6px; }
 .vcard__now { display: inline-flex; align-items: center; gap: 9px; margin-top: 14px; padding: 7px 14px 7px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: var(--t-xs); font-weight: 700; line-height: 1.4; }
-.vcard__now-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; box-shadow: 0 0 0 0 rgba(47,111,235,.5); animation: now-pulse 2.4s ease-out infinite; }
+.vcard__now-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; box-shadow: 0 0 0 0 rgba(47,111,235,.5); animation: now-pulse 2.4s ease-out 3; }
 @keyframes now-pulse { 0% { box-shadow: 0 0 0 0 rgba(47,111,235,.45); } 70% { box-shadow: 0 0 0 9px rgba(47,111,235,0); } 100% { box-shadow: 0 0 0 0 rgba(47,111,235,0); } }
 .vcard__meta { display: flex; align-items: center; gap: 6px; font-size: var(--t-sm); color: var(--text-2); font-weight: 600; }
 .vcard__meta svg { width: 18px; height: 18px; }
@@ -313,7 +313,7 @@ body::after { content: ""; position: fixed; left: 0; right: 0; top: 0; height: 9
 .news-body { min-width: 0; flex: 1; }
 .news-text { font-size: var(--t-sm); }
 .news-text strong { font-weight: 800; }
-.news-meta { display: block; font-size: var(--t-xs); font-weight: 700; color: var(--text-3); margin-top: 3px; }
+.news-meta { display: block; font-size: var(--t-xs); font-weight: 700; color: var(--text-2); margin-top: 3px; }
 .news-item--featured::before { content: ""; position: absolute; left: -12px; top: 12px; bottom: 12px; width: 4px; border-radius: 2px; background: var(--amber); }
 .news-item--featured:first-child::before { top: 0; } .news-item--featured:last-child::before { bottom: 0; }
 .news-list--timeline { position: relative; }
@@ -349,6 +349,20 @@ body::after { content: ""; position: fixed; left: 0; right: 0; top: 0; height: 9
 .system__desc { font-size: var(--t-xs); color: var(--text-2); margin-top: 2px; line-height: 1.5; }
 .system__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; }
 .system__venue { font-size: var(--t-xs); font-weight: 700; color: var(--text-2); margin-right: auto; }
+
+/* ── Paper pages ────────────────────────────────────────── */
+.paper__kicker { font-size: var(--t-sm); color: var(--text-2); margin-bottom: 10px; }
+.paper__title { font-size: var(--t-2xl); line-height: 1.25; display: block; margin-bottom: 10px; }
+.paper__title::before { display: none; }
+.paper__authors { font-size: var(--t-md); color: var(--text-2); }
+.paper__authors strong { color: var(--text); font-weight: 800; }
+.paper .pub-meta { margin: 10px 0 0; }
+.paper__actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; }
+.paper .card__title { margin-top: 22px; }
+.paper__abstract { max-width: var(--measure); line-height: 1.7; }
+.bibtex { font: 500 .82rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--tile); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; overflow-x: auto; white-space: pre; }
+.pub-cited { display: inline-flex; align-items: center; gap: 5px; min-height: 30px; padding: 0 10px; border-radius: 999px; font-size: var(--t-xs); font-weight: 700; color: var(--text-2); background: var(--tile); }
+.pub-cited svg { width: 13px; height: 13px; }
 
 /* ── Icon buttons (paper / code / video / BibTeX) ───────── */
 .iconbtn { display: inline-flex; align-items: center; gap: 5px; min-height: 30px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); font: inherit; font-size: var(--t-xs); font-weight: 700; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }

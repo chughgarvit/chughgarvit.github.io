@@ -36,7 +36,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "morsear"
  },
  {
   "year": "2026",
@@ -69,7 +70,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "vectionsense"
  },
  {
   "year": "2026",
@@ -102,7 +104,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "hydratear"
  },
  {
   "year": "2026",
@@ -135,7 +138,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "fed-casq"
  },
  {
   "year": "2026",
@@ -166,9 +170,10 @@
   "links": {
    "paper": "",
    "pdf": "",
-   "code": "",
+   "code": "https://github.com/chughgarvit/EchoUltraDefense",
    "video": ""
-  }
+  },
+  "slug": "earfence"
  },
  {
   "year": "2026",
@@ -203,7 +208,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "compulsear"
  },
  {
   "year": "2026",
@@ -232,7 +238,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "spinesense"
  },
  {
   "year": "2026",
@@ -269,7 +276,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "wristsense"
  },
  {
   "year": "2026",
@@ -298,7 +306,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "sensors-to-service"
  },
  {
   "year": "2025",
@@ -331,7 +340,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "homcdan"
  },
  {
   "year": "2025",
@@ -362,9 +372,10 @@
   "links": {
    "paper": "",
    "pdf": "",
-   "code": "",
+   "code": "https://github.com/chughgarvit/bitesense",
    "video": ""
-  }
+  },
+  "slug": "bitesense"
  },
  {
   "year": "2025",
@@ -395,9 +406,10 @@
   "links": {
    "paper": "",
    "pdf": "",
-   "code": "",
+   "code": "https://github.com/chughgarvit/EarDesk",
    "video": ""
-  }
+  },
+  "slug": "eardesk"
  },
  {
   "year": "2025",
@@ -430,9 +442,10 @@
   "links": {
    "paper": "",
    "pdf": "",
-   "code": "",
+   "code": "https://github.com/chughgarvit/imu_emotion",
    "video": ""
-  }
+  },
+  "slug": "ephemeral-emotions"
  },
  {
   "year": "2025",
@@ -461,7 +474,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "eye-gestures"
  },
  {
   "year": "2024",
@@ -483,7 +497,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "beta-decode"
  },
  {
   "year": "2024",
@@ -516,7 +531,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "uda-action-recognition"
  },
  {
   "year": "2023",
@@ -540,9 +556,10 @@
   "links": {
    "paper": "https://doi.org/10.1145/3580252.3586981",
    "pdf": "",
-   "code": "",
+   "code": "https://github.com/chughgarvit/enGauge",
    "video": ""
-  }
+  },
+  "slug": "lack-of-focus"
  },
  {
   "year": "2023",
@@ -571,7 +588,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "legalhelper"
  },
  {
   "year": "2023",
@@ -600,7 +618,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "envolve-plus"
  },
  {
   "year": "2022",
@@ -629,7 +648,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "envolve"
  },
  {
   "year": "2021",
@@ -658,7 +678,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "xgboost-ids"
  },
  {
   "year": "patent",
@@ -689,7 +710,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "headband-patent"
  },
  {
   "year": "review",
@@ -716,9 +738,10 @@
   "links": {
    "paper": "",
    "pdf": "",
-   "code": "",
+   "code": "https://github.com/chughgarvit/EarControl",
    "video": ""
-  }
+  },
+  "slug": "earcontrol"
  },
  {
   "year": "review",
@@ -747,7 +770,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "eating-behaviour-evaluation"
  },
  {
   "year": "review",
@@ -778,7 +802,8 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "mssl"
  },
  {
   "year": "review",
@@ -809,6 +834,7 @@
    "pdf": "",
    "code": "",
    "video": ""
-  }
+  },
+  "slug": "spontaneous-reactions"
  }
 ]

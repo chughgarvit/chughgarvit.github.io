@@ -17,14 +17,14 @@ All content lives in `data/*.json`. The HTML pages are **generated**; do not edi
 | `data/honours.json` | One object per honour or grant: `text`, `year`, `when` (display range), `kind` (`award` / `competition` / `fellowship` / `travel` / `scholarship` / `recognition` / `exam` / `talk`), `featured`, `source` (`awards` or `funding`) |
 | `data/service.json`, `data/teaching.json`, `data/outreach.json`, `data/mentorship.json`, `data/skills.json` | Plain lists of HTML strings |
 
-Then rebuild and push:
+Then rebuild and push (run `python3 refresh.py` first to pull DOIs, open-access PDFs, abstracts and citation counts from OpenAlex into `data/openalex.json`; the build itself needs no network):
 
 ```
 python3 build.py
 git add -A && git commit -m "content: ..." && git push origin gh-pages
 ```
 
-`build.py` derives every count from the data, writes the six pages, `sitemap.xml` (with today's date) and `news.xml` (RSS), and generates BibTeX for every paper and ScholarlyArticle structured data for the publications page.
+`build.py` derives every count from the data, writes the six pages plus one page per paper under `papers/` (with Google Scholar `citation_*` tags), `sitemap.xml` (with today's date) and `news.xml` (RSS), and generates BibTeX for every paper and ScholarlyArticle structured data for the publications page.
 
 Typography variant: add `data-type="editorial"` to `<html>` (via the `shell()` function in `build.py`) to switch headings to Source Serif 4.
 
