@@ -20,7 +20,7 @@ def load(name):
 P = load("profile"); PUBS = load("publications"); NEWS = load("news"); RESEARCH = load("research")
 EXPERIENCE = load("experience"); EDUCATION = load("education"); TEACHING = load("teaching"); OUTREACH = load("outreach")
 MENTORSHIP = load("mentorship"); SKILLS_FULL = load("skills")
-SERVICE = load("service"); SYSTEMS = load("systems"); HONOURS = load("honours"); LABS = load("labs")
+SERVICE = load("service"); SYSTEMS = load("systems"); HONOURS = load("honours"); LABS = load("labs"); COLLAB = load("collaborators")
 try: OPENALEX = load("openalex")
 except FileNotFoundError: OPENALEX = {"author": {}, "works": {}}
 def _norm(t): return re.sub(r"[^a-z0-9]", "", re.sub(r"<[^>]+>", "", t or "").lower())[:40]
@@ -254,6 +254,26 @@ def system_tile(x):
     links = "".join(f'<a class="iconbtn" href="{esc_attr(u)}"{"" if u.endswith(".html") else " target=\"_blank\" rel=\"noopener\""} title="{LINK_ICON[k][1]}" aria-label="{x["name"]} {LINK_ICON[k][1]}">{I[LINK_ICON[k][0]]}<span>{LINK_ICON[k][1]}</span></a>' for k, u in x["links"].items() if u and k in LINK_ICON)
     return f'<li class="system system--{x["kind"]}"><span class="system__icon" aria-hidden="true">{I[SYS_ICON.get(x["kind"], "wrench")]}</span><div class="system__body"><h3 class="system__name">{x["name"]}</h3><p class="system__desc">{x["description"]}</p><div class="system__meta"><span class="system__venue">{x["venue"]}</span>{links}</div></div></li>'
 
+def collab_card():
+    import collections
+    counts = collections.Counter()
+    for p in PUBS:
+        plain = re.sub(r"\s*\(\*Equal Contributions?\)", "", re.sub(r"<[^>]+>", "", p["authors"])).replace("&amp;", "&").replace("*", "")
+        for a in re.split(r",\s(?=[A-Z][A-Za-z'\-]+,)|\s&\s", plain): counts[a.strip()] += 1
+    rows = ""
+    for c in COLLAB:
+        n = counts.get(c["match"], 0); joint = f'{n} joint paper{"s" if n != 1 else ""}' if n and c["match"] != "Chakraborty, S." else ""
+        name = f'<a class="link" href="{c["url"]}" target="_blank" rel="noopener">{c["name"]}</a>' if c["url"] else f'<strong>{c["name"]}</strong>'
+        rows += f'<li class="collab"><span class="collab__avatar" aria-hidden="true">{"".join(w[0] for w in re.sub(r"^(Dr|Prof)\. ", "", c["name"]).split()[:2])}</span><span class="collab__body"><span class="collab__name">{name}</span><span class="entry__meta">{c["role"]} &middot; {c["org"]}{" &middot; " + joint if joint else ""}</span></span></li>'
+    return f'<section class="card" id="collaborators" aria-labelledby="collab-title"><h2 class="card__title" id="collab-title">Collaborators</h2><ul class="collabs">{rows}</ul></section>'
+
+def work_card():
+    docs = "".join(f'<a href="{d["file"]}" target="_blank" rel="noopener">{I["file"]}<span>{d["label"]}{(" <em>&middot; " + d["note"] + "</em>") if d.get("note") else ""}</span></a>' for d in P.get("documents", []) if d.get("file"))
+    data = "".join(f'<a href="{d["url"]}" target="_blank" rel="noopener">{I["code"]}<span>{d["label"]}</span></a>' for d in P.get("datasets", []) if d.get("url"))
+    extra = f'<h3 class="card__sub-title">Documents</h3><div class="links">{docs}</div>' if docs else ""
+    extra += f'<h3 class="card__sub-title">Datasets</h3><div class="links">{data}</div>' if data else ""
+    return f'<section class="card" id="work-with-me" aria-labelledby="work-title"><h2 class="card__title" id="work-title">Work with me</h2><p class="about-text">{P["work_with_me"]}</p><div class="vcard__actions" style="margin-top:14px"><a class="btn btn--primary" href="mailto:{P["email"]}">{I["mail"]}<span>Email me</span></a></div>{extra}</section>'
+
 def links_card():
     rows = "".join(f'<a href="{esc_attr(l["url"])}"{"" if l["url"].startswith("mailto:") else " target=\"_blank\" rel=\"noopener\""}>{B.get(l["kind"], I.get(l["kind"], ""))}<span>{l["label"]}</span></a>' for l in P["links"])
     return f'<section class="card"><h2 class="card__title">Contact &amp; links</h2><div class="links">{rows}</div></section>'
@@ -355,6 +375,8 @@ def build_index():
 
   <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
     <section class="card"><h2 class="card__title">Skills &amp; languages</h2><div class="pills">{"".join(f'<span class="pill">{s}</span>' for s in P["skills"])}</div><div class="stack" style="gap:0;margin-top:14px">{bullets(P["languages"])}</div></section>
+    {work_card()}
+    {collab_card()}
     <section class="card"><h2 class="card__title">Service</h2>{bullets(P["service_short"])}</section>
     {links_card()}
   </aside>

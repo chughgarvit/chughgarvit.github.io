@@ -87,5 +87,24 @@
  ],
  "honorific": "Dr",
  "now": "Now at SMU: building the next generation of earable health-sensing systems with Prof. Archan Misra.",
- "cv_updated": "September 2026"
+ "cv_updated": "September 2026",
+ "work_with_me": "I am looking for collaborators on earable and wearable sensing, digital health, and human-centred AI, and I enjoy mentoring students on end-to-end sensing systems. If you are a prospective student, a fellow researcher, or an industry team with a real deployment problem, write to me with a short note on what you are working on.",
+ "documents": [
+  {
+   "label": "Curriculum vitae",
+   "file": "static/media/Garvit_Resume.pdf",
+   "note": "September 2026"
+  },
+  {
+   "label": "Research statement",
+   "file": "",
+   "note": ""
+  },
+  {
+   "label": "Teaching statement",
+   "file": "",
+   "note": ""
+  }
+ ],
+ "datasets": []
 }

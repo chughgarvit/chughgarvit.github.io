@@ -1,0 +1,58 @@
+[
+ {
+  "name": "Dr. Suchetana Chakraborty",
+  "org": "IIT Jodhpur",
+  "role": "Ph.D. supervisor",
+  "url": "https://sites.google.com/site/suchetana0116",
+  "match": "Chakraborty, S."
+ },
+ {
+  "name": "Dr. Sandip Chakraborty",
+  "org": "IIT Kharagpur",
+  "role": "Ph.D. co-supervisor",
+  "url": "https://cse.iitkgp.ac.in/~sandipc/",
+  "match": "Chakraborty, S."
+ },
+ {
+  "name": "Prof. Archan Misra",
+  "org": "Singapore Management University",
+  "role": "Postdoc advisor",
+  "url": "https://sis.smu.edu.sg/faculty/profile/9626/Archan-MISRA",
+  "match": "Misra, A."
+ },
+ {
+  "name": "Prof. Nirmalya Roy",
+  "org": "UMBC",
+  "role": "Host, visiting research",
+  "url": "https://mpsc.umbc.edu/nroy/",
+  "match": "Roy, N."
+ },
+ {
+  "name": "Indrajeet Ghosh",
+  "org": "UMBC",
+  "role": "Co-author",
+  "url": "https://sites.google.com/view/indrajeetghosh/",
+  "match": "Ghosh, I."
+ },
+ {
+  "name": "Abu Zaher Md Faridee",
+  "org": "UMBC",
+  "role": "Co-author",
+  "url": "",
+  "match": "Faridee, A.Z.M."
+ },
+ {
+  "name": "Sameeran Zhingre",
+  "org": "IIT Jodhpur",
+  "role": "Mentee &amp; co-author",
+  "url": "",
+  "match": "Zhingre, S."
+ },
+ {
+  "name": "Ananya Mondal",
+  "org": "IIT Jodhpur",
+  "role": "Co-author",
+  "url": "",
+  "match": "Mondal, A."
+ }
+]
