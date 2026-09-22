@@ -1,0 +1,34 @@
+[
+  {
+    "area": "Machine learning &amp; AI",
+    "courses": [
+      "Machine Learning I",
+      "Statistical Techniques",
+      "Optimization",
+      "Artificial Intelligence II"
+    ]
+  },
+  {
+    "area": "Systems &amp; networking",
+    "courses": [
+      "Computer Architecture",
+      "Virtualization and Cloud Computing",
+      "Vehicular Ad-hoc Networks",
+      "Software and Data Engineering",
+      "Algorithms for Big Data"
+    ]
+  },
+  {
+    "area": "Security &amp; cryptography",
+    "courses": [
+      "Security and Applications",
+      "Cryptography"
+    ]
+  },
+  {
+    "area": "Ubiquitous computing",
+    "courses": [
+      "Mobile and Pervasive Computing"
+    ]
+  }
+]

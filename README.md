@@ -13,6 +13,7 @@ All content lives in `data/*.json`. The HTML pages are **generated**; do not edi
 | `data/news.json` | One object per update: `id`, `year`, `text` (HTML), `kind` (`paper` / `award` / `grant` / `milestone` / `service` / `talk` / `update`, picks the icon), `featured` (true = ochre bar and Highlights). Newest first. |
 | `data/systems.json` | The "Systems I built" grid: `name`, `description`, `kind` (`earable` / `wearable` / `tool`), `venue`, `links` (`paper`, `code`, `video`; empty strings are hidden) |
 | `data/experience.json`, `data/education.json`, `data/labs.json` | Roles, degrees, and labs with logo file names |
+| `data/coursework.json` | Graduate coursework on the Experience page, grouped by `area` with a `courses` list |
 | `data/collaborators.json` | People on the homepage Collaborators card: `name`, `org`, `role`, `url`, `match` (the "Last, F." form used to count joint papers) |
 | `data/facts.json` | The quantified tiles on the homepage; `"number": "auto"` is filled from the publication count |
 | `data/honours.json` | One object per honour or grant: `text`, `year`, `when` (display range), `kind` (`award` / `competition` / `fellowship` / `travel` / `scholarship` / `recognition` / `exam` / `talk`), `featured`, `source` (`awards` or `funding`) |

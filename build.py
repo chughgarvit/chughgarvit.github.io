@@ -20,7 +20,7 @@ def load(name):
 P = load("profile"); PUBS = load("publications"); NEWS = load("news"); RESEARCH = load("research")
 EXPERIENCE = load("experience"); EDUCATION = load("education"); TEACHING = load("teaching"); OUTREACH = load("outreach")
 MENTORSHIP = load("mentorship"); SKILLS_FULL = load("skills")
-SERVICE = load("service"); SYSTEMS = load("systems"); HONOURS = load("honours"); LABS = load("labs"); COLLAB = load("collaborators")
+SERVICE = load("service"); SYSTEMS = load("systems"); HONOURS = load("honours"); LABS = load("labs"); COLLAB = load("collaborators"); COURSEWORK = load("coursework")
 try: OPENALEX = load("openalex")
 except FileNotFoundError: OPENALEX = {"author": {}, "works": {}}
 def _norm(t): return re.sub(r"[^a-z0-9]", "", re.sub(r"<[^>]+>", "", t or "").lower())[:40]
@@ -268,15 +268,16 @@ def build_index():
     research = section("Research", '<ul class="grid grid--4">' + "".join(f'<li class="tile"><span class="tile__glyph" aria-hidden="true">{r["icon"]}</span><h3 class="tile__title">{r["title"]}</h3><p class="tile__desc">{r["description"]}</p></li>' for r in RESEARCH) + "</ul>", "research", alt=True)
     systems = section("Systems I built", '<ul class="grid grid--2">' + "".join(system_tile(x) for x in SYSTEMS[:2]) + "</ul>", "systems", more=("education.html#systems", f"All {len(SYSTEMS)} systems"))
     pubs = section("Selected publications", '<ul class="rows">' + "".join(pub_item(p) for p in PUBS if p.get("selected")) + "</ul>", "publications", alt=True, more=("publications.html", f"All {N_PUBS} publications"), narrow=True)
-    exp = section("Experience", entries(EXPERIENCE[:3]) + '<h3 class="subhead subhead--sm">Education</h3>' + entries(EDUCATION), "experience", more=("education.html", "Full experience"), narrow=True)
-    hon = section("Honours", '<ul class="rows">' + "".join(honour_row(h) for h in HONOURS if h["featured"]) + "</ul>", "honours", alt=True, more=("awards.html", f"All {len(HONOURS)} honours"), narrow=True)
-    work = section("Work with me", f'<div class="prose"><p>{P["work_with_me"]}</p></div><p class="hero__actions hero__actions--left"><a class="btn" href="mailto:{P["email"]}">Email me</a>{"".join(f"<a class=\"textlink\" href=\"{u}\" target=\"_blank\" rel=\"noopener\">{l} {CHEV}</a>" for l, u in docs)}</p><h3 class="subhead subhead--sm">Collaborators</h3>{collab_list()}', "work-with-me", narrow=True)
+    exp = (section("Experience", entries(EXPERIENCE[:3]), "experience", more=("education.html", f"All {len(EXPERIENCE)} roles"), narrow=True)
+           + section("Education", entries(EDUCATION), "education", alt=True, more=("education.html#education", "Coursework &amp; teaching"), narrow=True))
+    hon = section("Honours", '<ul class="rows">' + "".join(honour_row(h) for h in HONOURS if h["featured"]) + "</ul>", "honours", more=("awards.html", f"All {len(HONOURS)} honours"), narrow=True)
+    work = section("Work with me", f'<div class="prose"><p>{P["work_with_me"]}</p></div><p class="hero__actions hero__actions--left"><a class="btn" href="mailto:{P["email"]}">Email me</a>{"".join(f"<a class=\"textlink\" href=\"{u}\" target=\"_blank\" rel=\"noopener\">{l} {CHEV}</a>" for l, u in docs)}</p><h3 class="subhead subhead--sm">Collaborators</h3>{collab_list()}', "work-with-me", alt=True, narrow=True)
     info = section("", f"""<div class="grid grid--4 info">
   <div><h3 class="info__title">Skills</h3><p class="info__text">{", ".join(P["skills"])}</p></div>
   <div><h3 class="info__title">Languages</h3>{bullets(P["languages"], "info__list")}</div>
   <div><h3 class="info__title">Service</h3>{bullets(P["service_short"], "info__list")}</div>
   <div><h3 class="info__title">Links</h3><p class="info__links">{link_list()}</p></div>
-</div>""", "contact", alt=True)
+</div>""", "contact")
     jsonld = json.dumps({
         "@context": "https://schema.org", "@type": "Person", "name": P["name"], "honorificPrefix": P.get("honorific", ""), "url": SITE + "/",
         "image": f"{SITE}/static/media/profile.jpg", "email": f"mailto:{P['email']}", "jobTitle": "Postdoctoral Researcher",
@@ -362,7 +363,8 @@ def build_news():
 def build_education():
     labs = "".join(f'<li class="row row--entry"><span class="row__logo"><img src="static/media/{l["logo"]}" alt="" width="48" height="48" loading="lazy" decoding="async" /></span><div class="row__body"><h3 class="row__title"><a href="{l["url"]}" target="_blank" rel="noopener">{l["name"]}</a></h3><p class="row__sub">{l["org"]}</p><p class="row__meta">{l["role"]} &middot; {l["years"]}</p></div></li>' for l in LABS)
     body = (f'<section class="section section--first"><div class="wrap wrap--narrow">{page_head("Experience")}<h2 class="subhead">Current &amp; past roles</h2>{entries(EXPERIENCE)}</div></section>'
-            + section("Education", entries(EDUCATION), "education", alt=True, narrow=True)
+            + section("Education", entries(EDUCATION) + '<h3 class="subhead subhead--sm">Graduate coursework</h3><div class="grid grid--2 grid--tight">'
+                      + "".join(f'<div><p class="info__title">{c["area"]}</p><p class="info__text">{", ".join(c["courses"])}</p></div>' for c in COURSEWORK) + "</div>", "education", alt=True, narrow=True)
             + section("Labs I have been a part of", f'<ul class="rows">{labs}</ul>', "labs", narrow=True)
             + section("Systems I built", '<ul class="grid grid--3">' + "".join(system_tile(x) for x in SYSTEMS) + "</ul>", "systems", alt=True, intro=f"{len(SYSTEMS)} sensing systems and tools, from prototype to user study. Each links to its paper; code and video links appear as they are released.")
             + section("Teaching", '<h3 class="subhead subhead--sm">IIT Jodhpur</h3>' + bullets(TEACHING) + '<h3 class="subhead subhead--sm">PMRF outreach &amp; external teaching</h3>' + bullets(OUTREACH), "teaching", narrow=True)
