@@ -96,19 +96,26 @@ NAV = [("index.html", "Home", "home"), ("publications.html", "Publications", "pu
 def esc_attr(s):
     return s.replace("&", "&amp;").replace('"', "&quot;")
 
+NEWS_LABEL = {"paper": "Paper", "award": "Award", "grant": "Grant", "milestone": "Milestone", "service": "Service", "talk": "Talk", "update": "Update"}
+HON_LABEL = {"award": "Award", "competition": "Competition", "fellowship": "Fellowship", "travel": "Travel grant", "scholarship": "Scholarship", "recognition": "Recognition", "exam": "Exam", "talk": "Invited talk"}
+LINK_LABEL = {"paper": "DOI", "pdf": "PDF", "code": "Code", "video": "Video"}
+TRACK_LABEL = {"main": "Main track", "workshop": "Workshop", "journal": "Journal", "patent": "Patent", "review": "Under review"}
+CHEV = '<span class="chev" aria-hidden="true">&rsaquo;</span>'
+
 def nav(active):
     return "".join(f'<a href="{h}"{" class=\"active\" aria-current=\"page\"" if h == active else ""}>{I[k]}<span>{l}</span></a>' for h, l, k in NAV)
 
 def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
     url = f"{SITE}/{path}" if path else f"{SITE}/"
+    preload = '  <link rel="preload" href="static/media/profile.jpg" as="image" fetchpriority="high" />\n' if active == "index.html" and not path else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="{desc}" />
-  <meta name="theme-color" content="#2f6feb" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0e1520" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <meta property="og:title" content="{title}" />
   <meta property="og:description" content="{desc}" />
   <meta property="og:image" content="{SITE}/static/media/og-image.jpg" />
@@ -127,83 +134,158 @@ def shell(title, desc, path, active, body, extra_head="", ogtype="website"):
   <link rel="icon" href="favicon.svg?v={CSS_HASH}" type="image/svg+xml" />
   <link rel="icon" href="static/media/favicon-32.png?v={CSS_HASH}" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="static/media/apple-touch-icon.png?v={CSS_HASH}" />
-  <link rel="preload" href="static/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
-{'  <link rel="preload" href="static/media/profile.jpg" as="image" fetchpriority="high" />' + chr(10) if active == "index.html" else ""}  <script type="speculationrules">{{"prerender":[{{"where":{{"and":[{{"href_matches":"/*"}},{{"not":{{"href_matches":"/*.pdf"}}}},{{"not":{{"href_matches":"/*.xml"}}}}]}},"eagerness":"moderate"}}],"prefetch":[{{"where":{{"and":[{{"href_matches":"/*"}},{{"not":{{"href_matches":"/*.pdf"}}}}]}},"eagerness":"moderate"}}]}}</script>
+{preload}  <script type="speculationrules">{{"prerender":[{{"where":{{"and":[{{"href_matches":"/*"}},{{"not":{{"href_matches":"/*.pdf"}}}},{{"not":{{"href_matches":"/*.xml"}}}}]}},"eagerness":"moderate"}}],"prefetch":[{{"where":{{"and":[{{"href_matches":"/*"}},{{"not":{{"href_matches":"/*.pdf"}}}}]}},"eagerness":"moderate"}}]}}</script>
   <link rel="stylesheet" href="static/css/site.css?v={CSS_HASH}" />
 {extra_head}</head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <filter id="lg-refract" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-    <feImage href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='rgb(0,128,128)'/%3E%3Cstop offset='.18' stop-color='rgb(128,128,128)'/%3E%3Cstop offset='.82' stop-color='rgb(128,128,128)'/%3E%3Cstop offset='1' stop-color='rgb(255,128,128)'/%3E%3C/linearGradient%3E%3Crect width='100' height='100' fill='url(%23g)'/%3E%3C/svg%3E" preserveAspectRatio="none" result="mx" />
-    <feImage href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='rgb(128,0,128)'/%3E%3Cstop offset='.3' stop-color='rgb(128,128,128)'/%3E%3Cstop offset='.7' stop-color='rgb(128,128,128)'/%3E%3Cstop offset='1' stop-color='rgb(128,255,128)'/%3E%3C/linearGradient%3E%3Crect width='100' height='100' fill='url(%23g)'/%3E%3C/svg%3E" preserveAspectRatio="none" result="my" />
-    <feComposite in="mx" in2="my" operator="arithmetic" k2="1" k3="1" k4="-0.5" result="map" />
-    <feDisplacementMap in="SourceGraphic" in2="map" scale="-22" xChannelSelector="R" yChannelSelector="G" />
-  </filter>
-</svg>
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
-  <div class="topbar__inner glass">
+  <div class="topbar__inner">
+    <a href="index.html" class="topbar__home" aria-label="Garvit Chugh, home">Garvit Chugh</a>
     <nav class="nav" aria-label="Primary">{nav(active)}</nav>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"><span class="ico-sun">{I["sun"]}</span><span class="ico-moon">{I["moon"]}</span></button>
   </div>
-  <button type="button" class="theme-toggle glass" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"><span class="ico-sun">{I["sun"]}</span><span class="ico-moon">{I["moon"]}</span></button>
 </header>
-<main id="main" class="page">
+<main id="main">
 {body}
 </main>
 <footer class="footer">
-  <nav class="footer__links" aria-label="Footer">{"".join(f'<a href="{h}">{l}</a>' for h, l, _ in NAV)}<a href="education.html#systems">Systems</a><a href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">CV ({P.get("cv_updated", "PDF")})</a><a href="news.xml">RSS</a></nav>
-  <p class="footer__meta">Garvit Chugh &copy; {TODAY[:4]} &middot; Updated {TODAY} &middot; <a href="#main" class="footer__top">Back to top {I["up"]}</a></p>
+  <div class="wrap">
+    <nav class="footer__links" aria-label="Footer">{"".join(f'<a href="{h}">{l}</a>' for h, l, _ in NAV)}<a href="education.html#systems">Systems</a><a href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">CV</a><a href="news.xml">RSS</a></nav>
+    <p class="footer__meta">Copyright &copy; {TODAY[:4]} Garvit Chugh. Updated {TODAY}. <a href="#main">Back to top</a></p>
+  </div>
 </footer>
 <script>
-  // Theme toggle (remembers the choice; otherwise follows the system).
   document.getElementById('themeToggle').addEventListener('click', () => {{ const dark = matchMedia('(prefers-color-scheme: dark)').matches; const cur = document.documentElement.dataset.theme || (dark ? 'dark' : 'light'); const next = cur === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = next; try {{ localStorage.setItem('theme', next); }} catch (e) {{}} }});
-  // Copy BibTeX.
-  document.querySelectorAll('.iconbtn--copy').forEach(btn => btn.addEventListener('click', async () => {{ try {{ await navigator.clipboard.writeText(btn.dataset.bib); btn.classList.add('copied'); btn.querySelector('span').textContent = 'Copied'; setTimeout(() => {{ btn.classList.remove('copied'); btn.querySelector('span').textContent = 'BibTeX'; }}, 1600); }} catch (e) {{ prompt('BibTeX', btn.dataset.bib); }} }}));
-  // Reveal cards as they scroll in (skipped under reduced motion).
+  document.querySelectorAll('.copy-bib').forEach(btn => btn.addEventListener('click', async () => {{ try {{ await navigator.clipboard.writeText(btn.dataset.bib); const t = btn.textContent; btn.textContent = 'Copied'; setTimeout(() => btn.textContent = t, 1600); }} catch (e) {{ prompt('BibTeX', btn.dataset.bib); }} }}));
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {{
-    const io = new IntersectionObserver(es => es.forEach(e => {{ if (e.isIntersecting) {{ e.target.classList.add('in'); io.unobserve(e.target); }} }}), {{ rootMargin: '0px 0px -8% 0px' }});
-    document.querySelectorAll('.card').forEach(c => {{ if (c.getBoundingClientRect().top > innerHeight) {{ c.classList.add('reveal'); io.observe(c); }} }});
+    const io = new IntersectionObserver(es => es.forEach(e => {{ if (e.isIntersecting) {{ e.target.classList.add('in'); io.unobserve(e.target); }} }}), {{ rootMargin: '0px 0px -10% 0px' }});
+    document.querySelectorAll('.section').forEach(s => {{ if (s.getBoundingClientRect().top > innerHeight) {{ s.classList.add('reveal'); io.observe(s); }} }});
   }}
-  // Light follows the pointer across glass surfaces.
-  document.querySelectorAll('.glass, .btn--outline, .btn--ghost').forEach(el => el.addEventListener('pointermove', e => {{ const r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); }}, {{ passive: true }}));
-  // Tab bar minimises while scrolling down and returns on scroll up (phones only).
   (() => {{ let last = scrollY, ticking = false;
-    addEventListener('scroll', () => {{ if (ticking) return; ticking = true; requestAnimationFrame(() => {{
-      const y = scrollY; document.body.classList.toggle('nav-min', innerWidth <= 600 && y > last + 4 && y > 120); if (y < last - 4 || y < 120) document.body.classList.remove('nav-min'); last = y; ticking = false; }}); }}, {{ passive: true }});
+    addEventListener('scroll', () => {{ if (ticking) return; ticking = true; requestAnimationFrame(() => {{ const y = scrollY; document.body.classList.toggle('nav-min', innerWidth <= 734 && y > last + 4 && y > 120); if (y < last - 4 || y < 120) document.body.classList.remove('nav-min'); last = y; ticking = false; }}); }}, {{ passive: true }});
   }})();
 </script>
 </body>
 </html>
 """
 
-def show_all(href, label):
-    return f'<a class="card__footer" href="{href}">{label} {I["arrow"]}</a>'
-
-def title_h(level, text, cls="card__title", extra=""):
-    return f'<h{level} class="{cls}"{extra}>{text}</h{level}>'
-
 # ── components ───────────────────────────────────────────────────
-def logo_tile(item):
-    if item.get("logo"):
-        return f'<img src="static/media/{item["logo"]}" alt="" width="64" height="64" loading="lazy" decoding="async" />'
-    return item.get("mono", "")
+def section(title, body, id_=None, alt=False, more=None, intro=None, narrow=False):
+    head = ""
+    if title:
+        link = f'<a class="more" href="{more[0]}">{more[1]} {CHEV}</a>' if more else ""
+        head = f'<div class="section__head"><h2 class="section__title">{title}</h2>{link}</div>' + (f'<p class="section__intro">{intro}</p>' if intro else "")
+    return f'<section class="section{" section--alt" if alt else ""}"{f" id=\"{id_}\"" if id_ else ""}><div class="wrap{" wrap--narrow" if narrow else ""}">{head}{body}</div></section>\n'
+
+def page_head(title, sub=None):
+    return f'<div class="page-head"><h1 class="page-title">{title}</h1>{f"<p class=\"page-sub\">{sub}</p>" if sub else ""}</div>'
+
+def textlinks(pairs):
+    return "".join(f'<a href="{esc_attr(u)}" target="_blank" rel="noopener">{l} {CHEV}</a>' for l, u in pairs if u)
+
+def bullets(items, cls="list"):
+    return f'<ul class="{cls}">' + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
 
 def entry(e, level=3):
+    logo = f'<img src="static/media/{e["logo"]}" alt="" width="48" height="48" loading="lazy" decoding="async" />' if e.get("logo") else f'<span class="mono">{e.get("mono", "")}</span>'
     meta = " &middot; ".join(x for x in [e.get("dates", ""), e.get("place", "")] if x)
     org = e["org"] + (f' &middot; {e["kind"]}' if e.get("kind") else "")
-    desc = f'<div class="entry__desc">{e["desc"]}</div>' if e.get("desc") else ""
-    return f"""      <li class="entry">
-        <div class="entry__logo">{logo_tile(e)}</div>
-        <div class="entry__body">
-          <h{level} class="entry__title">{e["title"]}</h{level}>
-          <div class="entry__org">{org}</div>
-          <div class="entry__meta">{meta}</div>{desc}
-        </div>
-      </li>
-"""
+    desc = f'<p class="row__desc">{e["desc"]}</p>' if e.get("desc") else ""
+    return f'<li class="row row--entry"><span class="row__logo">{logo}</span><div class="row__body"><h{level} class="row__title">{e["title"]}</h{level}><p class="row__sub">{org}</p><p class="row__meta">{meta}</p>{desc}</div></li>'
 
 def entries(items, level=3):
-    return '<ul class="entries entries--timeline">\n' + "".join(entry(e, level) for e in items) + "</ul>"
+    return '<ul class="rows">' + "".join(entry(e, level) for e in items) + "</ul>"
+
+def pub_meta(p, with_tags=False):
+    parts = [p["venue"]]
+    if p["track"] in TRACK_LABEL and p["track"] not in ("journal",): parts.append(TRACK_LABEL[p["track"]])
+    for b in p["badges"]:
+        if b["kind"] == "core": parts.append("CORE A*")
+        elif b["kind"] == "award": parts.append(f'<span class="row__award">{b["text"]}</span>')
+        elif b["kind"] not in ("main", "wip"): parts.append(b["text"])
+        elif b["kind"] == "wip" and p["track"] != "workshop": parts.append(b["text"])
+    if p.get("cited"): parts.append(f'Cited {p["cited"]}')
+    if with_tags: parts.append(", ".join(p["tags"]))
+    return " &middot; ".join(parts)
+
+def pub_item(p, level=3):
+    links = [(LINK_LABEL[k], u) for k, u in (p.get("links") or {}).items() if u and k in LINK_LABEL]
+    return f"""<li class="row row--pub" data-year="{p["year"]}" data-track="{p["track"]}" data-topic="{' '.join(p["topics"])}">
+  <div class="row__body">
+    <h{level} class="row__title"><a href="papers/{p["slug"]}.html">{p["title"]}</a></h{level}>
+    <p class="row__sub">{p["authors"]}</p>
+    <p class="row__meta">{pub_meta(p)}</p>
+    <p class="row__links">{textlinks(links)}<button type="button" class="copy-bib" data-bib="{esc_attr(bibtex(p))}">BibTeX</button></p>
+  </div>
+</li>
+"""
+
+def news_row(n, with_year=True):
+    label = NEWS_LABEL.get(n.get("kind", "update"), "Update") + (f' &middot; {n["year"]}' if with_year else "")
+    return f'<li class="row row--news{" row--featured" if n.get("featured") else ""}"><span class="row__kicker">{label}</span><p class="row__text">{n["text"]}</p></li>'
+
+def system_tile(x):
+    links = [(LINK_LABEL[k], u) for k, u in x["links"].items() if u and k in LINK_LABEL and not u.endswith(".html")]
+    return f'<li class="tile"><h3 class="tile__title">{x["name"]}</h3><p class="tile__desc">{x["description"]}</p><p class="tile__meta">{x["venue"]}</p><p class="row__links">{textlinks(links)}</p></li>'
+
+def honour_row(h, with_year=True):
+    year = h["when"] or (str(h["year"]) if h["year"] else "")
+    label = HON_LABEL[h["kind"]] + (f" &middot; {year}" if with_year and year else "")
+    return f'<li class="row row--news{" row--featured" if h.get("featured") else ""}"><span class="row__kicker">{label}</span><p class="row__text">{h["text"]}</p></li>'
+
+def collab_list():
+    import collections
+    counts = collections.Counter()
+    for p in PUBS:
+        plain = re.sub(r"\s*\(\*Equal Contributions?\)", "", re.sub(r"<[^>]+>", "", p["authors"])).replace("&amp;", "&").replace("*", "")
+        for a in re.split(r",\s(?=[A-Z][A-Za-z'\-]+,)|\s&\s", plain): counts[a.strip()] += 1
+    items = ""
+    for c in COLLAB:
+        n = counts.get(c["match"], 0); joint = f' &middot; {n} joint paper{"s" if n != 1 else ""}' if n and c["match"] != "Chakraborty, S." else ""
+        name = f'<a href="{c["url"]}" target="_blank" rel="noopener">{c["name"]}</a>' if c["url"] else c["name"]
+        items += f'<li><p class="row__title">{name}</p><p class="row__meta">{c["role"]} &middot; {c["org"]}{joint}</p></li>'
+    return f'<ul class="grid grid--2 grid--tight">{items}</ul>'
+
+def link_list():
+    return "".join(f'<a href="{esc_attr(l["url"])}"{"" if l["url"].startswith("mailto:") else " target=\"_blank\" rel=\"noopener\""}>{l["label"]} {CHEV}</a>' for l in P["links"])
+
+# ── index ────────────────────────────────────────────────────────
+def build_index():
+    docs = [(d["label"], d["file"]) for d in P.get("documents", []) if d.get("file")]
+    hero = f"""<section class="hero"><div class="wrap wrap--narrow">
+  <img src="static/media/profile.jpg" alt="Garvit Chugh" class="hero__photo" width="176" height="176" fetchpriority="high" />
+  <h1 class="hero__name" id="name">{P.get("honorific", "")} {P["name"]}</h1>
+  <p class="hero__role">{P["headline"]}</p>
+  <p class="hero__tag">{P["tagline"]}</p>
+  <p class="hero__now">{P["now"]}</p>
+  <p class="hero__affil">{"".join(f'<a href="{a["url"]}" target="_blank" rel="noopener"><img src="static/media/{a["logo"]}" alt="" width="22" height="22" />{a["name"]}</a>' for a in P["affiliations"])}</p>
+  <p class="hero__actions"><a class="btn" href="mailto:{P["email"]}">Email me</a><a class="textlink" href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">Download CV {CHEV}</a><a class="textlink" href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar {CHEV}</a></p>
+</div></section>
+"""
+    about = section("About", f'<div class="prose">{"".join(f"<p>{p}</p>" for p in P["about"])}</div><p class="section__note">{" &middot; ".join(P["interests"])}</p>', "about", alt=True, narrow=True)
+    latest = section("Latest", '<ul class="rows">' + "".join(news_row(n) for n in NEWS[:6]) + "</ul>", "news", more=("news.html", f"All {len(NEWS)} updates"), narrow=True)
+    research = section("Research", '<ul class="grid grid--4">' + "".join(f'<li class="tile"><span class="tile__glyph" aria-hidden="true">{r["icon"]}</span><h3 class="tile__title">{r["title"]}</h3><p class="tile__desc">{r["description"]}</p></li>' for r in RESEARCH) + "</ul>", "research", alt=True)
+    systems = section("Systems I built", '<ul class="grid grid--2">' + "".join(system_tile(x) for x in SYSTEMS[:2]) + "</ul>", "systems", more=("education.html#systems", f"All {len(SYSTEMS)} systems"))
+    pubs = section("Selected publications", '<ul class="rows">' + "".join(pub_item(p) for p in PUBS if p.get("selected")) + "</ul>", "publications", alt=True, more=("publications.html", f"All {N_PUBS} publications"), narrow=True)
+    exp = section("Experience", entries(EXPERIENCE[:3]) + '<h3 class="subhead subhead--sm">Education</h3>' + entries(EDUCATION), "experience", more=("education.html", "Full experience"), narrow=True)
+    hon = section("Honours", '<ul class="rows">' + "".join(honour_row(h) for h in HONOURS if h["featured"]) + "</ul>", "honours", alt=True, more=("awards.html", f"All {len(HONOURS)} honours"), narrow=True)
+    work = section("Work with me", f'<div class="prose"><p>{P["work_with_me"]}</p></div><p class="hero__actions hero__actions--left"><a class="btn" href="mailto:{P["email"]}">Email me</a>{"".join(f"<a class=\"textlink\" href=\"{u}\" target=\"_blank\" rel=\"noopener\">{l} {CHEV}</a>" for l, u in docs)}</p><h3 class="subhead subhead--sm">Collaborators</h3>{collab_list()}', "work-with-me", narrow=True)
+    info = section("", f"""<div class="grid grid--4 info">
+  <div><h3 class="info__title">Skills</h3><p class="info__text">{", ".join(P["skills"])}</p></div>
+  <div><h3 class="info__title">Languages</h3>{bullets(P["languages"], "info__list")}</div>
+  <div><h3 class="info__title">Service</h3>{bullets(P["service_short"], "info__list")}</div>
+  <div><h3 class="info__title">Links</h3><p class="info__links">{link_list()}</p></div>
+</div>""", "contact", alt=True)
+    jsonld = json.dumps({
+        "@context": "https://schema.org", "@type": "Person", "name": P["name"], "honorificPrefix": P.get("honorific", ""), "url": SITE + "/",
+        "image": f"{SITE}/static/media/profile.jpg", "email": f"mailto:{P['email']}", "jobTitle": "Postdoctoral Researcher",
+        "worksFor": {"@type": "Organization", "name": "Singapore Management University"},
+        "alumniOf": [{"@type": "Organization", "name": "Indian Institute of Technology Jodhpur"}, {"@type": "Organization", "name": "Guru Gobind Singh Indraprastha University"}],
+        "sameAs": [l["url"] for l in P["links"] if not l["url"].startswith("mailto:")],
+        "knowsAbout": ["Earable Computing", "Wearable Sensing", "Human-Computer Interaction", "Mobile and Pervasive Computing", "Ubiquitous Computing", "Human-Centered AI"]}, indent=1)
+    return shell("Garvit Chugh", "Postdoctoral Researcher at Singapore Management University. Ph.D. from IIT Jodhpur. Research in earable and wearable sensing, human-computer interaction, and pervasive computing.",
+                 "", "index.html", hero + about + latest + research + systems + pubs + exp + hon + work + info, extra_head=f'  <script type="application/ld+json">{jsonld}</script>\n', ogtype="profile")
 
 def bibtex(p):
     plain = re.sub(r"<[^>]+>", "", p["authors"]).replace("&amp;", "&")
@@ -222,178 +304,9 @@ def bibtex(p):
     if p.get("url"): body += f",\n  url={{{p['url']}}}"
     return body + "\n}"
 
-def pub_item(p, heading_level=3):
-    badges = "".join(f' <span class="pub-badge pub-badge--{b["kind"]}" title="{esc_attr(BADGE_TITLES.get(b["kind"], b["text"]))}">{b["text"]}</span>' for b in p["badges"])
-    title = f'<a href="papers/{p["slug"]}.html">{p["title"]}</a>'
-    tags = "".join(f'<span class="pub-tag">{t}</span>' for t in p["tags"])
-    cited = f'<span class="pub-cited" title="Citations counted by OpenAlex">{I["quote"]}Cited {p["cited"]}</span>' if p.get("cited") else ""
-    links = "".join(f'<a class="iconbtn" href="{esc_attr(u)}" target="_blank" rel="noopener" title="{LINK_ICON[k][1]}" aria-label="{LINK_ICON[k][1]}">{I[LINK_ICON[k][0]]}<span>{LINK_ICON[k][1]}</span></a>' for k, u in (p.get("links") or {}).items() if u and k in LINK_ICON) + cited
-    links += f'<button type="button" class="iconbtn iconbtn--copy" data-bib="{esc_attr(bibtex(p))}" title="Copy BibTeX" aria-label="Copy BibTeX">{I["quote"]}<span>BibTeX</span></button>'
-    return f"""      <li class="pub-item" data-year="{p["year"]}" data-track="{p["track"]}" data-topic="{' '.join(p["topics"])}">
-        <h{heading_level} class="pub-title">{title}</h{heading_level}>
-        <div class="pub-authors">{p["authors"]}</div>
-        <div class="pub-meta"><span class="pub-venue">{p["venue"]}</span>{badges}{tags}</div>
-        <div class="pub-links">{links}</div>
-      </li>
-"""
-
-def news_item(n, with_year=True):
-    icon, label = NEWS_KIND.get(n.get("kind", "update"), NEWS_KIND["update"])
-    meta = label + (f' &middot; {n["year"]}' if with_year else "")
-    cls = f'news-item news-item--{n.get("kind", "update")}' + (" news-item--featured" if n.get("featured") else "")
-    return f'      <li class="{cls}"><span class="news-icon" aria-hidden="true">{I[icon]}</span><div class="news-body"><p class="news-text">{n["text"]}</p><span class="news-meta">{meta}</span></div></li>\n'
-
-def bullets(items, cls="ach-list"):
-    return f'<ul class="{cls}">' + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
-
-def news_hero(n):
-    icon, label = NEWS_KIND.get(n.get("kind", "update"), NEWS_KIND["update"])
-    return f'<a class="news-hero" href="news.html#y{n["year"]}"><span class="news-hero__icon" aria-hidden="true">{I[icon]}</span><span class="news-hero__body"><span class="news-hero__label">{label} &middot; {n["year"]}</span><span class="news-hero__text">{n["text"]}</span></span></a>'
-
-def system_tile(x):
-    links = "".join(f'<a class="iconbtn" href="{esc_attr(u)}"{"" if u.endswith(".html") else " target=\"_blank\" rel=\"noopener\""} title="{LINK_ICON[k][1]}" aria-label="{x["name"]} {LINK_ICON[k][1]}">{I[LINK_ICON[k][0]]}<span>{LINK_ICON[k][1]}</span></a>' for k, u in x["links"].items() if u and k in LINK_ICON)
-    return f'<li class="system system--{x["kind"]}"><span class="system__icon" aria-hidden="true">{I[SYS_ICON.get(x["kind"], "wrench")]}</span><div class="system__body"><h3 class="system__name">{x["name"]}</h3><p class="system__desc">{x["description"]}</p><div class="system__meta"><span class="system__venue">{x["venue"]}</span>{links}</div></div></li>'
-
-def collab_card():
-    import collections
-    counts = collections.Counter()
-    for p in PUBS:
-        plain = re.sub(r"\s*\(\*Equal Contributions?\)", "", re.sub(r"<[^>]+>", "", p["authors"])).replace("&amp;", "&").replace("*", "")
-        for a in re.split(r",\s(?=[A-Z][A-Za-z'\-]+,)|\s&\s", plain): counts[a.strip()] += 1
-    rows = ""
-    for c in COLLAB:
-        n = counts.get(c["match"], 0); joint = f'{n} joint paper{"s" if n != 1 else ""}' if n and c["match"] != "Chakraborty, S." else ""
-        name = f'<a class="link" href="{c["url"]}" target="_blank" rel="noopener">{c["name"]}</a>' if c["url"] else f'<strong>{c["name"]}</strong>'
-        rows += f'<li class="collab"><span class="collab__avatar" aria-hidden="true">{"".join(w[0] for w in re.sub(r"^(Dr|Prof)\. ", "", c["name"]).split()[:2])}</span><span class="collab__body"><span class="collab__name">{name}</span><span class="entry__meta">{c["role"]} &middot; {c["org"]}{" &middot; " + joint if joint else ""}</span></span></li>'
-    return f'<section class="card" id="collaborators" aria-labelledby="collab-title"><h2 class="card__title" id="collab-title">Collaborators</h2><ul class="collabs">{rows}</ul></section>'
-
-def work_card():
-    docs = "".join(f'<a href="{d["file"]}" target="_blank" rel="noopener">{I["file"]}<span>{d["label"]}{(" <em>&middot; " + d["note"] + "</em>") if d.get("note") else ""}</span></a>' for d in P.get("documents", []) if d.get("file"))
-    data = "".join(f'<a href="{d["url"]}" target="_blank" rel="noopener">{I["code"]}<span>{d["label"]}</span></a>' for d in P.get("datasets", []) if d.get("url"))
-    extra = f'<h3 class="card__sub-title">Documents</h3><div class="links">{docs}</div>' if docs else ""
-    extra += f'<h3 class="card__sub-title">Datasets</h3><div class="links">{data}</div>' if data else ""
-    return f'<section class="card" id="work-with-me" aria-labelledby="work-title"><h2 class="card__title" id="work-title">Work with me</h2><p class="about-text">{P["work_with_me"]}</p><div class="vcard__actions" style="margin-top:14px"><a class="btn btn--primary" href="mailto:{P["email"]}">{I["mail"]}<span>Email me</span></a></div>{extra}</section>'
-
-def links_card():
-    rows = "".join(f'<a href="{esc_attr(l["url"])}"{"" if l["url"].startswith("mailto:") else " target=\"_blank\" rel=\"noopener\""}>{B.get(l["kind"], I.get(l["kind"], ""))}<span>{l["label"]}</span></a>' for l in P["links"])
-    return f'<section class="card"><h2 class="card__title">Contact &amp; links</h2><div class="links">{rows}</div></section>'
-
-# ── index ────────────────────────────────────────────────────────
-def build_index():
-    affils = "".join(f'<a class="affil" href="{a["url"]}" target="_blank" rel="noopener"><img class="affil__logo" src="static/media/{a["logo"]}" alt="" width="36" height="36" /><span class="affil__long">{a["name"]}</span><span class="affil__short">{a["short"]}</span></a>' for a in P["affiliations"])
-    interests = "".join(f'<span class="pill">{i}</span>' for i in P["interests"])
-    research = "".join(f"""        <li class="project">
-          <div class="project__icon">{r["icon"]}</div>
-          <div class="project__body">
-            <h3>{r["title"]}</h3>
-            <p class="project__description">{r["description"]}</p>
-            <div class="project__stack">{"".join(f'<span class="project__stack-item">{t}</span>' for t in r["tags"])}</div>
-          </div>
-        </li>
-""" for r in RESEARCH)
-    body = f"""<section class="card vcard" aria-labelledby="name">
-  <div class="vcard__side">
-    <img src="static/media/profile.jpg" alt="Garvit Chugh" class="vcard__photo" width="240" height="240" fetchpriority="high" />
-  </div>
-  <div class="vcard__main">
-    <div class="vcard__id">
-      <h1 class="vcard__name" id="name">{P.get("honorific", "")} {P["name"]}</h1>
-      <p class="vcard__headline">{P["headline"]}</p>
-      <p class="vcard__tagline">{P["tagline"]}</p>
-      <p class="vcard__now"><span class="vcard__now-dot" aria-hidden="true"></span>{P["now"]}</p>
-    </div>
-    <div class="vcard__ctas">
-    <p class="vcard__meta">{I["pin"]}{P["location"]}</p>
-    <div class="vcard__affil">{affils}</div>
-    <div class="vcard__actions">
-      <a class="btn btn--primary" href="mailto:{P["email"]}">{I["mail"]}<span>Contact</span></a>
-      <a class="btn btn--outline" href="static/media/Garvit_Resume.pdf" target="_blank" rel="noopener" title="Curriculum vitae, {P.get("cv_updated", "")}">{I["file"]}<span>CV</span></a>
-      <a class="btn btn--ghost" href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&amp;hl=en" target="_blank" rel="noopener">{I["scholar"]}<span>Scholar</span></a>
-    </div>
-    </div>
-  </div>
-</section>
-
-<div class="grid">
-  <aside class="aside aside--top" aria-label="Latest news">
-    <section class="card" id="news" aria-labelledby="news-title">
-      <h2 class="card__title" id="news-title">Latest</h2>
-      {news_hero(next(n for n in NEWS if n.get("featured")))}
-      <ol class="news-list news-list--timeline">
-{"".join(news_item(n) for n in [x for x in NEWS if x is not next(y for y in NEWS if y.get("featured"))][:6])}      </ol>
-      {show_all("news.html", f"Show all {len(NEWS)} updates")}
-    </section>
-  </aside>
-
-  <div class="main stack">
-    <section class="card" id="about" aria-labelledby="about-title">
-      <h2 class="card__title" id="about-title">About</h2>
-      <div class="about-text">{"".join(f"<p>{p}</p>" for p in P["about"])}</div>
-      <div class="pills">{interests}</div>
-    </section>
-
-    <section class="card" id="research" aria-labelledby="research-title">
-      <h2 class="card__title" id="research-title">Research</h2>
-      <ul class="research">
-{research}      </ul>
-    </section>
-
-    <section class="card" id="systems" aria-labelledby="systems-title">
-      <h2 class="card__title" id="systems-title">Systems I built</h2>
-      <p class="card__sub">{len(SYSTEMS)} sensing systems and tools, from prototype to user study.</p>
-      <ul class="systems systems--top">{"".join(system_tile(x) for x in SYSTEMS[:2])}</ul>
-      {show_all("education.html#systems", f"Show all {len(SYSTEMS)} systems")}
-    </section>
-
-    <section class="card" id="experience" aria-labelledby="experience-title">
-      <h2 class="card__title" id="experience-title">Experience</h2>
-      {entries(EXPERIENCE[:3])}
-      {show_all("education.html", f"Show all {len(EXPERIENCE)} roles")}
-    </section>
-
-    <section class="card" id="education" aria-labelledby="education-title">
-      <h2 class="card__title" id="education-title">Education</h2>
-      {entries(EDUCATION)}
-      {show_all("education.html#teaching", "Show teaching &amp; mentorship")}
-    </section>
-
-    <section class="card" id="publications" aria-labelledby="publications-title">
-      <h2 class="card__title" id="publications-title">Publications</h2>
-      <p class="card__sub">Selected papers. {PUB_SUMMARY}</p>
-      <ul class="pub-list">
-{"".join(pub_item(p) for p in PUBS if p.get("selected"))}      </ul>
-      {show_all("publications.html", f"Show all {N_PUBS} publications")}
-    </section>
-
-    <section class="card" id="honours" aria-labelledby="honours-title">
-      <h2 class="card__title" id="honours-title">Honours &amp; awards</h2>
-      <ol class="news-list">
-{"".join(honour_item(h) for h in HONOURS if h["featured"])}      </ol>
-      {show_all("awards.html", f"Show all {len(HONOURS)} honours &amp; grants")}
-    </section>
-  </div>
-
-  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
-    <section class="card"><h2 class="card__title">Skills &amp; languages</h2><div class="pills">{"".join(f'<span class="pill">{s}</span>' for s in P["skills"])}</div><div class="stack" style="gap:0;margin-top:14px">{bullets(P["languages"])}</div></section>
-    {work_card()}
-    {collab_card()}
-    <section class="card"><h2 class="card__title">Service</h2>{bullets(P["service_short"])}</section>
-    {links_card()}
-  </aside>
-</div>"""
-    jsonld = json.dumps({
-        "@context": "https://schema.org", "@type": "Person", "name": P["name"], "honorificPrefix": P.get("honorific", ""), "url": SITE + "/",
-        "image": f"{SITE}/static/media/profile.jpg", "email": f"mailto:{P['email']}", "jobTitle": "Postdoctoral Researcher",
-        "worksFor": {"@type": "Organization", "name": "Singapore Management University"},
-        "alumniOf": [{"@type": "Organization", "name": "Indian Institute of Technology Jodhpur"}, {"@type": "Organization", "name": "Guru Gobind Singh Indraprastha University"}],
-        "sameAs": [l["url"] for l in P["links"] if not l["url"].startswith("mailto:")],
-        "knowsAbout": ["Earable Computing", "Wearable Sensing", "Human-Computer Interaction", "Mobile and Pervasive Computing", "Ubiquitous Computing", "Human-Centered AI"]}, indent=1)
-    return shell("Garvit Chugh", "Postdoctoral Researcher at Singapore Management University. Ph.D. from IIT Jodhpur. Research in earable and wearable sensing, human-computer interaction, and pervasive computing.",
-                 "", "index.html", body, extra_head=f'  <script type="application/ld+json">{jsonld}</script>\n', ogtype="profile")
-
-# ── publications ─────────────────────────────────────────────────
 TRACKS = [("main", "Main track"), ("workshop", "Workshop / WiP"), ("journal", "Journal"), ("patent", "Patent"), ("review", "Under review")]
 TOPICS = [("sensing", "Sensing"), ("healthcare", "Healthcare"), ("hci", "HCI"), ("mlai", "ML / AI"), ("security", "Security"), ("systems", "Systems")]
+
 
 def build_publications():
     years = []
@@ -402,91 +315,37 @@ def build_publications():
     def label_year(y): return "Under review" if y == "review" else "Patent" if y == "patent" else y
     def select(id_, label, options):
         opts = "".join(f'<option value="{v}">{t}</option>' for v, t in options)
-        return f'<label class="select"><span class="select__label">{label}</span><select id="{id_}" aria-label="{label}"><option value="all">All</option>{opts}</select></label>'
-    toolbar = select("yearSelect", "Year", [(y, label_year(y)) for y in years]) + select("trackSelect", "Track", TRACKS) + select("topicSelect", "Topic", TOPICS) + '<button type="button" class="btn btn--ghost btn--sm" id="resetFilters" hidden>Reset</button>'
-    groups = ""
-    for y in years:
-        groups += f'      <h2 class="pub-year" data-year-heading="{y}">{label_year(y)}</h2>\n      <ul class="pub-list">\n' + "".join(pub_item(p) for p in PUBS if p["year"] == y) + "      </ul>\n"
-    topic_counts = {k: sum(k in p["topics"] for p in PUBS) for k, _ in TOPICS}
-    track_counts = {k: sum(p["track"] == k for p in PUBS) for k, _ in TRACKS}
-    overview = f"""<section class="card" aria-labelledby="ov-title">
-      <h2 class="card__title" id="ov-title">Overview</h2>
-      <dl class="stats-list">
-        <div><dt>Total</dt><dd>{N_PUBS}</dd></div>
-        <div><dt>Peer-reviewed</dt><dd>{N_PEER}</dd></div>
-        <div><dt>Patent filed</dt><dd>{N_PATENT}</dd></div>
-        <div><dt>Under review</dt><dd>{N_REVIEW}</dd></div>
-        <div><dt>Citations</dt><dd>{CITES_TOTAL}</dd></div>
-        <div><dt>h-index</dt><dd>{H_INDEX if H_INDEX is not None else "&ndash;"}</dd></div>
-      </dl>
-      <p class="muted" style="font-size:var(--t-xs);margin-top:6px">Citation counts from <a class="link" href="{OPENALEX["author"].get("openalex_id", "https://openalex.org")}" target="_blank" rel="noopener">OpenAlex</a>; Google Scholar usually reads higher.</p>
-      <h3 class="card__sub-title">By track</h3>
-      <div class="pills">{"".join(f'<button type="button" class="pill pill--btn" data-filter="track" data-value="{k}">{t} <b>{track_counts[k]}</b></button>' for k, t in TRACKS)}</div>
-      <h3 class="card__sub-title">By topic</h3>
-      <div class="pills">{"".join(f'<button type="button" class="pill pill--btn" data-filter="topic" data-value="{k}">{t} <b>{topic_counts[k]}</b></button>' for k, t in TOPICS)}</div>
-      <h3 class="card__sub-title">Legend</h3>
-      <p class="legend"><span class="pub-badge pub-badge--core">Core A*</span> top-tier venue in the CORE ranking &middot; <span class="pub-badge pub-badge--wip">WiP</span> work-in-progress, poster, demo or artefact track &middot; <strong>*</strong> equal contribution</p>
-      <h3 class="card__sub-title">Full record</h3>
-      <div class="links"><a href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&amp;hl=en" target="_blank" rel="noopener">{B["scholar"]}<span>Google Scholar</span></a><a href="https://dblp.org/pid/302/5075" target="_blank" rel="noopener">{B["dblp"]}<span>DBLP</span></a><a href="https://orcid.org/0000-0002-0354-9731" target="_blank" rel="noopener">{B["orcid"]}<span>ORCID</span></a></div>
-    </section>"""
-    body = f"""<div class="grid grid--2">
-  <div class="main stack">
-    <section class="card">
-      <div class="toolbar">
-        <div>
-          <h1 class="page-title">Publications</h1>
-          <p class="page-subtitle" style="margin-bottom:0">{PUB_SUMMARY} <span class="filter-count" id="filterCount" aria-live="polite"></span></p>
-        </div>
-        <div class="toolbar__controls">{toolbar}</div>
-      </div>
-      <div class="no-results" id="noResults" role="status">No publications match the selected filters.</div>
-      <div id="pubContainer">
-{groups}      </div>
-    </section>
-  </div>
-  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
-    {overview}
-  </aside>
-</div>
+        return f'<label class="select"><span>{label}</span><select id="{id_}" aria-label="{label}"><option value="all">All</option>{opts}</select></label>'
+    toolbar = select("yearSelect", "Year", [(y, label_year(y)) for y in years]) + select("trackSelect", "Track", TRACKS) + select("topicSelect", "Topic", TOPICS) + '<button type="button" class="textlink" id="resetFilters" hidden>Reset</button>'
+    stats = f"""<ul class="stats"><li><strong>{N_PUBS}</strong><span>Publications</span></li><li><strong>{N_PEER}</strong><span>Peer-reviewed</span></li><li><strong>{CITES_TOTAL}</strong><span>Citations</span></li><li><strong>{H_INDEX if H_INDEX is not None else "&ndash;"}</strong><span>h-index</span></li></ul>
+<p class="section__note">Citation counts from <a href="{OPENALEX["author"].get("openalex_id", "https://openalex.org")}" target="_blank" rel="noopener">OpenAlex</a>; Google Scholar usually reads higher. CORE A* marks a top-tier venue; * marks equal contribution. Full record on <a href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, <a href="https://dblp.org/pid/302/5075" target="_blank" rel="noopener">DBLP</a> and <a href="https://orcid.org/0000-0002-0354-9731" target="_blank" rel="noopener">ORCID</a>.</p>"""
+    groups = "".join(f'<h2 class="group" data-year-heading="{y}">{label_year(y)}</h2>\n<ul class="rows">\n' + "".join(pub_item(p) for p in PUBS if p["year"] == y) + "</ul>\n" for y in years)
+    body = f"""<section class="section section--first"><div class="wrap wrap--narrow">
+  {page_head("Publications", PUB_SUMMARY)}
+  {stats}
+  <div class="toolbar">{toolbar}<span class="filter-count" id="filterCount" aria-live="polite"></span></div>
+  <p class="no-results" id="noResults" role="status" hidden>No publications match the selected filters.</p>
+  <div id="pubContainer">
+{groups}  </div>
+</div></section>
 <script>
   const selects = {{ year: document.getElementById('yearSelect'), track: document.getElementById('trackSelect'), topic: document.getElementById('topicSelect') }};
-  const items = document.querySelectorAll('.pub-item');
-  const countEl = document.getElementById('filterCount');
-  const noResults = document.getElementById('noResults');
-  const reset = document.getElementById('resetFilters');
+  const items = document.querySelectorAll('.row--pub'); const countEl = document.getElementById('filterCount'); const noResults = document.getElementById('noResults'); const reset = document.getElementById('resetFilters');
   function applyFilters() {{
-    const f = {{ year: selects.year.value, track: selects.track.value, topic: selects.topic.value }};
-    let visible = 0;
-    items.forEach(item => {{
-      const show = (f.year === 'all' || item.dataset.year === f.year)
-        && (f.track === 'all' || item.dataset.track === f.track)
-        && (f.topic === 'all' || item.dataset.topic.split(' ').includes(f.topic));
-      item.classList.toggle('hidden', !show);
-      if (show) visible++;
-    }});
-    document.querySelectorAll('[data-year-heading]').forEach(h => {{
-      const any = Array.from(items).some(i => i.dataset.year === h.dataset.yearHeading && !i.classList.contains('hidden'));
-      h.hidden = !any; h.nextElementSibling.hidden = !any;
-    }});
-    const filtered = Object.values(f).some(v => v !== 'all');
-    countEl.textContent = filtered ? `Showing ${{visible}} of ${{items.length}}.` : '';
-    reset.hidden = !filtered;
-    noResults.style.display = visible === 0 ? 'block' : 'none';
-    document.querySelectorAll('.pill--btn').forEach(p => p.classList.toggle('active', f[p.dataset.filter] === p.dataset.value));
+    const f = {{ year: selects.year.value, track: selects.track.value, topic: selects.topic.value }}; let visible = 0;
+    items.forEach(item => {{ const show = (f.year === 'all' || item.dataset.year === f.year) && (f.track === 'all' || item.dataset.track === f.track) && (f.topic === 'all' || item.dataset.topic.split(' ').includes(f.topic)); item.hidden = !show; if (show) visible++; }});
+    document.querySelectorAll('[data-year-heading]').forEach(h => {{ const any = Array.from(items).some(i => i.dataset.year === h.dataset.yearHeading && !i.hidden); h.hidden = !any; h.nextElementSibling.hidden = !any; }});
+    const filtered = Object.values(f).some(v => v !== 'all'); countEl.textContent = filtered ? `Showing ${{visible}} of ${{items.length}}` : ''; reset.hidden = !filtered; noResults.hidden = visible !== 0;
   }}
   Object.values(selects).forEach(sel => sel.addEventListener('change', applyFilters));
   reset.addEventListener('click', () => {{ Object.values(selects).forEach(sel => sel.value = 'all'); applyFilters(); }});
-  document.querySelectorAll('.pill--btn').forEach(p => p.addEventListener('click', () => {{
-    const sel = selects[p.dataset.filter]; sel.value = sel.value === p.dataset.value ? 'all' : p.dataset.value; applyFilters();
-    document.getElementById('pubContainer').scrollIntoView({{ behavior: 'smooth', block: 'start' }});
-  }}));
 </script>"""
     def article(p):
         names = [re.sub(r"[*]", "", a.strip()) for a in re.split(r",\s(?=[A-Z][A-Za-z'\-]+,)|\s&amp;\s|\s&\s", re.sub(r"\s*\(\*Equal Contributions?\)", "", re.sub(r"<[^>]+>", "", p["authors"]))) if a.strip()]
         d = {"@type": "ScholarlyArticle", "headline": re.sub(r"<[^>]+>", "", p["title"]).replace("&amp;", "&"), "author": [{"@type": "Person", "name": n} for n in names],
-             "isPartOf": {"@type": "Periodical" if p["track"] == "journal" else "Event", "name": p["venue"].replace("&amp;", "&")}}
+             "isPartOf": {"@type": "Periodical" if p["track"] == "journal" else "Event", "name": p["venue"].replace("&amp;", "&")}, "url": f"{SITE}/papers/{p['slug']}.html"}
         if p["year"].isdigit(): d["datePublished"] = p["year"]
-        if p.get("url"): d["url"] = p["url"]
+        if p.get("url"): d["sameAs"] = p["url"]
         return d
     ld = json.dumps({"@context": "https://schema.org", "@type": "ItemList", "name": "Publications by Garvit Chugh", "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": article(p)} for i, p in enumerate(PUBS) if p["track"] != "review"]}, ensure_ascii=False)
     return shell("Publications - Garvit Chugh", f"{PUB_SUMMARY} Research by Garvit Chugh at CHI, PerCom, SenSys, PACMHCI, CIKM, ICDM and more.", "publications.html", "publications.html", body, extra_head=f'  <script type="application/ld+json">{ld}</script>\n')
@@ -494,91 +353,29 @@ def build_publications():
 # ── news ─────────────────────────────────────────────────────────
 def build_news():
     years = sorted({n["year"] for n in NEWS}, reverse=True)
-    groups = "".join(f'      <h2 class="pub-year" id="y{y}">{y} <span class="muted">&middot; {sum(n["year"] == y for n in NEWS)}</span></h2>\n      <ol class="news-grid">\n' + "".join(f'        <li class="news-tile news-tile--{n.get("kind","update")}{" news-tile--featured" if n.get("featured") else ""}"><span class="news-icon" aria-hidden="true">{I[NEWS_KIND.get(n.get("kind","update"), NEWS_KIND["update"])[0]]}</span><div class="news-body"><p class="news-text">{n["text"]}</p><span class="news-meta">{NEWS_KIND.get(n.get("kind","update"), NEWS_KIND["update"])[1]}</span></div></li>\n' for n in NEWS if n["year"] == y) + "      </ol>\n" for y in years)
-    jump = "".join(f'<a class="pill pill--btn" href="#y{y}">{y} <b>{sum(n["year"] == y for n in NEWS)}</b></a>' for y in years)
-    body = f"""<div class="grid grid--2">
-  <div class="main stack">
-    <section class="card">
-      <h1 class="page-title">News</h1>
-      <p class="page-subtitle">{len(NEWS)} updates, newest first.</p>
-{groups}    </section>
-  </div>
-  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
-    <section class="card"><h2 class="card__title">Jump to year</h2><div class="pills">{jump}</div></section>
-    <section class="card"><h2 class="card__title">Highlights</h2><ol class="news-list">{"".join(news_item(n) for n in NEWS if n.get("featured"))}</ol></section>
-  </aside>
-</div>"""
+    jump = " &middot; ".join(f'<a href="#y{y}">{y}</a>' for y in years)
+    groups = "".join(f'<h2 class="group" id="y{y}">{y}</h2>\n<ul class="rows">' + "".join(news_row(n, with_year=False) for n in NEWS if n["year"] == y) + "</ul>\n" for y in years)
+    body = f'<section class="section section--first"><div class="wrap wrap--narrow">{page_head("News", f"{len(NEWS)} updates, newest first. {jump}")}{groups}</div></section>'
     return shell("News - Garvit Chugh", "Latest news and updates from Garvit Chugh.", "news.html", "news.html", body)
 
 # ── experience & education ───────────────────────────────────────
 def build_education():
-    body = f"""<div class="grid grid--2">
-  <div class="main stack">
-    <section class="card">
-      <h1 class="page-title">Experience</h1>
-      {entries(EXPERIENCE, level=2)}
-    </section>
-    <section class="card">
-      <h2 class="card__title">Education</h2>
-      {entries(EDUCATION)}
-    </section>
-    <section class="card" id="systems">
-      <h2 class="card__title">Systems I built</h2>
-      <p class="card__sub">{len(SYSTEMS)} sensing systems and tools, from prototype to user study. Each links to its paper; code and video links appear as they are released.</p>
-      <ul class="systems systems--2">{"".join(system_tile(x) for x in SYSTEMS)}</ul>
-    </section>
-    <section class="card" id="teaching">
-      <h2 class="card__title">Teaching (IIT Jodhpur)</h2>
-      {bullets(TEACHING)}
-    </section>
-    <section class="card">
-      <h2 class="card__title">PMRF outreach &amp; external teaching</h2>
-      {bullets(OUTREACH)}
-    </section>
-  </div>
-  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
-    <section class="card"><h2 class="card__title">Labs I have been a part of</h2><ul class="labs">{"".join(f'<li class="lab"><a class="lab__link" href="{l["url"]}" target="_blank" rel="noopener"><span class="entry__logo lab__logo"><img src="static/media/{l["logo"]}" alt="" width="64" height="64" loading="lazy" decoding="async" /></span><span class="lab__body"><span class="lab__name">{l["name"]}</span><span class="lab__org">{l["org"]}</span><span class="entry__meta">{l["role"]} &middot; {l["years"]}</span></span></a></li>' for l in LABS)}</ul></section>
-    <section class="card"><h2 class="card__title">Supervision &amp; mentorship</h2>{bullets(MENTORSHIP)}</section>
-    <section class="card"><h2 class="card__title">Skills &amp; languages</h2>{bullets(SKILLS_FULL)}</section>
-  </aside>
-</div>"""
-    return shell("Experience - Garvit Chugh", "Experience, education, teaching, and mentorship of Garvit Chugh.", "education.html", "education.html", body)
+    labs = "".join(f'<li class="row row--entry"><span class="row__logo"><img src="static/media/{l["logo"]}" alt="" width="48" height="48" loading="lazy" decoding="async" /></span><div class="row__body"><h3 class="row__title"><a href="{l["url"]}" target="_blank" rel="noopener">{l["name"]}</a></h3><p class="row__sub">{l["org"]}</p><p class="row__meta">{l["role"]} &middot; {l["years"]}</p></div></li>' for l in LABS)
+    body = (f'<section class="section section--first"><div class="wrap wrap--narrow">{page_head("Experience")}<h2 class="subhead">Current &amp; past roles</h2>{entries(EXPERIENCE)}</div></section>'
+            + section("Education", entries(EDUCATION), "education", alt=True, narrow=True)
+            + section("Labs I have been a part of", f'<ul class="rows">{labs}</ul>', "labs", narrow=True)
+            + section("Systems I built", '<ul class="grid grid--3">' + "".join(system_tile(x) for x in SYSTEMS) + "</ul>", "systems", alt=True, intro=f"{len(SYSTEMS)} sensing systems and tools, from prototype to user study. Each links to its paper; code and video links appear as they are released.")
+            + section("Teaching", '<h3 class="subhead subhead--sm">IIT Jodhpur</h3>' + bullets(TEACHING) + '<h3 class="subhead subhead--sm">PMRF outreach &amp; external teaching</h3>' + bullets(OUTREACH), "teaching", narrow=True)
+            + section("Mentorship", bullets(MENTORSHIP) + '<h3 class="subhead subhead--sm">Skills &amp; languages</h3>' + bullets(SKILLS_FULL), "mentorship", alt=True, narrow=True))
+    return shell("Experience - Garvit Chugh", "Experience, education, labs, systems, teaching, and mentorship of Garvit Chugh.", "education.html", "education.html", body)
 
 # ── honours ──────────────────────────────────────────────────────
-def honour_tile(h, with_year=False):
-    icon, label = HON_KIND[h["kind"]]
-    meta = label + (f' &middot; {h["when"] or h["year"] or ""}' if with_year else (f' &middot; {h["when"]}' if h["when"] and not re.fullmatch(r"\d{4}", h["when"]) else ""))
-    cls = f'news-tile news-tile--{h["kind"]}' + (" news-tile--featured" if h["featured"] else "")
-    return f'        <li class="{cls}"><span class="news-icon" aria-hidden="true">{I[icon]}</span><div class="news-body"><p class="news-text">{h["text"]}</p><span class="news-meta">{meta}</span></div></li>\n'
-
-def honour_item(h):
-    icon, label = HON_KIND[h["kind"]]
-    cls = f'news-item news-item--{h["kind"]}' + (" news-item--featured" if h["featured"] else "")
-    return f'      <li class="{cls}"><span class="news-icon" aria-hidden="true">{I[icon]}</span><div class="news-body"><p class="news-text">{h["text"]}</p><span class="news-meta">{label} &middot; {h["when"] or h["year"] or ""}</span></div></li>\n'
-
 def build_awards():
     years = sorted({h["year"] for h in HONOURS if h["year"]}, reverse=True)
-    groups = ""
-    for y in years:
-        hs = [h for h in HONOURS if h["year"] == y]
-        groups += f'      <h2 class="pub-year" id="h{y}">{y} <span class="muted">&middot; {len(hs)}</span></h2>\n      <ul class="news-grid">\n' + "".join(honour_tile(h) for h in hs) + "      </ul>\n"
-    undated = [h for h in HONOURS if not h["year"]]
-    if undated: groups += '      <h2 class="pub-year">Other</h2>\n      <ul class="news-grid">\n' + "".join(honour_tile(h) for h in undated) + "      </ul>\n"
-    counts = {k: sum(h["kind"] == k for h in HONOURS) for k in HON_KIND if any(h["kind"] == k for h in HONOURS)}
+    groups = "".join(f'<h2 class="group" id="h{y}">{y}</h2>\n<ul class="rows">' + "".join(honour_row(h, with_year=False) for h in HONOURS if h["year"] == y) + "</ul>\n" for y in years)
     n_awards = sum(h["source"] == "awards" for h in HONOURS); n_fund = len(HONOURS) - n_awards
-    body = f"""<div class="grid grid--2">
-  <div class="main stack">
-    <section class="card">
-      <h1 class="page-title">Honours &amp; awards</h1>
-      <p class="page-subtitle">{len(HONOURS)} in total: {n_awards} honours and {n_fund} fellowships and grants, newest first.</p>
-{groups}    </section>
-  </div>
-  <aside class="aside aside--bottom" aria-label="Sidebar" tabindex="0">
-    <section class="card"><h2 class="card__title">Highlights</h2><ol class="news-list">{"".join(honour_item(h) for h in HONOURS if h["featured"])}</ol></section>
-    <section class="card"><h2 class="card__title">By kind</h2><div class="pills">{"".join(f'<span class="pill">{I[HON_KIND[k][0]]} {HON_KIND[k][1]} <b>{v}</b></span>' for k, v in counts.items())}</div></section>
-    <section class="card"><h2 class="card__title">Community service</h2>{bullets(SERVICE)}</section>
-  </aside>
-</div>"""
+    body = (f'<section class="section section--first"><div class="wrap wrap--narrow">{page_head("Honours &amp; awards", f"{len(HONOURS)} in total: {n_awards} honours and {n_fund} fellowships and grants, newest first.")}{groups}</div></section>'
+            + section("Community service", bullets(SERVICE), "service", alt=True, narrow=True))
     return shell("Honours - Garvit Chugh", "Honours, awards, fellowships, grants, and professional service of Garvit Chugh.", "awards.html", "awards.html", body)
 
 # ── one page per paper (Google Scholar indexes these) ────────────
@@ -587,53 +384,36 @@ def build_paper(p):
     plain_authors = re.sub(r"\s*\(\*Equal Contributions?\)", "", re.sub(r"<[^>]+>", "", p["authors"])).replace("&amp;", "&").replace("*", "")
     names = [a.strip() for a in re.split(r",\s(?=[A-Z][A-Za-z'\-]+,)|\s&\s", plain_authors) if a.strip()]
     year = p["year"] if p["year"].isdigit() else ("2025" if p["year"] == "patent" else "2026")
-    venue = p["venue"].replace("&amp;", "&")
-    links = p.get("links") or {}
-    meta = [("citation_title", plain_title), ("citation_publication_date", year), ("citation_journal_title" if p["track"] == "journal" else "citation_conference_title", venue)]
-    meta += [("citation_author", n) for n in names]
+    venue = p["venue"].replace("&amp;", "&"); links = p.get("links") or {}
+    meta = [("citation_title", plain_title), ("citation_publication_date", year), ("citation_journal_title" if p["track"] == "journal" else "citation_conference_title", venue)] + [("citation_author", n) for n in names]
     if p.get("url") and "doi.org/" in p["url"]: meta.append(("citation_doi", p["url"].split("doi.org/")[1]))
     if links.get("pdf"): meta.append(("citation_pdf_url", links["pdf"]))
     meta_html = "".join(f'  <meta name="{k}" content="{esc_attr(v)}" />\n' for k, v in meta)
-    badges = "".join(f' <span class="pub-badge pub-badge--{b["kind"]}" title="{esc_attr(BADGE_TITLES.get(b["kind"], b["text"]))}">{b["text"]}</span>' for b in p["badges"])
-    btns = "".join(f'<a class="btn btn--outline" href="{esc_attr(u)}" target="_blank" rel="noopener">{I[LINK_ICON[k][0]]}<span>{LINK_ICON[k][1]}</span></a>' for k, u in links.items() if u and k in LINK_ICON)
-    abstract = f'<h2 class="card__title">Abstract</h2><p class="paper__abstract">{p["abstract"]}</p>' if p.get("abstract") else ""
-    cited = f'<div><dt>Citations</dt><dd>{p["cited"]}</dd></div>' if p.get("cited") else ""
+    actions = textlinks([(LINK_LABEL[k], u) for k, u in links.items() if u and k in LINK_LABEL]) + f'<button type="button" class="copy-bib" data-bib="{esc_attr(bibtex(p))}">Copy BibTeX</button>'
+    abstract = f'<h2 class="subhead">Abstract</h2><div class="prose"><p>{p["abstract"]}</p></div>' if p.get("abstract") else ""
     related = [q for q in PUBS if q is not p and set(q["topics"]) & set(p["topics"])][:4]
-    related_html = "".join(f'<li><a class="link" href="papers/{q["slug"]}.html">{q["title"]}</a> <span class="muted">&middot; {q["venue"]}</span></li>' for q in related)
-    ld = {"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": plain_title, "author": [{"@type": "Person", "name": n} for n in names],
-          "datePublished": year, "isPartOf": {"@type": "Periodical" if p["track"] == "journal" else "Event", "name": venue}, "url": f"{SITE}/papers/{p['slug']}.html"}
+    related_html = ('<h2 class="subhead">Related</h2><ul class="list">' + "".join(f'<li><a href="papers/{q["slug"]}.html">{q["title"]}</a> <span class="muted">&middot; {q["venue"]}</span></li>' for q in related) + "</ul>") if related else ""
+    ld = {"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": plain_title, "author": [{"@type": "Person", "name": n} for n in names], "datePublished": year,
+          "isPartOf": {"@type": "Periodical" if p["track"] == "journal" else "Event", "name": venue}, "url": f"{SITE}/papers/{p['slug']}.html"}
     if p.get("url"): ld["sameAs"] = p["url"]
     if p.get("abstract"): ld["abstract"] = p["abstract"]
-    body = f"""<div class="grid grid--2">
-  <div class="main stack">
-    <article class="card paper">
-      <p class="paper__kicker"><a class="link" href="publications.html">Publications</a> &rsaquo; {p["venue"]}</p>
-      <h1 class="page-title paper__title">{p["title"]}</h1>
-      <p class="paper__authors">{p["authors"]}</p>
-      <p class="pub-meta"><span class="pub-venue">{p["venue"]}</span>{badges}{"".join(f'<span class="pub-tag">{t}</span>' for t in p["tags"])}</p>
-      <div class="paper__actions">{btns}<button type="button" class="btn btn--ghost iconbtn--copy" data-bib="{esc_attr(bibtex(p))}">{I["quote"]}<span>BibTeX</span></button></div>
-      {abstract}
-      <h2 class="card__title">BibTeX</h2>
-      <pre class="bibtex">{bibtex(p).replace("&", "&amp;").replace("<", "&lt;")}</pre>
-    </article>
-  </div>
-  <aside class="aside aside--bottom" aria-label="Paper details" tabindex="0">
-    <section class="card"><h2 class="card__title">At a glance</h2>
-      <dl class="stats-list"><div><dt>Year</dt><dd>{year}</dd></div><div><dt>Track</dt><dd>{dict(TRACKS).get(p["track"], p["track"]).split(" /")[0]}</dd></div>{cited}</dl>
-      {'<h3 class="card__sub-title">Related</h3><ul class="ach-list">' + related_html + '</ul>' if related_html else ''}
-    </section>
-  </aside>
-</div>"""
+    body = f"""<section class="section section--first"><div class="wrap wrap--narrow">
+  <p class="crumb"><a href="publications.html">Publications</a> {CHEV} {p["venue"]}</p>
+  <h1 class="page-title">{p["title"]}</h1>
+  <p class="paper__authors">{p["authors"]}</p>
+  <p class="row__meta">{pub_meta(p, with_tags=True)}</p>
+  <p class="row__links row__links--lg">{actions}</p>
+  {abstract}
+  <h2 class="subhead">BibTeX</h2>
+  <pre class="bibtex" tabindex="0" role="region" aria-label="BibTeX entry">{bibtex(p).replace("&", "&amp;").replace("<", "&lt;")}</pre>
+  {related_html}
+</div></section>"""
     desc = (p.get("abstract") or f"{plain_title}. {plain_authors}. {venue}.")[:300].rsplit(" ", 1)[0]
     return shell(f"{plain_title} - Garvit Chugh", esc_attr(desc), f"papers/{p['slug']}.html", "publications.html", body,
                  extra_head=meta_html + f'  <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n', ogtype="article")
 
 def build_404():
-    return shell("Page not found - Garvit Chugh", "This page does not exist.", "404.html", "", """<section class="card notfound">
-  <h1 class="page-title">404</h1>
-  <p class="muted">This page doesn&rsquo;t exist.</p>
-  <a class="btn btn--primary" href="index.html">Back to home</a>
-</section>""")
+    return shell("Page not found - Garvit Chugh", "This page does not exist.", "404.html", "", f'<section class="section section--first"><div class="wrap wrap--narrow notfound"><h1 class="page-title">404</h1><p class="page-sub">This page doesn&rsquo;t exist.</p><p class="hero__actions"><a class="btn" href="index.html">Back to home</a></p></div></section>')
 
 def build_rss():
     import html as _h

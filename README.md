@@ -27,16 +27,13 @@ git add -A && git commit -m "content: ..." && git push origin gh-pages
 
 `build.py` derives every count from the data, writes the six pages plus one page per paper under `papers/` (with Google Scholar `citation_*` tags), `sitemap.xml` (with today's date) and `news.xml` (RSS), and generates BibTeX for every paper and ScholarlyArticle structured data for the publications page.
 
-Typography variant: add `data-type="editorial"` to `<html>` (via the `shell()` function in `build.py`) to switch headings to Source Serif 4.
-
 **Adding a paper:** append an object to `data/publications.json` in the right year order. **Adding news:** prepend an object to `data/news.json` with the next `id` and the year it happened.
 
 > If a bot (GitJar or similar) was previously configured to insert HTML into the pages, point it at the JSON files instead. The old HTML anchors no longer exist.
 
 ## Assets
 
-- `static/css/site.css`: the only stylesheet (light and dark themes, print styles, phone tab bar).
-- `static/fonts/manrope.woff2`: self-hosted variable font.
+- `static/css/site.css`: the only stylesheet. Apple-style system-font design: near-monochrome palette, one blue accent, tonal full-width sections, light and dark themes, print styles, and an iOS-style tab bar on phones. No webfont is loaded.
 - `static/media/`: photo, logos (SVG or 128px PNG), resume PDF, social preview image, favicons.
 
 Replace `static/media/Garvit_Resume.pdf` to update the resume link.
