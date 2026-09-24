@@ -414,6 +414,24 @@ def build_paper(p):
     return shell(f"{plain_title} - Garvit Chugh", esc_attr(desc), f"papers/{p['slug']}.html", "publications.html", body,
                  extra_head=meta_html + f'  <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n', ogtype="article")
 
+def build_redirect(target, note):
+    """Static stub for a URL that used to exist. GitHub Pages cannot issue a 301,
+    so this pairs a canonical tag (what crawlers follow) with a meta refresh and a
+    scripted replace (what browsers follow)."""
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting to {target or "the homepage"}</title>
+  <link rel="canonical" href="{SITE}/{target}" />
+  <meta name="robots" content="noindex, follow" />
+  <meta http-equiv="refresh" content="0; url=/{target}" />
+  <script>location.replace('/{target}');</script>
+</head>
+<body><p>{note} This page has moved to <a href="/{target}">{SITE}/{target}</a>.</p></body>
+</html>
+"""
+
 def build_404():
     return shell("Page not found - Garvit Chugh", "This page does not exist.", "404.html", "", f'<section class="section section--first"><div class="wrap wrap--narrow notfound"><h1 class="page-title">404</h1><p class="page-sub">This page doesn&rsquo;t exist.</p><p class="hero__actions"><a class="btn" href="index.html">Back to home</a></p></div></section>')
 
@@ -425,14 +443,38 @@ def build_rss():
         items += f"    <item><title>{_h.escape(text[:120])}</title><link>{SITE}/news.html#y{n['year']}</link><guid isPermaLink=\"false\">news-{n['id']}</guid><pubDate>{n['year']}-01-01</pubDate><description>{_h.escape(text)}</description></item>\n"
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Garvit Chugh: news</title><link>{SITE}/news.html</link><description>Updates from Garvit Chugh</description>\n{items}</channel></rss>\n'
 
+SOURCES = {  # which data files decide when a page last genuinely changed
+ "": ["profile", "news", "research", "systems", "publications", "experience", "education", "honours", "collaborators"],
+ "publications.html": ["publications", "openalex"],
+ "news.html": ["news"],
+ "education.html": ["experience", "education", "labs", "systems", "teaching", "outreach", "mentorship", "skills", "coursework"],
+ "awards.html": ["honours", "service"],
+}
+def last_changed(names):
+    """Newest commit date across the given data files, so lastmod reflects content,
+    not the moment the build ran. Falls back to today outside a git checkout."""
+    import subprocess
+    dates = []
+    for n in names:
+        try:
+            d = subprocess.run(["git", "-C", str(ROOT), "log", "-1", "--format=%cs", "--", f"data/{n}.json"],
+                               capture_output=True, text=True, timeout=10).stdout.strip()
+            if d: dates.append(d)
+        except Exception: pass
+    return max(dates) if dates else TODAY
+
 def build_sitemap():
     pages = [("", "1.0"), ("publications.html", "0.9"), ("news.html", "0.8"), ("education.html", "0.7"), ("awards.html", "0.7")] + [(f"papers/{p['slug']}.html", "0.6") for p in PUBS]
-    urls = "".join(f"  <url><loc>{SITE}/{p}</loc><lastmod>{TODAY}</lastmod><priority>{pr}</priority></url>\n" for p, pr in pages)
+    cache = {k: last_changed(v) for k, v in SOURCES.items()}
+    paper_date = cache["publications.html"]
+    urls = "".join(f"  <url><loc>{SITE}/{p}</loc><lastmod>{cache.get(p, paper_date)}</lastmod><priority>{pr}</priority></url>\n" for p, pr in pages)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n'
 
 if __name__ == "__main__":
     out = {"index.html": build_index(), "publications.html": build_publications(), "news.html": build_news(),
-           "education.html": build_education(), "awards.html": build_awards(), "404.html": build_404(), "sitemap.xml": build_sitemap(), "news.xml": build_rss()}
+           "education.html": build_education(), "awards.html": build_awards(), "404.html": build_404(), "sitemap.xml": build_sitemap(), "news.xml": build_rss(),
+           "index_orig.html": build_redirect("", "The old single-page site has been replaced."),
+           "papers/index.html": build_redirect("publications.html", "Individual paper pages are listed on the publications page.")}
     (ROOT / "papers").mkdir(exist_ok=True)
     for p in PUBS: out[f"papers/{p['slug']}.html"] = build_paper(p)
     for name, html in out.items():
