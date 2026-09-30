@@ -280,12 +280,12 @@ def build_index():
 </div>""", "contact")
     jsonld = json.dumps({
         "@context": "https://schema.org", "@type": "Person", "name": P["name"], "honorificPrefix": P.get("honorific", ""), "url": SITE + "/",
-        "image": f"{SITE}/static/media/profile.jpg", "email": f"mailto:{P['email']}", "jobTitle": "Postdoctoral Researcher",
+        "image": f"{SITE}/static/media/profile.jpg", "email": f"mailto:{P['email']}", "jobTitle": "Research Scientist",
         "worksFor": {"@type": "Organization", "name": "Singapore Management University"},
         "alumniOf": [{"@type": "Organization", "name": "Indian Institute of Technology Jodhpur"}, {"@type": "Organization", "name": "Guru Gobind Singh Indraprastha University"}],
         "sameAs": [l["url"] for l in P["links"] if not l["url"].startswith("mailto:")],
         "knowsAbout": ["Earable Computing", "Wearable Sensing", "Human-Computer Interaction", "Mobile and Pervasive Computing", "Ubiquitous Computing", "Human-Centered AI"]}, indent=1)
-    return shell("Garvit Chugh", "Postdoctoral Researcher at Singapore Management University. Ph.D. from IIT Jodhpur. Research in earable and wearable sensing, human-computer interaction, and pervasive computing.",
+    return shell("Garvit Chugh", "Research Scientist at Singapore Management University. Ph.D. from IIT Jodhpur. Research in earable and wearable sensing, human-computer interaction, and pervasive computing.",
                  "", "index.html", hero + about + latest + research + systems + pubs + exp + hon + work + info, extra_head=f'  <script type="application/ld+json">{jsonld}</script>\n', ogtype="profile")
 
 def bibtex(p):
