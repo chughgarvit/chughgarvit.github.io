@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry. Chugh, G. &amp; Chakraborty, S.. PerCom" />
+  <meta name="description" content="Monitoring hydration is critical for maintaining physical, cognitive, and physiological performance, yet current monitoring still largely relies on invasive laboratory assays or cumbersome non-pervasive methods such as bioimpedance straps, sweat patches, or intake logs. The ear canal offers a" />
   <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <meta property="og:title" content="HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry - Garvit Chugh" />
-  <meta property="og:description" content="HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry. Chugh, G. &amp; Chakraborty, S.. PerCom" />
+  <meta property="og:description" content="Monitoring hydration is critical for maintaining physical, cognitive, and physiological performance, yet current monitoring still largely relies on invasive laboratory assays or cumbersome non-pervasive methods such as bioimpedance straps, sweat patches, or intake logs. The ear canal offers a" />
   <meta property="og:image" content="https://www.garvitchugh.com/static/media/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -15,7 +15,7 @@
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry - Garvit Chugh" />
-  <meta name="twitter:description" content="HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry. Chugh, G. &amp; Chakraborty, S.. PerCom" />
+  <meta name="twitter:description" content="Monitoring hydration is critical for maintaining physical, cognitive, and physiological performance, yet current monitoring still largely relies on invasive laboratory assays or cumbersome non-pervasive methods such as bioimpedance straps, sweat patches, or intake logs. The ear canal offers a" />
   <meta name="twitter:image" content="https://www.garvitchugh.com/static/media/og-image.jpg" />
   <title>HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry - Garvit Chugh</title>
   <link rel="canonical" href="https://www.garvitchugh.com/papers/hydratear.html" />
@@ -31,7 +31,8 @@
   <meta name="citation_conference_title" content="PerCom 2026" />
   <meta name="citation_author" content="Chugh, G." />
   <meta name="citation_author" content="Chakraborty, S." />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry", "author": [{"@type": "Person", "name": "Chugh, G."}, {"@type": "Person", "name": "Chakraborty, S."}], "datePublished": "2026", "isPartOf": {"@type": "Event", "name": "PerCom 2026"}, "url": "https://www.garvitchugh.com/papers/hydratear.html"}</script>
+  <meta name="citation_doi" content="10.1109/percom67906.2026.11524499" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry", "author": [{"@type": "Person", "name": "Chugh, G."}, {"@type": "Person", "name": "Chakraborty, S."}], "datePublished": "2026", "isPartOf": {"@type": "Event", "name": "PerCom 2026"}, "url": "https://www.garvitchugh.com/papers/hydratear.html", "sameAs": "https://doi.org/10.1109/percom67906.2026.11524499", "abstract": "Monitoring hydration is critical for maintaining physical, cognitive, and physiological performance, yet current monitoring still largely relies on invasive laboratory assays or cumbersome non-pervasive methods such as bioimpedance straps, sweat patches, or intake logs. The ear canal offers a unique opportunity for unobtrusive monitoring through acoustic reflectometry, leveraging its stable anatomy and acoustic properties. In this work, we propose HydratEar, an earable-based system that transmits FMCW chirps through in-ear speakers and records echoes with embedded microphones to infer hydration status between two states (hydrated vs mildly dehydrated). By extracting acoustic biomarkers such as echo decay and resonance characteristics, and modeling them with temporal convolutional networks (TCN), the system classifies hydration state in 8 controlled but diverse lab and outdoor environments (quiet/noisy/hot/cold/low or high humidity/windy/post-exercise). A 21-participant study showed that HydratEar attains a macro-F1 of 0.88 in within-subject evaluation and 0.83 under strict leave-one-subject-out (LOSO) generalization. Under the same protocol, HydratEar improves F1 by ≈ 10% over the vision-based IR Noir imaging systems, while remaining hands-free and lighting-invariant, and runs in real time on our prototype with an end-to-end latency of ≈68 ms per probe. This study highlights the feasibility of earable-based acoustic probing as the first in-situ hydration monitoring system, paving the way for continuous and user-friendly hydration tracking in daily life."}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -48,19 +49,21 @@
   <h1 class="page-title">HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry</h1>
   <p class="paper__authors"><strong>Chugh, G.</strong> &amp; Chakraborty, S.</p>
   <p class="row__meta">PerCom 2026 &middot; Main track &middot; CORE A* &middot; Healthcare, Sensing</p>
-  <p class="row__links row__links--lg"><button type="button" class="copy-bib" data-bib="@inproceedings{chugh2026hydratear,
+  <p class="row__links row__links--lg"><a href="https://doi.org/10.1109/percom67906.2026.11524499" target="_blank" rel="noopener">DOI <span class="chev" aria-hidden="true">&rsaquo;</span></a><button type="button" class="copy-bib" data-bib="@inproceedings{chugh2026hydratear,
   title={HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry},
   author={Chugh, G. and Chakraborty, S.},
   booktitle={PerCom 2026},
-  year={2026}
+  year={2026},
+  url={https://doi.org/10.1109/percom67906.2026.11524499}
 }">Copy BibTeX</button></p>
-  
+  <h2 class="subhead">Abstract</h2><div class="prose"><p>Monitoring hydration is critical for maintaining physical, cognitive, and physiological performance, yet current monitoring still largely relies on invasive laboratory assays or cumbersome non-pervasive methods such as bioimpedance straps, sweat patches, or intake logs. The ear canal offers a unique opportunity for unobtrusive monitoring through acoustic reflectometry, leveraging its stable anatomy and acoustic properties. In this work, we propose HydratEar, an earable-based system that transmits FMCW chirps through in-ear speakers and records echoes with embedded microphones to infer hydration status between two states (hydrated vs mildly dehydrated). By extracting acoustic biomarkers such as echo decay and resonance characteristics, and modeling them with temporal convolutional networks (TCN), the system classifies hydration state in 8 controlled but diverse lab and outdoor environments (quiet/noisy/hot/cold/low or high humidity/windy/post-exercise). A 21-participant study showed that HydratEar attains a macro-F1 of 0.88 in within-subject evaluation and 0.83 under strict leave-one-subject-out (LOSO) generalization. Under the same protocol, HydratEar improves F1 by ≈ 10% over the vision-based IR Noir imaging systems, while remaining hands-free and lighting-invariant, and runs in real time on our prototype with an end-to-end latency of ≈68 ms per probe. This study highlights the feasibility of earable-based acoustic probing as the first in-situ hydration monitoring system, paving the way for continuous and user-friendly hydration tracking in daily life.</p></div>
   <h2 class="subhead">BibTeX</h2>
   <pre class="bibtex" tabindex="0" role="region" aria-label="BibTeX entry">@inproceedings{chugh2026hydratear,
   title={HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry},
   author={Chugh, G. and Chakraborty, S.},
   booktitle={PerCom 2026},
-  year={2026}
+  year={2026},
+  url={https://doi.org/10.1109/percom67906.2026.11524499}
 }</pre>
   <h2 class="subhead">Related</h2><ul class="list"><li><a href="/papers/morsear.html">MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable-Based Inertial Sensing</a> <span class="muted">&middot; CHI 2026</span></li><li><a href="/papers/vectionsense.html">VectionSense: Multimodal Inertial-Physiological Cybersickness Detection in Consumer VR</a> <span class="muted">&middot; SAXR 2026 Workshop co-located with CHI 2026</span></li><li><a href="/papers/earfence.html">EarFence: Lightweight Ultrasonic Defense for Smart Earbuds Against Hidden Commands</a> <span class="muted">&middot; PerCom 2026</span></li><li><a href="/papers/compulsear.html">CompulsEar: Body-focused Repetitive Behaviors Detection using Earable-Based Inertial Sensing</a> <span class="muted">&middot; PerCom 2026</span></li></ul>
 </div></section>
@@ -68,7 +71,7 @@
 <footer class="footer">
   <div class="wrap">
     <nav class="footer__links" aria-label="Footer"><a href="/index.html">Home</a><a href="/publications.html">Publications</a><a href="/education.html">Experience</a><a href="/awards.html">Honours</a><a href="/news.html">News</a><a href="/education.html#systems">Systems</a><a href="/static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">CV</a><a href="/news.xml">RSS</a></nav>
-    <p class="footer__meta">Copyright &copy; 2026 Garvit Chugh. Updated 2026-09-30. <a href="#main">Back to top</a></p>
+    <p class="footer__meta">Copyright &copy; 2026 Garvit Chugh. Updated 2026-10-06. <a href="#main">Back to top</a></p>
   </div>
 </footer>
 <script>

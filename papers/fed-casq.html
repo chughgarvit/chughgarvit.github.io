@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Federated Learning (FL) enables collaborative machine learning across decentralized devices and data sources, but resource constraints on pervasive devices necessitate efficient model compression. Existing approaches, such as quantization for on-device training, often degrade accuracy, especially" />
+  <meta name="description" content="Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization. Dey, E., Ravi, A., Shinde, G., Chugh, G., Ghosh, I., Misra, A. &amp; Roy, N.. PerCom" />
   <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <meta property="og:title" content="Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization - Garvit Chugh" />
-  <meta property="og:description" content="Federated Learning (FL) enables collaborative machine learning across decentralized devices and data sources, but resource constraints on pervasive devices necessitate efficient model compression. Existing approaches, such as quantization for on-device training, often degrade accuracy, especially" />
+  <meta property="og:description" content="Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization. Dey, E., Ravi, A., Shinde, G., Chugh, G., Ghosh, I., Misra, A. &amp; Roy, N.. PerCom" />
   <meta property="og:image" content="https://www.garvitchugh.com/static/media/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -15,7 +15,7 @@
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization - Garvit Chugh" />
-  <meta name="twitter:description" content="Federated Learning (FL) enables collaborative machine learning across decentralized devices and data sources, but resource constraints on pervasive devices necessitate efficient model compression. Existing approaches, such as quantization for on-device training, often degrade accuracy, especially" />
+  <meta name="twitter:description" content="Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization. Dey, E., Ravi, A., Shinde, G., Chugh, G., Ghosh, I., Misra, A. &amp; Roy, N.. PerCom" />
   <meta name="twitter:image" content="https://www.garvitchugh.com/static/media/og-image.jpg" />
   <title>Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization - Garvit Chugh</title>
   <link rel="canonical" href="https://www.garvitchugh.com/papers/fed-casq.html" />
@@ -36,8 +36,9 @@
   <meta name="citation_author" content="Ghosh, I." />
   <meta name="citation_author" content="Misra, A." />
   <meta name="citation_author" content="Roy, N." />
-  <meta name="citation_doi" content="10.1109/percom67906.2026.11524552" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization", "author": [{"@type": "Person", "name": "Dey, E."}, {"@type": "Person", "name": "Ravi, A."}, {"@type": "Person", "name": "Shinde, G."}, {"@type": "Person", "name": "Chugh, G."}, {"@type": "Person", "name": "Ghosh, I."}, {"@type": "Person", "name": "Misra, A."}, {"@type": "Person", "name": "Roy, N."}], "datePublished": "2026", "isPartOf": {"@type": "Event", "name": "PerCom 2026"}, "url": "https://www.garvitchugh.com/papers/fed-casq.html", "sameAs": "https://doi.org/10.1109/percom67906.2026.11524552", "abstract": "Federated Learning (FL) enables collaborative machine learning across decentralized devices and data sources, but resource constraints on pervasive devices necessitate efficient model compression. Existing approaches, such as quantization for on-device training, often degrade accuracy, especially for classes that are difficult to learn due to imbalance, poor-quality samples, or inherent complexity. This results in persistent accuracy gaps across classes. We propose Fed-CASQ's a novel framework that couples class-aware strategies into the quantization process to jointly improve efficiency and accuracy in pervasive FL. Unlike prior works that address quantization and imbalance separately, Fed-CASQ adaptively selects quantization levels based on device resources and leverages Layer-wise Relevance Propagation (LRP) to assess class-relevant convolutional neural network (CNN) filters on the client side. An adaptive weight scaling mechanism is then applied to amplify critical information for low-accuracy classes before aggregation. At the server, a complementary novel aggregation strategy mitigates global imbalance across clients, ensuring that underperforming classes receive proportional attention during model updates. We theoretically establish that Fed-CASQ achieves a convergence rate of ${\\mathcal{O}}\\left({\\frac{{\\kappa *\\hat \\sigma *\\hat \\delta }}{{\\sqrt T }}}\\right)$ under non-convex settings. We empirically establish that quantization directly influences the performance of under sampled (minority) classes. Experimental results further show that Fed-CASQ substantially narrows the performance gap for low-accuracy classes, improving their accuracy by ≈30%, while reducing training latency by over 56% on resource-constrained pervasive devices."}</script>
+  <meta name="citation_doi" content="10.13016/m2qpym-aj3l" />
+  <meta name="citation_pdf_url" content="https://doi.org/10.13016/m2qpym-aj3l" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization", "author": [{"@type": "Person", "name": "Dey, E."}, {"@type": "Person", "name": "Ravi, A."}, {"@type": "Person", "name": "Shinde, G."}, {"@type": "Person", "name": "Chugh, G."}, {"@type": "Person", "name": "Ghosh, I."}, {"@type": "Person", "name": "Misra, A."}, {"@type": "Person", "name": "Roy, N."}], "datePublished": "2026", "isPartOf": {"@type": "Event", "name": "PerCom 2026"}, "url": "https://www.garvitchugh.com/papers/fed-casq.html", "sameAs": "https://doi.org/10.13016/m2qpym-aj3l"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -54,21 +55,21 @@
   <h1 class="page-title">Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization</h1>
   <p class="paper__authors">Dey, E., Ravi, A., Shinde, G., <strong>Chugh, G.</strong>, Ghosh, I., Misra, A. &amp; Roy, N.</p>
   <p class="row__meta">PerCom 2026 &middot; Main track &middot; CORE A* &middot; ML / AI, Systems</p>
-  <p class="row__links row__links--lg"><a href="https://doi.org/10.1109/percom67906.2026.11524552" target="_blank" rel="noopener">DOI <span class="chev" aria-hidden="true">&rsaquo;</span></a><button type="button" class="copy-bib" data-bib="@inproceedings{dey2026fedcasq,
+  <p class="row__links row__links--lg"><a href="https://doi.org/10.13016/m2qpym-aj3l" target="_blank" rel="noopener">DOI <span class="chev" aria-hidden="true">&rsaquo;</span></a><a href="https://doi.org/10.13016/m2qpym-aj3l" target="_blank" rel="noopener">PDF <span class="chev" aria-hidden="true">&rsaquo;</span></a><button type="button" class="copy-bib" data-bib="@inproceedings{dey2026fedcasq,
   title={Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization},
   author={Dey, E. and Ravi, A. and Shinde, G. and Chugh, G. and Ghosh, I. and Misra, A. and Roy, N.},
   booktitle={PerCom 2026},
   year={2026},
-  url={https://doi.org/10.1109/percom67906.2026.11524552}
+  url={https://doi.org/10.13016/m2qpym-aj3l}
 }">Copy BibTeX</button></p>
-  <h2 class="subhead">Abstract</h2><div class="prose"><p>Federated Learning (FL) enables collaborative machine learning across decentralized devices and data sources, but resource constraints on pervasive devices necessitate efficient model compression. Existing approaches, such as quantization for on-device training, often degrade accuracy, especially for classes that are difficult to learn due to imbalance, poor-quality samples, or inherent complexity. This results in persistent accuracy gaps across classes. We propose Fed-CASQ's a novel framework that couples class-aware strategies into the quantization process to jointly improve efficiency and accuracy in pervasive FL. Unlike prior works that address quantization and imbalance separately, Fed-CASQ adaptively selects quantization levels based on device resources and leverages Layer-wise Relevance Propagation (LRP) to assess class-relevant convolutional neural network (CNN) filters on the client side. An adaptive weight scaling mechanism is then applied to amplify critical information for low-accuracy classes before aggregation. At the server, a complementary novel aggregation strategy mitigates global imbalance across clients, ensuring that underperforming classes receive proportional attention during model updates. We theoretically establish that Fed-CASQ achieves a convergence rate of ${\mathcal{O}}\left({\frac{{\kappa *\hat \sigma *\hat \delta }}{{\sqrt T }}}\right)$ under non-convex settings. We empirically establish that quantization directly influences the performance of under sampled (minority) classes. Experimental results further show that Fed-CASQ substantially narrows the performance gap for low-accuracy classes, improving their accuracy by ≈30%, while reducing training latency by over 56% on resource-constrained pervasive devices.</p></div>
+  
   <h2 class="subhead">BibTeX</h2>
   <pre class="bibtex" tabindex="0" role="region" aria-label="BibTeX entry">@inproceedings{dey2026fedcasq,
   title={Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization},
   author={Dey, E. and Ravi, A. and Shinde, G. and Chugh, G. and Ghosh, I. and Misra, A. and Roy, N.},
   booktitle={PerCom 2026},
   year={2026},
-  url={https://doi.org/10.1109/percom67906.2026.11524552}
+  url={https://doi.org/10.13016/m2qpym-aj3l}
 }</pre>
   <h2 class="subhead">Related</h2><ul class="list"><li><a href="/papers/wristsense.html">WristSense: Sensing Hidden Wrist Strain in Routine Activities via Inertial Tokenization and LLM-Based Feedback</a> <span class="muted">&middot; SenSys 2026</span></li><li><a href="/papers/sensors-to-service.html">Experience: From Sensors to Service: Advancing Ambient Living with an AIoT Community Testbed</a> <span class="muted">&middot; COMSNETS 2026</span></li><li><a href="/papers/homcdan.html">High-Order Moments Conditional Domain Adaptation Networks for Wearable Human Activity Recognition</a> <span class="muted">&middot; CIKM 2025, Seoul, South Korea</span></li><li><a href="/papers/eardesk.html">EarDesk: An Adaptive Desktop BLE Framework for eSense IMU Data Collection and Configuration</a> <span class="muted">&middot; PerCom 2025</span></li></ul>
 </div></section>
@@ -76,7 +77,7 @@
 <footer class="footer">
   <div class="wrap">
     <nav class="footer__links" aria-label="Footer"><a href="/index.html">Home</a><a href="/publications.html">Publications</a><a href="/education.html">Experience</a><a href="/awards.html">Honours</a><a href="/news.html">News</a><a href="/education.html#systems">Systems</a><a href="/static/media/Garvit_Resume.pdf" target="_blank" rel="noopener">CV</a><a href="/news.xml">RSS</a></nav>
-    <p class="footer__meta">Copyright &copy; 2026 Garvit Chugh. Updated 2026-09-30. <a href="#main">Back to top</a></p>
+    <p class="footer__meta">Copyright &copy; 2026 Garvit Chugh. Updated 2026-10-06. <a href="#main">Back to top</a></p>
   </div>
 </footer>
 <script>

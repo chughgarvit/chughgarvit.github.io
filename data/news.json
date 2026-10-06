@@ -1,5 +1,12 @@
 [
  {
+  "id": 42,
+  "year": 2027,
+  "kind": "service",
+  "featured": false,
+  "text": "Selected as a <strong>Publicity Content Creator</strong> for <strong>IEEE PerCom 2027</strong>, alongside Arko Datta (IIT Madras) and Faruque Aziz (BITS Pilani, K K Birla Goa Campus)."
+ },
+ {
   "id": 41,
   "year": 2026,
   "text": "Joined <strong>Singapore Management University (SMU)</strong> as a <strong>Research Scientist</strong> in the School of Computing and Information Systems, working with Prof. Archan Misra (Sept 2026)!",

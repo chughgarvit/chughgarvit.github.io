@@ -1,7 +1,7 @@
 {
  "author": {
   "openalex_id": "https://openalex.org/A5066226035",
-  "works_count": 22,
+  "works_count": 28,
   "cited_by_count": 155,
   "h_index": 4,
   "i10_index": 2
@@ -95,17 +95,6 @@
    "abstract": "The extended screen time with the exponential rise of mobile applications has raised concerns about its impact on users’ mental health and frequent episodes of sudden emotional outbursts. Conventional emotion detection systems rely on intrusive physiological data or computationally intensive visual processing devices leading to a usability barrier. To address this challenge, we propose a novel method to detect ephemeral (immediate) and residual (lingering) emotional effects induced by media content by observing facial expression changes during content consumption. Our approach is based on predicting various facial expressions across different emotional behaviors using an earable-based Inertial Measurement Unit (IMU) to detect the ephemeral state and then map it to the circumplex model of affect to predict the residual state. A pilot study validates the potential of the proposed earable-based solution to offer a non-intrusive, efficient alternative for identifying the state of emotional turbulence of the user during screen time interaction.",
    "openalex_id": "https://openalex.org/W4411447061"
   },
-  "federatedmachinelearningwithdataminingin": {
-   "title": "Federated Machine Learning with Data Mining in Healthcare",
-   "doi": "https://doi.org/10.1007/978-3-030-85559-8_15",
-   "year": 2022,
-   "cited_by_count": 2,
-   "oa_url": null,
-   "landing": "https://doi.org/10.1007/978-3-030-85559-8_15",
-   "pdf": null,
-   "abstract": "",
-   "openalex_id": "https://openalex.org/W4210337857"
-  },
   "astudyonparallelclusteringalgorithmsbase": {
    "title": "A Study on Parallel Clustering Algorithms based on MapReduce",
    "doi": "https://doi.org/10.5573/ieiespc.2022.11.4.276",
@@ -116,6 +105,17 @@
    "pdf": null,
    "abstract": "Since the advent of the global computerized market, the volume of digital information has grown exponentially, as has the demand for storing it. As the price of storage devices decreases, the necessity to analyze vast quantities of unstructured digital data to retain only essential information increases. MapReduce is a programming paradigm for producing and generating massive information indices. Using MapReduce to produce meaningful clusters from such a massive amount of raw data is an efficient way to manage such voluminous amounts of data. On the other hand, the existing industry standard for data clustering algorithms presents significant obstacles. The conventional clustering calculation efficiently handles a great deal of information from various sources, such as online media, business, and the web. Nevertheless, the sequential count in clustering approaches is time-intensive in these conventional calculations. The wide varieties of K-Means, including K-Harmonic Means, are sensitive to forming cluster centers in huge datasets. This work suggests a logical evaluation of such calculations. It offers a study of the various k-means clustering algorithms employed in MapReduce, as well as the study on the introduction and the open challenges of parallelism in MapReduce.",
    "openalex_id": "https://openalex.org/W4295863788"
+  },
+  "federatedmachinelearningwithdataminingin": {
+   "title": "Federated Machine Learning with Data Mining in Healthcare",
+   "doi": "https://doi.org/10.1007/978-3-030-85559-8_15",
+   "year": 2022,
+   "cited_by_count": 2,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1007/978-3-030-85559-8_15",
+   "pdf": null,
+   "abstract": "",
+   "openalex_id": "https://openalex.org/W4210337857"
   },
   "envolveareyoulisteninginertialsensingtom": {
    "title": "enVolve: Are You Listening? Inertial Sensing to Monitor the Involvement of Silent Listeners during an Online Interaction",
@@ -194,6 +194,28 @@
    "abstract": "Physiological sensing modalities, such as Electroencephalography (EEG), Galvanic Skin Response (GSR), and Photoplethysmography (PPG), provide detailed representations of cognitive and physiological states, proving invaluable for applications in human-computer interaction and digital health. However, these time-series signals are frequently affected by stationary and non-stationary noise, temporal fluctuations, and user-specific physiological variations, compromising signal integrity. To address these challenges, we propose β -Decode, a generative, unsupervised denoising framework tailored for multi-modal time series data. β -Decode achieves two main objectives: (i) learning global and local temporal dependencies within time-series representations to enhance denoising and (ii) handling unseen temporal noise variations. β -Decode leverages a β -variational autoencoder (β -VAE) combined with an attention mechanism, capturing the data distribution via latent representations. Additionally, we introduce a modal-specific noise-coupling strategy (NCS) to simulate diverse noise patterns, enhancing β -Decode’s adaptability across datasets. We evaluate β -Decode on two public uni-modal datasets and an in-house multi-modal dataset, demonstrating that it consistently outperforms five state-of-the-art denoising algorithms, quantifying this superiority across three denoising metrics by a significant margin (e.g., Pearson Correlation Coefficients of 0.73 ± (0.0102) between original and denoised signals).",
    "openalex_id": "https://openalex.org/W4411624750"
   },
+  "experiencefromsensorstoserviceadvancinga": {
+   "title": "Experience: From Sensors to Service: Advancing Ambient Living with an AIoT Community Testbed",
+   "doi": "https://doi.org/10.1109/comsnets67989.2026.11418207",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/comsnets67989.2026.11418207",
+   "pdf": null,
+   "abstract": "Rapid advancements in IoT and AI over the past decade, coupled with their pervasive integration into daily life, have created substantial opportunities for research and development in Artificial Intelligence of Things (AIoT) toward the comprehensive realization of smart city services. These human-centered applications require suitable testbeds for in-the-wild usability studies and performance validation, ensuring reliable sensory data for training AI models. Yet, most existing testbeds remain either application-focused (e.g., occupancy, energy, mobility) or scenario-bound, which limits their extensibility, heterogeneity, and usability for researchers. This paper introduces SensePod, an AIoT-based smart home testbed established in the IIT Jodhpur campus, designed to promote Sensing as a Service for ambient living. Unlike city-scale or lab-restricted platforms, SensePod transforms a one-bedroom residential space into a modular and reconfigurable substrate where environmental, motion, acoustic, and wearable streams can be orchestrated and reused across studies. We document the requirement analysis, system design, and operational lessons learned in deploying SensePod, and demonstrate two representative use cases: privacy-preserving occupancy estimation and multimodal activity recognition via wearable integration. Our results show that multimodal fusion achieves over 90% accuracy for activity inference, while edge-based deployment enables low-latency, privacy-aware operation. By exposing real-world challenges such as calibration drift, heterogeneous sampling rates, and privacy trade-offs, SensePod provides a researcher-oriented platform that bridges the gap between controlled lab testbeds and the unpredictability of lived environments, paving the way for community-driven innovation in ambient intelligence.",
+   "openalex_id": "https://openalex.org/W7134914691"
+  },
+  "unsupervisedcrossdomainadaptationforwear": {
+   "title": "Unsupervised Cross-Domain Adaptation for Wearable-based Human Activity Recognition",
+   "doi": "https://doi.org/10.21203/rs.3.rs-8622641/v1",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": "https://www.researchsquare.com/article/rs-8622641/latest.pdf",
+   "landing": "https://doi.org/10.21203/rs.3.rs-8622641/v1",
+   "pdf": "https://www.researchsquare.com/article/rs-8622641/latest.pdf",
+   "abstract": "",
+   "openalex_id": "https://openalex.org/W7135056657"
+  },
   "wristsensesensinghiddenwriststraininrout": {
    "title": "WristSense: Sensing Hidden Wrist Strain in Routine Activities via Inertial Tokenization and LLM-Based Feedback",
    "doi": "https://doi.org/10.1145/3774906.3800489",
@@ -206,15 +228,26 @@
    "openalex_id": "https://openalex.org/W7160629186"
   },
   "fedcasqenhancingclasswiseaccuracyinperva": {
-   "title": "Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization",
-   "doi": "https://doi.org/10.1109/percom67906.2026.11524552",
+   "title": "Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning",
+   "doi": "https://doi.org/10.13016/m2qpym-aj3l",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": "https://doi.org/10.13016/m2qpym-aj3l",
+   "landing": "https://doi.org/10.13016/m2qpym-aj3l",
+   "pdf": null,
+   "abstract": "",
+   "openalex_id": "https://openalex.org/W7164038988"
+  },
+  "hydratearnoninvasivehydrationmonitoringu": {
+   "title": "HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry",
+   "doi": "https://doi.org/10.1109/percom67906.2026.11524499",
    "year": 2026,
    "cited_by_count": 0,
    "oa_url": null,
-   "landing": "https://doi.org/10.1109/percom67906.2026.11524552",
+   "landing": "https://doi.org/10.1109/percom67906.2026.11524499",
    "pdf": null,
-   "abstract": "Federated Learning (FL) enables collaborative machine learning across decentralized devices and data sources, but resource constraints on pervasive devices necessitate efficient model compression. Existing approaches, such as quantization for on-device training, often degrade accuracy, especially for classes that are difficult to learn due to imbalance, poor-quality samples, or inherent complexity. This results in persistent accuracy gaps across classes. We propose Fed-CASQ's a novel framework that couples class-aware strategies into the quantization process to jointly improve efficiency and accuracy in pervasive FL. Unlike prior works that address quantization and imbalance separately, Fed-CASQ adaptively selects quantization levels based on device resources and leverages Layer-wise Relevance Propagation (LRP) to assess class-relevant convolutional neural network (CNN) filters on the client side. An adaptive weight scaling mechanism is then applied to amplify critical information for low-accuracy classes before aggregation. At the server, a complementary novel aggregation strategy mitigates global imbalance across clients, ensuring that underperforming classes receive proportional attention during model updates. We theoretically establish that Fed-CASQ achieves a convergence rate of ${\\mathcal{O}}\\left({\\frac{{\\kappa *\\hat \\sigma *\\hat \\delta }}{{\\sqrt T }}}\\right)$ under non-convex settings. We empirically establish that quantization directly influences the performance of under sampled (minority) classes. Experimental results further show that Fed-CASQ substantially narrows the performance gap for low-accuracy classes, improving their accuracy by ≈30%, while reducing training latency by over 56% on resource-constrained pervasive devices.",
-   "openalex_id": "https://openalex.org/W7162142154"
+   "abstract": "Monitoring hydration is critical for maintaining physical, cognitive, and physiological performance, yet current monitoring still largely relies on invasive laboratory assays or cumbersome non-pervasive methods such as bioimpedance straps, sweat patches, or intake logs. The ear canal offers a unique opportunity for unobtrusive monitoring through acoustic reflectometry, leveraging its stable anatomy and acoustic properties. In this work, we propose HydratEar, an earable-based system that transmits FMCW chirps through in-ear speakers and records echoes with embedded microphones to infer hydration status between two states (hydrated vs mildly dehydrated). By extracting acoustic biomarkers such as echo decay and resonance characteristics, and modeling them with temporal convolutional networks (TCN), the system classifies hydration state in 8 controlled but diverse lab and outdoor environments (quiet/noisy/hot/cold/low or high humidity/windy/post-exercise). A 21-participant study showed that HydratEar attains a macro-F1 of 0.88 in within-subject evaluation and 0.83 under strict leave-one-subject-out (LOSO) generalization. Under the same protocol, HydratEar improves F1 by ≈ 10% over the vision-based IR Noir imaging systems, while remaining hands-free and lighting-invariant, and runs in real time on our prototype with an end-to-end latency of ≈68 ms per probe. This study highlights the feasibility of earable-based acoustic probing as the first in-situ hydration monitoring system, paving the way for continuous and user-friendly hydration tracking in daily life.",
+   "openalex_id": "https://openalex.org/W7162145909"
   },
   "spinesenseaninteractivesystemforcervical": {
    "title": "SpineSense: An Interactive System for Cervical Spine Monitoring and Clinician-Oriented Summaries using COTS Earables EICS005",
@@ -226,6 +259,28 @@
    "pdf": null,
    "abstract": "We present SpineSense , an interactive earable-based framework for continuous monitoring of cervical spine posture and discomfort-related behavior in daily life. Leveraging inertial data from commercial off-the-shelf (COTS) earables (e.g., Apple AirPods Pro 2), SpineSense models the cervical vertebral chain (C1–C7) using SLERP-interpolated quaternions to estimate craniovertebral (CV) angles and identify early pain-relief gestures (e.g., neck rubbing, circular head rolls) that are associated with early signs of musculoskeletal fatigue, as informed by clinical observation. A real-time feedback loop delivers posture-based alerts and weekly compliance summaries to support user awareness and long-term posture correction. Central to our design is a clinician-in-the-loop methodology: clinical experts (including orthopedic surgeons and physiotherapists) informed threshold selection (e.g., CV angle cutoffs), interpreted common discomfort behaviors, and iteratively guided the structure of weekly feedback reports. We evaluate the system on 20 participants and achieve low spine angle estimation error (MAE: 0.876° , RMSE: 1.02° , r = 0.95), and discomfort gesture classification accuracy of F 1 = 0.97. Usability studies across diverse activities show high acceptance (SUS = 84.75, NASA-TLX = 32.7, PSSUQ = 2.13), with formal ANOVA tests validating statistically significant improvements over baseline interfaces. Together, our findings establish the feasibility of engineering interactive cervical health systems using COTS earables that support real-time feedback, clinician-informed reporting, and pervasive deployment in naturalistic settings.",
    "openalex_id": "https://openalex.org/W7166561067"
+  },
+  "compulsearbodyfocusedrepetitivebehaviors": {
+   "title": "CompulsEar: Body-Focused Repetitive Behaviors Detection Using Earable-based Inertial Sensing",
+   "doi": "https://doi.org/10.1109/percomworkshops68308.2026.11585219",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/percomworkshops68308.2026.11585219",
+   "pdf": null,
+   "abstract": "",
+   "openalex_id": "https://openalex.org/W7167017204"
+  },
+  "earfencelightweightultrasonicdefensefors": {
+   "title": "EarFence: Lightweight Ultrasonic Defense for Smart Earbuds Against Hidden Commands",
+   "doi": "https://doi.org/10.1109/percomworkshops68308.2026.11585284",
+   "year": 2026,
+   "cited_by_count": 0,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/percomworkshops68308.2026.11585284",
+   "pdf": null,
+   "abstract": "",
+   "openalex_id": "https://openalex.org/W7167029223"
   }
  }
 }
