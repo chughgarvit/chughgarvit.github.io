@@ -1,0 +1,105 @@
+{
+ "profile_url": "https://scholar.google.com/citations?user=15XfuxMAAAAJ&hl=en",
+ "fetched": "2026-10-06",
+ "cited_by_count": 323,
+ "h_index": 5,
+ "i10_index": 3,
+ "works_count": 19,
+ "works": [
+  {
+   "title": "An improved ensemble based intrusion detection technique using XGBoost",
+   "cited_by_count": 192,
+   "year": "2021"
+  },
+  {
+   "title": "Federated learning for IOT applications",
+   "cited_by_count": 81,
+   "year": "2022"
+  },
+  {
+   "title": "Bitesense: Earable-based inertial sensing for eating behaviour assessment",
+   "cited_by_count": 12,
+   "year": "2025"
+  },
+  {
+   "title": "Exploring earables to monitor temporal lack of focus during online meetings to identify onset of neurological disorders",
+   "cited_by_count": 8,
+   "year": "2023"
+  },
+  {
+   "title": "Federated machine learning with data mining in healthcare",
+   "cited_by_count": 6,
+   "year": "2022"
+  },
+  {
+   "title": "Unlocking eye gestures with earable inertial sensing for accessible hci",
+   "cited_by_count": 5,
+   "year": "2025"
+  },
+  {
+   "title": "Unsupervised domain adaptation for action recognition via self-ensembling and conditional embedding alignment",
+   "cited_by_count": 5,
+   "year": "2024"
+  },
+  {
+   "title": "High-order moments conditional domain adaptation networks for wearable human activity recognition",
+   "cited_by_count": 3,
+   "year": "2025"
+  },
+  {
+   "title": "envolve: Are you listening? inertial sensing to monitor the involvement of silent listeners during an online interaction",
+   "cited_by_count": 3,
+   "year": "2022"
+  },
+  {
+   "title": "MorsEar: Toward Generalizable Low-Resource Covert Messaging via Earable based Inertial Sensing",
+   "cited_by_count": 1,
+   "year": "2026"
+  },
+  {
+   "title": "Tracking Ephemeral and Residual Emotions via Earable Inertial Sensing During Media Consumption",
+   "cited_by_count": 1,
+   "year": "2025"
+  },
+  {
+   "title": "β-Decode: Attention-based Decoding Temporal Artifacts via Unsupervised β-Variational Autoencoder",
+   "cited_by_count": 1,
+   "year": "2024"
+  },
+  {
+   "title": "Demonstration of LegalHelper: A Low-cost tool for Smart Translation and Creation of Legal Contracts",
+   "cited_by_count": 1,
+   "year": "2023"
+  },
+  {
+   "title": "SpineSense: An Interactive System for Cervical Spine Monitoring and Clinician-Oriented Summaries using COTS Earables",
+   "cited_by_count": 0,
+   "year": "2026"
+  },
+  {
+   "title": "WristSense: Sensing Hidden Wrist Strain in Routine Activities via Inertial Tokenization and LLM-Based Feedback",
+   "cited_by_count": 0,
+   "year": "2026"
+  },
+  {
+   "title": "CompulsEar: Body-Focused Repetitive Behaviors Detection Using Earable-based Inertial Sensing",
+   "cited_by_count": 0,
+   "year": "2026"
+  },
+  {
+   "title": "EarFence: Lightweight Ultrasonic Defense for Smart Earbuds Against Hidden Commands",
+   "cited_by_count": 0,
+   "year": "2026"
+  },
+  {
+   "title": "HydratEar: Non-Invasive Hydration Monitoring using In-Ear Acoustic Reflectometry",
+   "cited_by_count": 0,
+   "year": "2026"
+  },
+  {
+   "title": "Fed-CASQ: Enhancing Class-Wise Accuracy in Pervasive Federated Learning with Class-Aware Scaling and Quantization",
+   "cited_by_count": 0,
+   "year": "2026"
+  }
+ ]
+}

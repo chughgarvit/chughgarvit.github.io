@@ -23,6 +23,9 @@ MENTORSHIP = load("mentorship"); SKILLS_FULL = load("skills")
 SERVICE = load("service"); SYSTEMS = load("systems"); HONOURS = load("honours"); LABS = load("labs"); COLLAB = load("collaborators"); COURSEWORK = load("coursework")
 try: OPENALEX = load("openalex")
 except FileNotFoundError: OPENALEX = {"author": {}, "works": {}}
+try: SCHOLAR = load("scholar")
+except FileNotFoundError: SCHOLAR = {}
+SCHOLAR_WORKS = {re.sub(r"[^a-z0-9]", "", (w["title"] or "").lower())[:34]: w for w in SCHOLAR.get("works", [])}
 def _norm(t): return re.sub(r"[^a-z0-9]", "", re.sub(r"<[^>]+>", "", t or "").lower())[:40]
 for p in PUBS:  # merge the OpenAlex cache; hand-set fields in publications.json win
     oa = OPENALEX["works"].get(_norm(p["title"]), {}); links = p.setdefault("links", {})
@@ -30,9 +33,16 @@ for p in PUBS:  # merge the OpenAlex cache; hand-set fields in publications.json
     if p.get("url") and not links.get("paper"): links["paper"] = p["url"]
     if oa.get("oa_url") and not links.get("pdf"): links["pdf"] = oa["oa_url"]
     if oa.get("abstract") and not p.get("abstract"): p["abstract"] = oa["abstract"]
-    p["cited"] = oa.get("cited_by_count", 0); p["openalex_id"] = oa.get("openalex_id")
-CITES_TOTAL = OPENALEX["author"].get("cited_by_count") or sum(p["cited"] for p in PUBS)
-H_INDEX = OPENALEX["author"].get("h_index")
+    sc = SCHOLAR_WORKS.get(re.sub(r"[^a-z0-9]", "", re.sub(r"<[^>]+>", "", p["title"]).lower())[:34], {})
+    p["cited"] = sc.get("cited_by_count") or oa.get("cited_by_count", 0)
+    p["cited_src"] = "Google Scholar" if sc.get("cited_by_count") else "OpenAlex"
+    p["openalex_id"] = oa.get("openalex_id")
+CITES_TOTAL = SCHOLAR.get("cited_by_count") or OPENALEX["author"].get("cited_by_count") or sum(p["cited"] for p in PUBS)
+H_INDEX = SCHOLAR.get("h_index") or OPENALEX["author"].get("h_index")
+I10_INDEX = SCHOLAR.get("i10_index")
+METRIC_SRC = "Google Scholar" if SCHOLAR.get("cited_by_count") else "OpenAlex"
+METRIC_URL = SCHOLAR.get("profile_url") or OPENALEX["author"].get("openalex_id", "https://openalex.org")
+METRIC_DATE = SCHOLAR.get("fetched", TODAY)
 
 # ── derived counts ────────────────────────────────────────────────
 N_PEER = sum(p["track"] in ("main", "workshop", "journal") for p in PUBS)
@@ -318,8 +328,8 @@ def build_publications():
         opts = "".join(f'<option value="{v}">{t}</option>' for v, t in options)
         return f'<label class="select"><span>{label}</span><select id="{id_}" aria-label="{label}"><option value="all">All</option>{opts}</select></label>'
     toolbar = select("yearSelect", "Year", [(y, label_year(y)) for y in years]) + select("trackSelect", "Track", TRACKS) + select("topicSelect", "Topic", TOPICS) + '<button type="button" class="textlink" id="resetFilters" hidden>Reset</button>'
-    stats = f"""<ul class="stats"><li><strong>{N_PUBS}</strong><span>Publications</span></li><li><strong>{N_PEER}</strong><span>Peer-reviewed</span></li><li><strong>{CITES_TOTAL}</strong><span>Citations</span></li><li><strong>{H_INDEX if H_INDEX is not None else "&ndash;"}</strong><span>h-index</span></li></ul>
-<p class="section__note">Citation counts from <a href="{OPENALEX["author"].get("openalex_id", "https://openalex.org")}" target="_blank" rel="noopener">OpenAlex</a>; Google Scholar usually reads higher. CORE A* marks a top-tier venue; * marks equal contribution. Full record on <a href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, <a href="https://dblp.org/pid/302/5075" target="_blank" rel="noopener">DBLP</a> and <a href="https://orcid.org/0000-0002-0354-9731" target="_blank" rel="noopener">ORCID</a>.</p>"""
+    stats = f"""<ul class="stats"><li><strong>{N_PUBS}</strong><span>Publications</span></li><li><strong>{CITES_TOTAL}</strong><span>Citations</span></li><li><strong>{H_INDEX if H_INDEX is not None else "&ndash;"}</strong><span>h-index</span></li><li><strong>{I10_INDEX if I10_INDEX is not None else N_PEER}</strong><span>{"i10-index" if I10_INDEX is not None else "Peer-reviewed"}</span></li></ul>
+<p class="section__note">Citation counts from <a href="{METRIC_URL}" target="_blank" rel="noopener">{METRIC_SRC}</a>, last checked {METRIC_DATE}. CORE A* marks a top-tier venue; * marks equal contribution. Full record on <a href="https://scholar.google.com/citations?user=15XfuxMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, <a href="https://dblp.org/pid/302/5075" target="_blank" rel="noopener">DBLP</a> and <a href="https://orcid.org/0000-0002-0354-9731" target="_blank" rel="noopener">ORCID</a>.</p>"""
     groups = "".join(f'<h2 class="group" data-year-heading="{y}">{label_year(y)}</h2>\n<ul class="rows">\n' + "".join(pub_item(p) for p in PUBS if p["year"] == y) + "</ul>\n" for y in years)
     body = f"""<section class="section section--first"><div class="wrap wrap--narrow">
   {page_head("Publications", PUB_SUMMARY)}

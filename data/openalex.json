@@ -84,17 +84,6 @@
    "abstract": "Developing scalable wearable human activity recognition (wHAR) models is challenging due to domain shifts that substantially degrade performance across downstream tasks. Unsupervised domain adaptation (UDA) seeks to improve generalization by transferring knowledge from labeled source domains to unlabeled target domains. However, conventional UDA methods primarily align marginal feature distributions while neglecting feature-label dependencies, often leading to negative transfer and sub-optimal performance. Motivated by these limitations, we propose a novel optimization framework that tackles two key challenges: (i) generating reliable pseudo-labels for the unlabeled target domain and (ii) minimizing conditional discrepancies across domains. To address (i), we employ temperature-based entropy minimization (TEM), which calibrates prediction confidence by scaling logits with a temperature parameter to produce robust pseudo-labels. For (ii), we introduce a polynomial kernel-based cross-covariance (PkCC) loss, a high-order statistics-driven approach that maps features into a reproducing kernel hilbert space (RKHS) to capture richer feature-label dependencies and reduce conditional distribution gaps between domains. In addition, we demonstrate that CoDAN readily extends to partial UDA (pUDA), where the target label space is a subset of the source, and extensive evaluations on public wHAR datasets with diverse label spaces validate its superior performance over state-of-the-art methods in both UDA and pUDA scenarios.",
    "openalex_id": "https://openalex.org/W4416016048"
   },
-  "trackingephemeralandresidualemotionsviae": {
-   "title": "Tracking Ephemeral and Residual Emotions via Earable Inertial Sensing During Media Consumption",
-   "doi": "https://doi.org/10.1109/percomworkshops65533.2025.00153",
-   "year": 2025,
-   "cited_by_count": 1,
-   "oa_url": null,
-   "landing": "https://doi.org/10.1109/percomworkshops65533.2025.00153",
-   "pdf": null,
-   "abstract": "The extended screen time with the exponential rise of mobile applications has raised concerns about its impact on users’ mental health and frequent episodes of sudden emotional outbursts. Conventional emotion detection systems rely on intrusive physiological data or computationally intensive visual processing devices leading to a usability barrier. To address this challenge, we propose a novel method to detect ephemeral (immediate) and residual (lingering) emotional effects induced by media content by observing facial expression changes during content consumption. Our approach is based on predicting various facial expressions across different emotional behaviors using an earable-based Inertial Measurement Unit (IMU) to detect the ephemeral state and then map it to the circumplex model of affect to predict the residual state. A pilot study validates the potential of the proposed earable-based solution to offer a non-intrusive, efficient alternative for identifying the state of emotional turbulence of the user during screen time interaction.",
-   "openalex_id": "https://openalex.org/W4411447061"
-  },
   "astudyonparallelclusteringalgorithmsbase": {
    "title": "A Study on Parallel Clustering Algorithms based on MapReduce",
    "doi": "https://doi.org/10.5573/ieiespc.2022.11.4.276",
@@ -105,6 +94,17 @@
    "pdf": null,
    "abstract": "Since the advent of the global computerized market, the volume of digital information has grown exponentially, as has the demand for storing it. As the price of storage devices decreases, the necessity to analyze vast quantities of unstructured digital data to retain only essential information increases. MapReduce is a programming paradigm for producing and generating massive information indices. Using MapReduce to produce meaningful clusters from such a massive amount of raw data is an efficient way to manage such voluminous amounts of data. On the other hand, the existing industry standard for data clustering algorithms presents significant obstacles. The conventional clustering calculation efficiently handles a great deal of information from various sources, such as online media, business, and the web. Nevertheless, the sequential count in clustering approaches is time-intensive in these conventional calculations. The wide varieties of K-Means, including K-Harmonic Means, are sensitive to forming cluster centers in huge datasets. This work suggests a logical evaluation of such calculations. It offers a study of the various k-means clustering algorithms employed in MapReduce, as well as the study on the introduction and the open challenges of parallelism in MapReduce.",
    "openalex_id": "https://openalex.org/W4295863788"
+  },
+  "trackingephemeralandresidualemotionsviae": {
+   "title": "Tracking Ephemeral and Residual Emotions via Earable Inertial Sensing During Media Consumption",
+   "doi": "https://doi.org/10.1109/percomworkshops65533.2025.00153",
+   "year": 2025,
+   "cited_by_count": 1,
+   "oa_url": null,
+   "landing": "https://doi.org/10.1109/percomworkshops65533.2025.00153",
+   "pdf": null,
+   "abstract": "The extended screen time with the exponential rise of mobile applications has raised concerns about its impact on users’ mental health and frequent episodes of sudden emotional outbursts. Conventional emotion detection systems rely on intrusive physiological data or computationally intensive visual processing devices leading to a usability barrier. To address this challenge, we propose a novel method to detect ephemeral (immediate) and residual (lingering) emotional effects induced by media content by observing facial expression changes during content consumption. Our approach is based on predicting various facial expressions across different emotional behaviors using an earable-based Inertial Measurement Unit (IMU) to detect the ephemeral state and then map it to the circumplex model of affect to predict the residual state. A pilot study validates the potential of the proposed earable-based solution to offer a non-intrusive, efficient alternative for identifying the state of emotional turbulence of the user during screen time interaction.",
+   "openalex_id": "https://openalex.org/W4411447061"
   },
   "federatedmachinelearningwithdataminingin": {
    "title": "Federated Machine Learning with Data Mining in Healthcare",
