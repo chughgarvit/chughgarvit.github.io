@@ -310,6 +310,76 @@
   "slug": "sensors-to-service"
  },
  {
+  "year": "2026",
+  "track": "journal",
+  "topics": [
+   "healthcare",
+   "sensing"
+  ],
+  "title": "An Evaluation of Earable-Based Inertial Sensing for Understanding Eating Behaviour",
+  "url": null,
+  "authors": "<strong>Chugh, G.</strong>, Ghosh, I., Chakraborty, S. &amp; Chakraborty, S.",
+  "venue": "Pervasive and Mobile Computing (Elsevier)",
+  "badges": [
+   {
+    "kind": "journal",
+    "text": "Journal"
+   },
+   {
+    "kind": "journal",
+    "text": "In press"
+   }
+  ],
+  "tags": [
+   "Healthcare",
+   "Sensing"
+  ],
+  "selected": true,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  },
+  "slug": "eating-behaviour-evaluation"
+ },
+ {
+  "year": "2026",
+  "track": "journal",
+  "topics": [
+   "mlai",
+   "sensing",
+   "systems"
+  ],
+  "title": "Real-time Recognition of Contextual Composite Activities from Asynchronous Multi-IMU Sensor Streams",
+  "url": null,
+  "authors": "Mondal, A., Khan, A., <strong>Chugh, G.</strong> &amp; Chakraborty, S.",
+  "venue": "ACM Transactions on Sensor Networks (TOSN)",
+  "badges": [
+   {
+    "kind": "journal",
+    "text": "Journal"
+   },
+   {
+    "kind": "journal",
+    "text": "In press"
+   }
+  ],
+  "tags": [
+   "ML / AI",
+   "Sensing",
+   "Systems"
+  ],
+  "selected": false,
+  "links": {
+   "paper": "",
+   "pdf": "",
+   "code": "",
+   "video": ""
+  },
+  "slug": "mssl"
+ },
+ {
   "year": "2025",
   "track": "main",
   "topics": [
@@ -742,68 +812,6 @@
    "video": ""
   },
   "slug": "earcontrol"
- },
- {
-  "year": "review",
-  "track": "review",
-  "topics": [
-   "healthcare",
-   "sensing"
-  ],
-  "title": "An Evaluation of Earable-Based Inertial Sensing for Understanding Eating Behaviour",
-  "url": null,
-  "authors": "<strong>Chugh, G.</strong>, Ghosh, I., Chakraborty, S. &amp; Chakraborty, S.",
-  "venue": "Under review, 2026",
-  "badges": [
-   {
-    "kind": "review",
-    "text": "Under Review"
-   }
-  ],
-  "tags": [
-   "Healthcare",
-   "Sensing"
-  ],
-  "selected": false,
-  "links": {
-   "paper": "",
-   "pdf": "",
-   "code": "",
-   "video": ""
-  },
-  "slug": "eating-behaviour-evaluation"
- },
- {
-  "year": "review",
-  "track": "review",
-  "topics": [
-   "mlai",
-   "sensing",
-   "systems"
-  ],
-  "title": "MSSL: Real-Time Complex Activity Recognition from Multiple Unlabeled IMU Data Streams",
-  "url": null,
-  "authors": "Mondal, A., <strong>Chugh, G.</strong> &amp; Chakraborty, S.",
-  "venue": "Under review, 2026",
-  "badges": [
-   {
-    "kind": "review",
-    "text": "Under Review"
-   }
-  ],
-  "tags": [
-   "ML / AI",
-   "Sensing",
-   "Systems"
-  ],
-  "selected": false,
-  "links": {
-   "paper": "",
-   "pdf": "",
-   "code": "",
-   "video": ""
-  },
-  "slug": "mssl"
  },
  {
   "year": "review",

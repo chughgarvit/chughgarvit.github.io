@@ -1,5 +1,19 @@
 [
  {
+  "id": 44,
+  "year": 2026,
+  "kind": "paper",
+  "featured": true,
+  "text": "Journal paper accepted at <strong>ACM Transactions on Sensor Networks (TOSN)</strong>!"
+ },
+ {
+  "id": 43,
+  "year": 2026,
+  "kind": "paper",
+  "featured": true,
+  "text": "Journal paper accepted at <strong>Pervasive and Mobile Computing</strong> (Elsevier)!"
+ },
+ {
   "id": 42,
   "year": 2027,
   "kind": "service",
