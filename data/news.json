@@ -1,5 +1,12 @@
 [
  {
+  "id": 45,
+  "year": 2027,
+  "kind": "service",
+  "featured": false,
+  "text": "Joined the technical programme committees of the <strong>WWW 2027</strong> Research Track, <strong>PerRobotics @ IEEE PerCom 2027</strong>, and the <strong>ICDCN 2027</strong> Doctoral Symposium."
+ },
+ {
   "id": 44,
   "year": 2026,
   "kind": "paper",
